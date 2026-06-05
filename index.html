@@ -1,0 +1,1181 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zhub | A plataforma de aprendizado do ecossistema SAP | Lab2learn</title>
+  <link rel="icon" type="image/png" href="logos/Logo Zhub.png">
+  <meta name="description" content="Domine S/4HANA, Clean Core, SAP BTP e as tecnologias modernas do ecossistema SAP com trilhas estruturadas e agentes de IA treinados com experiência real de projetos.">
+  <meta property="og:title" content="Zhub — A plataforma de aprendizado do ecossistema SAP">
+  <meta property="og:description" content="Trilhas de aprendizado + agentes de IA treinados com experiência real de projetos SAP.">
+  <meta property="og:type" content="website">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    :root {
+      --gold:          #C9A84C;
+      --gold-light:    #DBBA5E;
+      --gold-dark:     #7C620C;
+      --gold-bg:       rgba(201,168,76,0.08);
+      --gold-border:   rgba(201,168,76,0.20);
+      --cta-green:     #22C55E;
+      --cta-green-lt:  #4ADE80;
+      --cta-green-dk:  #16A34A;
+      --black:         #0A0A0A;
+      --dark:          #111111;
+      --dark-warm:     #141210;
+      --dark-2:        #1C1A14;
+      --dark-card:     #201E16;
+      --dark-border:   rgba(255,255,255,0.06);
+      --dark-border-2: rgba(255,255,255,0.10);
+      --text-white:    #EEEEEE;
+      --text-off:      #C8BFA8;
+      --text-muted:    #706858;
+      --text-subtle:   #484848;
+      --page-px:       64px;
+      --page-max:      1200px;
+      --r-sm: 8px; --r-md: 12px; --r-lg: 16px; --r-xl: 24px; --r-pill: 100px;
+      --btn-lg: 40px; --btn-md: 32px; --btn-sm: 24px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Montserrat', sans-serif; background: var(--black); color: var(--text-white); -webkit-font-smoothing: antialiased; }
+
+    .wrap { max-width: calc(var(--page-max) + var(--page-px) * 2); margin: 0 auto; padding-left: var(--page-px); padding-right: var(--page-px); }
+    @media (max-width: 900px) { .wrap { padding-left: 32px; padding-right: 32px; } }
+    @media (max-width: 640px) { .wrap { padding-left: 24px; padding-right: 24px; } }
+
+    .t-label { font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); }
+    .t-display { font-size: clamp(30px, 4.5vw, 52px); font-weight: 800; line-height: 1.1; letter-spacing: -0.02em; }
+    .t-h2 { font-size: clamp(22px, 3vw, 38px); font-weight: 700; line-height: 1.2; letter-spacing: -0.02em; }
+    .t-h3 { font-size: clamp(16px, 1.6vw, 20px); font-weight: 700; line-height: 1.3; }
+    .t-body    { font-size: 15px; font-weight: 400; line-height: 1.75; }
+    .t-body-lg { font-size: 17px; font-weight: 400; line-height: 1.75; }
+    .t-body-sm { font-size: 13px; font-weight: 400; line-height: 1.7; }
+    .text-gold { color: var(--gold); }
+    .gradient-text { background: linear-gradient(90deg, var(--gold) 0%, var(--gold-light) 60%, var(--gold) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+
+    .sec-a { background: var(--black); }
+    .sec-b { background: var(--dark); }
+    .sec-c { background: var(--dark-warm); }
+    .sec-pad    { padding-top: 96px;  padding-bottom: 96px;  }
+    .sec-pad-sm { padding-top: 64px;  padding-bottom: 64px;  }
+    @media (max-width: 640px) { .sec-pad { padding-top: 64px; padding-bottom: 64px; } .sec-pad-sm { padding-top: 48px; padding-bottom: 48px; } }
+    .page-start { padding-top: calc(40px + 56px); }
+
+    /* BOTÕES */
+    .btn-gold { display: inline-flex; align-items: center; justify-content: center; height: var(--btn-lg); background: var(--gold); color: #0A0A0A; font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; padding: 0 32px; border-radius: var(--r-sm); border: none; cursor: pointer; text-decoration: none; white-space: nowrap; transition: background 0.2s, transform 0.2s, box-shadow 0.2s; }
+    .btn-gold:hover { background: var(--gold-light); transform: translateY(-1px); box-shadow: 0 8px 24px rgba(201,168,76,0.28); }
+    .btn-gold-sm { display: inline-flex; align-items: center; justify-content: center; height: var(--btn-sm); background: var(--gold); color: #0A0A0A; font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; padding: 0 16px; border-radius: var(--r-sm); border: none; cursor: pointer; text-decoration: none; transition: opacity 0.2s; }
+    .btn-gold-sm:hover { opacity: 0.85; }
+    .btn-green { display: inline-flex; align-items: center; justify-content: center; height: var(--btn-lg); background: var(--cta-green); color: #0A0A0A; font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; padding: 0 32px; border-radius: var(--r-sm); border: none; cursor: pointer; text-decoration: none; white-space: nowrap; transition: background 0.2s, transform 0.2s, box-shadow 0.2s; }
+    .btn-green:hover { background: var(--cta-green-lt); transform: translateY(-1px); box-shadow: 0 8px 28px rgba(34,197,94,0.38); }
+    .btn-green-sm { display: inline-flex; align-items: center; justify-content: center; height: var(--btn-sm); background: var(--cta-green); color: #0A0A0A; font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; padding: 0 16px; border-radius: var(--r-sm); border: none; cursor: pointer; text-decoration: none; transition: opacity 0.2s; }
+    .btn-green-sm:hover { opacity: 0.85; }
+    .btn-outline { display: inline-flex; align-items: center; justify-content: center; height: var(--btn-lg); background: transparent; color: var(--text-white); font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 12px; padding: 0 32px; border-radius: var(--r-sm); border: 1px solid var(--dark-border-2); cursor: pointer; text-decoration: none; transition: border-color 0.2s, background 0.2s; }
+    .btn-outline:hover { border-color: rgba(255,255,255,0.24); background: rgba(255,255,255,0.04); }
+    .btn-outline-md { display: inline-flex; align-items: center; justify-content: center; height: var(--btn-md); background: transparent; color: var(--text-white); font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 12px; padding: 0 24px; border-radius: var(--r-sm); border: 1px solid var(--dark-border-2); cursor: pointer; text-decoration: none; transition: border-color 0.2s; }
+
+    .chip { display: inline-flex; align-items: center; gap: 8px; background: var(--gold-bg); border: 1px solid var(--gold-border); color: var(--gold); font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; padding: 6px 16px; border-radius: var(--r-pill); }
+    .chip-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); animation: pulse 2s infinite; flex-shrink: 0; }
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.35} }
+
+    .card-dark { background: var(--dark-2); border: 1px solid var(--dark-border); border-radius: var(--r-md); padding: 24px; transition: border-color 0.2s; }
+    .card-dark:hover { border-color: var(--dark-border-2); }
+    .card-gold { border-color: var(--gold-border) !important; background: linear-gradient(135deg, rgba(201,168,76,0.07) 0%, var(--dark-2) 60%); }
+    .divider { height: 1px; background: var(--dark-border); }
+    .grid-bg { background-image: linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px); background-size: 64px 64px; }
+
+    .timer-unit { display: flex; flex-direction: column; align-items: center; background: var(--dark-2); border: 1px solid var(--dark-border); border-radius: var(--r-sm); padding: 8px 16px; min-width: 64px; }
+    .timer-num { font-size: 24px; font-weight: 800; line-height: 1; color: var(--gold); }
+    .timer-lbl { font-size: 10px; font-weight: 500; color: var(--text-muted); letter-spacing: 0.08em; margin-top: 4px; text-transform: uppercase; }
+
+    .ba-table { display: grid; grid-template-columns: 1fr 1fr; border-radius: var(--r-md); overflow: hidden; border: 1px solid var(--dark-border); }
+    .ba-header { padding: 14px 24px; font-weight: 700; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; }
+    .ba-before-h { background: rgba(255,255,255,0.02); color: var(--text-muted); border-right: 1px solid var(--dark-border); }
+    .ba-after-h  { background: rgba(201,168,76,0.07); color: var(--gold); }
+    .ba-cell { padding: 14px 24px; font-size: 14px; line-height: 1.5; border-bottom: 1px solid var(--dark-border); }
+    .ba-before { background: var(--black); color: var(--text-subtle); border-right: 1px solid var(--dark-border); }
+    .ba-after  { background: var(--dark-warm); color: var(--text-off); font-weight: 500; }
+    .ba-before::before { content: '✗ '; color: var(--text-subtle); font-size: 11px; }
+    .ba-after::before  { content: '✓ '; color: var(--gold); font-size: 11px; }
+    @media (max-width: 640px) { .ba-table { grid-template-columns: 1fr; } .ba-before-h,.ba-after-h,.ba-before,.ba-after { border-right: none; } .ba-before { border-bottom: none; } }
+
+    .price-box { border: 1px solid var(--gold-border); border-radius: var(--r-lg); background: linear-gradient(135deg, rgba(201,168,76,0.06) 0%, rgba(201,168,76,0.02) 100%); padding: 48px; max-width: 560px; margin: 0 auto; }
+    @media (max-width: 640px) { .price-box { padding: 32px 24px; } }
+    .price-old  { text-decoration: line-through; color: var(--text-muted); font-size: 16px; }
+    .price-main { font-size: clamp(40px, 5.5vw, 56px); font-weight: 900; color: var(--gold); line-height: 1; }
+    .price-period { font-size: 16px; font-weight: 600; color: var(--text-muted); }
+
+    .check-list { list-style: none; display: flex; flex-direction: column; gap: 14px; }
+    .check-list li { display: flex; align-items: flex-start; gap: 12px; font-size: 15px; line-height: 1.55; color: var(--text-off); }
+    .ck { color: var(--gold); font-weight: 800; flex-shrink: 0; margin-top: 1px; }
+    .cross-list { list-style: none; display: flex; flex-direction: column; gap: 14px; }
+    .cross-list li { display: flex; align-items: flex-start; gap: 12px; font-size: 15px; line-height: 1.55; color: var(--text-muted); }
+    .cx { color: var(--text-subtle); font-weight: 800; flex-shrink: 0; margin-top: 1px; }
+
+    .sec-label-wrap { display: flex; align-items: center; gap: 16px; margin-bottom: 24px; }
+    .sec-label-line { flex: 1; height: 1px; background: var(--dark-border); }
+
+    .faq-item { border-bottom: 1px solid var(--dark-border); }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-trigger { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 22px 0; cursor: pointer; background: none; border: none; font-family: 'Montserrat', sans-serif; font-size: 15px; font-weight: 600; color: var(--text-white); text-align: left; }
+    .faq-icon { flex-shrink: 0; width: 24px; height: 24px; border-radius: 50%; border: 1px solid var(--dark-border-2); display: flex; align-items: center; justify-content: center; transition: all 0.2s; }
+    .faq-icon svg { transition: transform 0.25s; }
+    .faq-trigger[aria-expanded="true"] .faq-icon { border-color: var(--gold); background: var(--gold-bg); }
+    .faq-trigger[aria-expanded="true"] .faq-icon svg { transform: rotate(45deg); }
+    .faq-trigger[aria-expanded="true"] .faq-icon path { stroke: var(--gold); }
+    .faq-answer { overflow: hidden; max-height: 0; transition: max-height 0.35s ease, padding 0.25s ease; }
+    .faq-answer.open { max-height: 400px; padding-bottom: 22px; }
+    .faq-answer p { color: var(--text-off); font-size: 14px; line-height: 1.75; }
+
+    .testimonial-card { background: var(--dark-2); border: 1px solid var(--dark-border); border-radius: var(--r-md); padding: 28px; position: relative; }
+    .testimonial-card::before { content: '"'; position: absolute; top: 16px; left: 24px; font-size: 64px; line-height: 1; color: var(--gold); opacity: 0.15; font-family: Georgia, serif; }
+    .testimonial-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    @media (max-width: 768px) { .testimonial-grid { grid-template-columns: 1fr; } }
+
+    .stack-item { display: flex; align-items: flex-start; gap: 16px; padding: 24px; border-radius: var(--r-md); background: var(--dark-2); border: 1px solid var(--dark-border); transition: border-color 0.2s; }
+    .stack-item:hover { border-color: var(--dark-border-2); }
+    .stack-icon { width: 40px; height: 40px; border-radius: var(--r-sm); flex-shrink: 0; display: flex; align-items: center; justify-content: center; background: var(--gold-bg); border: 1px solid var(--gold-border); color: var(--gold); }
+    .stack-icon .material-symbols-rounded { font-size: 20px; font-variation-settings: 'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 24; }
+
+    .guarantee-badge { width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%); display: flex; align-items: center; justify-content: center; margin: 0 auto 24px; box-shadow: 0 8px 32px rgba(201,168,76,0.25); }
+    .guarantee-badge .material-symbols-rounded { font-size: 36px; color: var(--black); font-variation-settings: 'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 40; }
+
+    /* URGENCY BAR */
+    #urgency-bar { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: linear-gradient(90deg, var(--gold-dark) 0%, var(--gold) 50%, var(--gold-dark) 100%); height: 40px; padding: 0 var(--page-px); display: flex; align-items: center; justify-content: center; gap: 16px; }
+    @media (max-width: 900px) { #urgency-bar { padding: 0 24px; gap: 12px; } }
+    #urgency-bar .ub-icon { font-size: 16px; color: rgba(10,10,10,0.6); font-variation-settings: 'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 20; display: flex; align-items: center; }
+    #urgency-bar .ub-text  { font-size: 12px; font-weight: 500; color: var(--black); white-space: nowrap; }
+    #urgency-bar .ub-timer { font-size: 12px; font-weight: 800; color: var(--black); letter-spacing: 0.04em; }
+    #urgency-bar .ub-sep   { color: rgba(10,10,10,0.3); }
+
+    /* NAV */
+    nav { position: fixed; top: 40px; left: 0; right: 0; z-index: 90; padding: 0 var(--page-px); height: 56px; background: rgba(10,10,10,0.88); border-bottom: 1px solid var(--dark-border); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    @media (max-width: 900px) { nav { padding: 0 32px; } }
+    .nav-logo { display: flex; align-items: center; gap: 16px; text-decoration: none; }
+    .nav-sep   { width: 1px; height: 24px; background: var(--dark-border-2); }
+    .nav-cta   { display: none; }
+    @media (min-width: 640px) { .nav-cta { display: inline-flex; } }
+
+    #sticky-cta { display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 80; padding: 16px 24px 24px; background: var(--black); border-top: 1px solid var(--dark-border); }
+    @media (max-width: 767px) { #sticky-cta { display: block; } }
+
+    #back-top { position: fixed; bottom: 88px; right: 24px; left: auto; z-index: 70; width: 40px; height: 40px; border-radius: 50%; background: var(--dark-2); border: 1px solid var(--dark-border-2); display: flex; align-items: center; justify-content: center; cursor: pointer; opacity: 0; pointer-events: none; transition: opacity 0.3s, transform 0.2s; }
+    #back-top.visible { opacity: 1; pointer-events: all; }
+    #back-top:hover { transform: translateY(-2px); }
+    @media (min-width: 768px) { #back-top { bottom: 32px; } }
+
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--dark); }
+    ::-webkit-scrollbar-thumb { background: var(--dark-2); border-radius: 3px; }
+
+    /* LAYOUTS */
+    .hero-inner { display: grid; grid-template-columns: 1fr 420px; gap: 64px; align-items: start; }
+    @media (max-width: 960px) { .hero-inner { grid-template-columns: 1fr; } .hero-visual { display: none; } }
+    .stats-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 24px; }
+    @media (max-width: 768px) { .stats-grid { grid-template-columns: repeat(2,1fr); } }
+    .feature-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
+    @media (max-width: 900px) { .feature-grid { grid-template-columns: 1fr; } }
+    .for-who-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    @media (max-width: 768px) { .for-who-grid { grid-template-columns: 1fr; } }
+    .stack-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    @media (max-width: 768px) { .stack-grid { grid-template-columns: 1fr; } }
+    .story-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+    @media (max-width: 860px) { .story-grid { grid-template-columns: 1fr; } }
+    .problem-grid { display: grid; grid-template-columns: 1fr 360px; gap: 64px; align-items: start; }
+    @media (max-width: 960px) { .problem-grid { grid-template-columns: 1fr; } .problem-visual { display: none; } }
+
+    .expert-photo { width: 100%; aspect-ratio: 3/4; object-fit: cover; object-position: top; border-radius: var(--r-md); border: 1px solid var(--dark-border-2); filter: grayscale(15%) contrast(1.05); display: block; }
+    .expert-card { position: relative; overflow: hidden; border-radius: var(--r-md); }
+    .expert-tag { position: absolute; bottom: 16px; left: 16px; right: 16px; background: rgba(10,10,10,0.88); backdrop-filter: blur(16px); border: 1px solid var(--dark-border-2); border-radius: var(--r-sm); padding: 12px 16px; }
+
+    /* MOCKUP BROWSER */
+    .mockup { border-radius: var(--r-md); overflow: hidden; border: 1px solid var(--dark-border); box-shadow: 0 24px 56px rgba(0,0,0,0.45); }
+    .mockup-bar { background: #1C1A14; padding: 10px 14px; display: flex; align-items: center; gap: 6px; border-bottom: 1px solid var(--dark-border); }
+    .mockup-dot { width: 9px; height: 9px; border-radius: 50%; background: #3A3A3A; flex-shrink: 0; }
+    .mockup-url { flex: 1; margin-left: 8px; background: rgba(255,255,255,0.04); border-radius: 4px; height: 20px; display: flex; align-items: center; padding: 0 10px; }
+    .mockup img { width: 100%; display: block; }
+
+    .material-symbols-rounded { font-variation-settings: 'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 24; user-select: none; }
+
+    /* ANIMAÇÕES */
+    .anim       { opacity: 0; transform: translateY(24px); transition: opacity 0.42s cubic-bezier(0.22,1,0.36,1), transform 0.42s cubic-bezier(0.22,1,0.36,1); }
+    .anim-left  { opacity: 0; transform: translateX(-24px); transition: opacity 0.42s cubic-bezier(0.22,1,0.36,1), transform 0.42s cubic-bezier(0.22,1,0.36,1); }
+    .anim-right { opacity: 0; transform: translateX(24px);  transition: opacity 0.42s cubic-bezier(0.22,1,0.36,1), transform 0.42s cubic-bezier(0.22,1,0.36,1); }
+    .anim-scale { opacity: 0; transform: scale(0.95); transition: opacity 0.38s ease, transform 0.38s ease; }
+    .anim.in, .anim-left.in, .anim-right.in, .anim-scale.in { opacity: 1; transform: none; }
+    .d1{transition-delay:.04s} .d2{transition-delay:.08s} .d3{transition-delay:.12s}
+    .d4{transition-delay:.16s} .d5{transition-delay:.20s} .d6{transition-delay:.24s}
+    .d7{transition-delay:.30s} .d8{transition-delay:.36s}
+
+    /* HERO ANIMATION */
+    @keyframes float-a { 0%,100%{transform:translateY(0) rotate(-1.5deg)} 50%{transform:translateY(-12px) rotate(-0.5deg)} }
+    @keyframes float-b { 0%,100%{transform:translateY(0) rotate(1deg)} 50%{transform:translateY(-8px) rotate(0deg)} }
+    @keyframes float-c { 0%,100%{transform:translateY(-3px)} 50%{transform:translateY(5px)} }
+    @keyframes float-d { 0%,100%{transform:translateY(0);opacity:.75} 50%{transform:translateY(-6px);opacity:1} }
+    @keyframes blink   { 0%,100%{opacity:1} 50%{opacity:0} }
+    .hero-float-a { animation: float-a 5.5s ease-in-out infinite; }
+    .hero-float-b { animation: float-b 6.2s ease-in-out infinite 0.6s; }
+    .hero-float-c { animation: float-c 4.8s ease-in-out infinite 1.2s; }
+    .hero-float-d { animation: float-d 5s   ease-in-out infinite 0.3s; }
+    .hero-card { backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); background: rgba(28,26,20,0.9); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--r-md); }
+    .hero-card-gold { border-color: rgba(201,168,76,0.25) !important; }
+    .ai-cursor { display:inline-block;width:1.5px;height:11px;background:var(--gold);vertical-align:text-bottom;animation:blink 1s step-end infinite; }
+  </style>
+</head>
+<body>
+
+<!-- BARRA DE ESCASSEZ -->
+<div id="urgency-bar">
+  <span class="material-symbols-rounded ub-icon">bolt</span>
+  <span class="ub-text">Oferta de Lançamento &nbsp;·&nbsp; 12x de R$249,75 ou R$2.997/ano à vista</span>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">
+    <img src="logos/Logo Horizontal Lab2learn - Fundo Escuro.svg" alt="Lab2learn" style="height:28px;">
+    <span class="nav-sep"></span>
+    <img src="logos/Logo Zhub.png" alt="Zhub" style="height:34px;">
+  </a>
+  <a href="https://chk.eduzz.com/797Z18210E" class="btn-outline-md nav-cta">Fazer parte</a>
+</nav>
+
+<!-- HERO -->
+<section class="sec-a grid-bg page-start" style="min-height:100vh;display:flex;align-items:center;position:relative;">
+  <div style="position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 30%,rgba(201,168,76,0.05) 0%,transparent 70%);pointer-events:none;"></div>
+  <div class="wrap" style="padding-top:80px;padding-bottom:80px;width:100%;">
+    <div class="hero-inner">
+
+      <div>
+        <h1 class="t-display anim" style="margin-bottom:20px;">
+          Domine o ecossistema SAP moderno com o <span class="gradient-text">Zhub</span>
+        </h1>
+        <p class="t-body-lg anim d1" style="color:var(--text-off);max-width:580px;margin-bottom:32px;">
+          O Zhub é uma plataforma de aprendizado especializada no ecossistema SAP, com jornadas estruturadas e agentes de IA treinados com experiência real de projetos SAP para você evoluir em S/4HANA, Clean Core e SAP BTP.
+        </p>
+        <ul class="check-list anim d2" style="margin-bottom:40px;max-width:440px;">
+          <li><span class="ck">✦</span>Jornadas do fundamento ao domínio técnico</li>
+          <li><span class="ck">✦</span>IA treinada com experiência real de projetos SAP</li>
+          <li><span class="ck">✦</span>Plataforma para usar no projeto, não só para estudar</li>
+        </ul>
+        <div class="anim d3" style="display:flex;flex-wrap:wrap;gap:16px;align-items:center;margin-bottom:16px;">
+          <a href="https://chk.eduzz.com/797Z18210E" class="btn-green">Quero fazer parte</a>
+          <a href="#zhub" class="btn-outline">Conhecer o Zhub</a>
+        </div>
+        <p class="t-body-sm anim d4" style="color:var(--text-muted);">
+          <strong style="color:var(--cta-green)">12x de R$249,75</strong> &nbsp;·&nbsp; ou R$2.997/ano à vista &nbsp;·&nbsp; Garantia de 7 dias
+        </p>
+      </div>
+
+      <!-- VISUAL ANIMADO -->
+      <div class="hero-visual" style="position:relative;height:520px;user-select:none;">
+        <canvas id="hero-canvas" style="position:absolute;inset:0;width:100%;height:100%;border-radius:var(--r-lg);"></canvas>
+        <div style="position:absolute;inset:0;border-radius:var(--r-lg);border:1px solid var(--dark-border);background:linear-gradient(135deg,rgba(20,18,12,0.75) 0%,rgba(10,10,10,0.6) 100%);pointer-events:none;"></div>
+
+        <!-- Card: AI Agent -->
+        <div class="hero-card hero-card-gold hero-float-a" style="position:absolute;top:24px;right:0;width:216px;padding:16px;">
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;">
+            <span style="width:20px;height:20px;background:var(--gold-bg);border:1px solid var(--gold-border);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:9px;color:var(--gold);flex-shrink:0;">✦</span>
+            <span style="font-size:11px;font-weight:700;color:var(--gold);letter-spacing:0.04em;">Zhub AI</span>
+          </div>
+          <div style="background:rgba(255,255,255,0.04);border-radius:var(--r-sm);padding:8px 10px;margin-bottom:10px;min-height:36px;">
+            <p style="font-size:11px;color:var(--text-off);line-height:1.5;display:inline;" id="ai-q"></p><span id="ai-cursor-q" class="ai-cursor"></span>
+          </div>
+          <p style="font-size:11px;color:var(--text-off);line-height:1.65;min-height:52px;" id="ai-typing-text"></p><span id="ai-cursor-a" class="ai-cursor" style="display:none;"></span>
+        </div>
+
+        <!-- Card: Jornada Progress -->
+        <div class="hero-card hero-float-b" style="position:absolute;bottom:32px;left:0;width:240px;padding:16px;">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
+            <div style="width:32px;height:32px;background:var(--gold-bg);border:1px solid var(--gold-border);border-radius:var(--r-sm);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <span class="material-symbols-rounded" style="font-size:16px;color:var(--gold);">explore</span>
+            </div>
+            <div style="flex:1;min-width:0;">
+              <p style="font-size:12px;font-weight:700;color:var(--text-white);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">Jornada Clean Core</p>
+              <p style="font-size:10px;color:var(--text-muted);">Módulo 4 de 6</p>
+            </div>
+            <span style="font-size:13px;font-weight:800;color:var(--gold);flex-shrink:0;">67%</span>
+          </div>
+          <div style="height:4px;background:rgba(255,255,255,0.07);border-radius:2px;overflow:hidden;">
+            <div id="hero-progress-bar" style="height:4px;width:0;background:linear-gradient(90deg,var(--gold-dark),var(--gold-light));border-radius:2px;transition:width 1.4s cubic-bezier(0.22,1,0.36,1);"></div>
+          </div>
+          <div style="margin-top:12px;padding-top:12px;border-top:1px solid rgba(255,255,255,0.06);">
+            <p style="font-size:9px;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:4px;">Próxima aula</p>
+            <p style="font-size:12px;font-weight:600;color:var(--text-off);">Extensibility no S/4HANA</p>
+          </div>
+        </div>
+
+        <!-- Tags flutuantes -->
+        <div class="hero-float-d" style="position:absolute;top:64px;left:0;">
+          <span style="display:inline-block;background:var(--gold-bg);border:1px solid var(--gold-border);color:var(--gold);font-size:10px;font-weight:600;padding:4px 12px;border-radius:var(--r-pill);letter-spacing:0.06em;">SAP BTP</span>
+        </div>
+        <div class="hero-float-d" style="position:absolute;top:108px;left:0;animation-delay:1.8s;">
+          <span style="display:inline-block;background:rgba(255,255,255,0.04);border:1px solid var(--dark-border-2);color:var(--text-muted);font-size:10px;font-weight:600;padding:4px 12px;border-radius:var(--r-pill);letter-spacing:0.06em;">ABAP RAP</span>
+        </div>
+        <div class="hero-float-c" style="position:absolute;bottom:156px;right:8px;">
+          <span style="display:inline-block;background:rgba(255,255,255,0.04);border:1px solid var(--dark-border-2);color:var(--text-muted);font-size:10px;font-weight:600;padding:4px 12px;border-radius:var(--r-pill);letter-spacing:0.06em;">S/4HANA</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEMA -->
+<section class="sec-b sec-pad">
+  <div class="wrap">
+    <div class="problem-grid">
+
+      <!-- CONTEÚDO ESQUERDA -->
+      <div>
+        <div class="sec-label-wrap anim">
+          <span class="t-label">O Problema</span>
+          <span class="sec-label-line"></span>
+        </div>
+        <h2 class="t-h2 anim d1" style="margin-bottom:24px;">
+          Existe um problema silencioso que boa parte dos profissionais SAP enfrenta.
+        </h2>
+        <p class="t-body-lg anim d2" style="color:var(--text-off);margin-bottom:24px;">
+          O ecossistema SAP nunca mudou tão rápido. S/4HANA, Clean Core, SAP BTP e inteligência artificial entraram nos projetos com força total. As empresas precisam de profissionais que entendam tudo isso hoje.
+        </p>
+        <p class="t-h3 anim d3" style="margin-bottom:16px;">A maioria ainda tenta se manter atualizada assim:</p>
+        <div style="display:flex;flex-direction:column;gap:8px;margin-bottom:40px;">
+          <div class="card-dark anim d4" style="display:flex;align-items:flex-start;gap:16px;">
+            <span style="color:var(--text-subtle);font-size:16px;margin-top:1px;flex-shrink:0;">→</span>
+            <p class="t-body" style="color:var(--text-off);">Uma aula no YouTube aqui, outra ali, sem caminho estruturado</p>
+          </div>
+          <div class="card-dark anim d5" style="display:flex;align-items:flex-start;gap:16px;">
+            <span style="color:var(--text-subtle);font-size:16px;margin-top:1px;flex-shrink:0;">→</span>
+            <p class="t-body" style="color:var(--text-off);">A documentação oficial do SAP, extensa e técnica, sem contexto de projeto real</p>
+          </div>
+          <div class="card-dark anim d6" style="display:flex;align-items:flex-start;gap:16px;">
+            <span style="color:var(--text-subtle);font-size:16px;margin-top:1px;flex-shrink:0;">→</span>
+            <p class="t-body" style="color:var(--text-off);">Aquele curso que ficou pela metade porque não tinha sequência lógica</p>
+          </div>
+        </div>
+        <div class="anim d7" style="background:var(--gold-bg);border:1px solid var(--gold-border);border-radius:var(--r-md);padding:24px 32px;margin-bottom:32px;">
+          <p class="t-body-lg" style="color:var(--text-off);font-style:italic;">Você já esteve numa reunião de arquitetura SAP e ficou na dúvida se a decisão que estava sendo tomada era realmente a mais adequada para aquele cenário?</p>
+          <p style="margin-top:12px;font-size:14px;font-weight:700;color:var(--gold);">Se a resposta é sim, você conhece exatamente esse problema.</p>
+        </div>
+        <div class="anim d8">
+          <a href="https://chk.eduzz.com/797Z18210E" class="btn-green" style="font-size:13px;">Quero a solução</a>
+        </div>
+      </div>
+
+      <!-- ILUSTRAÇÃO DIREITA -->
+      <div class="problem-visual" style="position:sticky;top:116px;align-self:start;">
+        <canvas id="problem-canvas" style="width:100%;height:440px;display:block;"></canvas>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- AMPLIFICAR -->
+<section class="sec-a sec-pad">
+  <div class="wrap">
+    <div class="sec-label-wrap anim">
+      <span class="t-label">O Que Está Em Jogo</span>
+      <span class="sec-label-line"></span>
+    </div>
+    <h2 class="t-h2 anim d1" style="max-width:700px;margin-bottom:48px;">O mercado SAP está se reorganizando. Isso está criando uma separação clara.</h2>
+    <div class="for-who-grid anim d2">
+      <div style="background:rgba(255,255,255,0.02);border:1px solid var(--dark-border);border-radius:var(--r-md);padding:32px;">
+        <p style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-muted);margin-bottom:16px;">De um lado</p>
+        <p class="t-h3" style="color:var(--text-subtle);margin-bottom:24px;">Quem ficou para trás</p>
+        <ul class="cross-list">
+          <li><span class="cx">✗</span>Corre atrás de informação fragmentada</li>
+          <li><span class="cx">✗</span>Pede prazo para validar decisões técnicas</li>
+          <li><span class="cx">✗</span>Depende de outros para responder sobre Clean Core e BTP</li>
+          <li><span class="cx">✗</span>Sente insegurança em reuniões de arquitetura</li>
+          <li><span class="cx">✗</span>Deixa de ser chamado quando a decisão é crítica</li>
+        </ul>
+      </div>
+      <div class="card-dark card-gold" style="padding:32px;">
+        <p style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--gold);margin-bottom:16px;">Do outro lado</p>
+        <p class="t-h3" style="color:var(--text-white);margin-bottom:24px;">Quem se atualizou com método</p>
+        <ul class="check-list">
+          <li><span class="ck">✦</span>Entra em reunião com clareza para questionar e propor</li>
+          <li><span class="ck">✦</span>Responde sobre Clean Core, BTP e integrações com segurança</li>
+          <li><span class="ck">✦</span>É o profissional que o time consulta</li>
+          <li><span class="ck">✦</span>Lidera decisões de arquitetura SAP com confiança</li>
+          <li><span class="ck">✦</span>Cresce porque entrega valor além do esperado</li>
+        </ul>
+      </div>
+    </div>
+    <div class="anim d3" style="margin-top:40px;display:flex;align-items:center;gap:20px;flex-wrap:wrap;">
+      <p style="color:var(--text-muted);font-size:15px;">O gap tem solução.</p>
+      <a href="https://chk.eduzz.com/797Z18210E" class="btn-green" style="font-size:13px;">Quero fazer parte</a>
+    </div>
+  </div>
+</section>
+
+<!-- HISTÓRIA -->
+<section class="sec-b sec-pad" id="historia">
+  <div class="wrap">
+    <div class="story-grid">
+
+      <!-- Fotos: coluna de scroll normal -->
+      <div class="anim-left" style="display:flex;flex-direction:column;gap:32px;">
+        <div class="expert-card" style="max-width:440px;">
+          <img src="foto dos experts/Leandro Dante.png" alt="Leandro Dante" class="expert-photo" style="aspect-ratio:3/4;width:100%;">
+          <div class="expert-tag">
+            <p style="font-size:13px;font-weight:700;color:var(--text-white);margin-bottom:2px;">Leandro Dante</p>
+            <p class="t-body-sm" style="color:var(--text-muted);">Co-fundador Lab2learn</p>
+          </div>
+        </div>
+        <div class="expert-card" style="max-width:440px;">
+          <img src="foto dos experts/Vitor Ueda.png" alt="Vitor Ueda" class="expert-photo" style="aspect-ratio:3/4;width:100%;">
+          <div class="expert-tag">
+            <p style="font-size:13px;font-weight:700;color:var(--text-white);margin-bottom:2px;">Vitor Ueda</p>
+            <p class="t-body-sm" style="color:var(--text-muted);">Instrutor SAP</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Texto: sticky — acompanha o scroll das fotos -->
+      <div class="anim-right" style="position:sticky;top:116px;align-self:start;">
+        <div class="sec-label-wrap">
+          <span class="t-label">A Iniciativa</span>
+          <span class="sec-label-line"></span>
+        </div>
+        <h2 class="t-h2" style="margin-bottom:32px;">Quem está por trás do Zhub.</h2>
+        <div style="display:flex;flex-direction:column;gap:24px;">
+          <div style="border-left:2px solid var(--gold-border);padding-left:24px;">
+            <p class="t-body-sm" style="color:var(--gold);font-weight:700;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;">Leandro Dante</p>
+            <p class="t-body-sm" style="color:var(--text-muted);margin-bottom:12px;">Head de SAP BTP · Co-fundador Lab2learn · Expert da maior comunidade de SAP BTP do Brasil</p>
+            <div style="display:flex;flex-direction:column;gap:10px;">
+              <p class="t-body" style="color:var(--text-off);">Minha maior missão é transformar ideias em soluções reais usando SAP Business Technology Platform. Já liderei treinamentos, bootcamps e projetos para empresas de todos os portes, sempre com foco em inovação, Clean Core, IA e Integração Inteligente.</p>
+              <p class="t-body" style="color:var(--text-off);">Atuo como palestrante em eventos no Brasil e no exterior, compartilhando práticas e experiências que ajudam profissionais a crescerem rápido no ecossistema SAP.</p>
+              <p class="t-body" style="color:var(--text-off);">Acredito que tecnologia só faz sentido quando resolve problemas de verdade e aproxima pessoas.</p>
+            </div>
+          </div>
+          <div style="border-left:2px solid var(--dark-border-2);padding-left:24px;">
+            <p class="t-body-sm" style="color:var(--gold);font-weight:700;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;">Vitor Ueda</p>
+            <p class="t-body-sm" style="color:var(--text-muted);margin-bottom:12px;">Instrutor SAP · Desenvolvedor · Speaker</p>
+            <div style="display:flex;flex-direction:column;gap:10px;">
+              <p class="t-body" style="color:var(--text-off);">Meu objetivo é mudar vidas e negócios através da tecnologia, ajudando pessoas e empresas. Amo automatizar processos, criar soluções e estudar novas stacks SAP. Sempre em busca de evoluir e fazer a diferença por onde passo.</p>
+              <p class="t-body" style="color:var(--text-off);">Cinco anos de experiência em SAP ECC, S/4HANA e BTP: ABAP Cloud, RAP, CDS View, SAPUI5, Fiori, PI/PO, CI, CAP, Clean Core nos três tiers — in-app, key user e developer extensibility.</p>
+              <p class="t-body" style="color:var(--text-off);">Focado no desenvolvimento de liderança técnica e na formação de equipes de alta performance no ecossistema SAP.</p>
+            </div>
+          </div>
+        </div>
+        <div style="margin-top:40px;">
+          <a href="https://chk.eduzz.com/797Z18210E" class="btn-green" style="font-size:13px;">Aprender com eles no Zhub</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- TRANSFORMAÇÃO -->
+<section class="sec-a sec-pad">
+  <div class="wrap">
+    <div style="text-align:center;margin-bottom:48px;" class="anim">
+      <div class="chip" style="display:inline-flex;margin-bottom:16px;">A Transformação</div>
+      <h2 class="t-h2">O que muda para quem entra no Zhub.</h2>
+    </div>
+    <div class="ba-table anim d1" style="max-width:900px;margin:0 auto;">
+      <div class="ba-header ba-before-h">Antes do Zhub</div>
+      <div class="ba-header ba-after-h">Depois do Zhub</div>
+      <div class="ba-cell ba-before">Aprendizado fragmentado, sem caminho definido</div>
+      <div class="ba-cell ba-after">Trilha clara e progressiva, com início, meio e destino</div>
+      <div class="ba-cell ba-before">Dúvidas de projeto que ficam sem resposta rápida</div>
+      <div class="ba-cell ba-after">Agente de IA disponível para responder como um sênior SAP</div>
+      <div class="ba-cell ba-before">Insegurança para questionar decisões de arquitetura</div>
+      <div class="ba-cell ba-after">Clareza para propor e validar decisões com fundamento</div>
+      <div class="ba-cell ba-before">Conteúdo genérico sem contexto de projeto</div>
+      <div class="ba-cell ba-after">Conteúdo baseado em projetos reais do ecossistema SAP</div>
+      <div class="ba-cell ba-before" style="border-bottom:none;">Dependência de outros para validar cada decisão</div>
+      <div class="ba-cell ba-after" style="border-bottom:none;">Autonomia técnica crescente em S/4HANA, BTP e Clean Core</div>
+    </div>
+    <div class="anim d2" style="text-align:center;margin-top:40px;">
+      <a href="https://chk.eduzz.com/797Z18210E" class="btn-green" style="font-size:13px;padding:0 40px;">Quero estar do lado direito</a>
+    </div>
+  </div>
+</section>
+
+<!-- APRESENTAÇÃO DO ZHUB -->
+<section class="sec-c sec-pad" id="zhub">
+  <div class="wrap">
+    <div class="anim" style="text-align:center;max-width:640px;margin:0 auto 56px;">
+      <div class="chip" style="display:inline-flex;margin-bottom:16px;">A Solução</div>
+      <h2 class="t-h2" style="margin-bottom:16px;">Apresentando o <span class="text-gold">Zhub</span>.</h2>
+      <p class="t-body-lg" style="color:var(--text-off);">A primeira plataforma de aprendizado e inteligência especializada no ecossistema SAP moderno. Trilhas estruturadas e agentes de IA treinados com experiência real de projetos SAP.</p>
+    </div>
+
+    <div class="anim d1" style="text-align:center;margin-bottom:48px;">
+      <img src="logos/Logo Zhub.png" alt="Zhub" style="height:80px;margin:0 auto;">
+    </div>
+
+    <div class="feature-grid" style="margin-bottom:56px;">
+      <div class="card-dark card-gold anim d2" style="text-align:center;">
+        <div style="width:56px;height:56px;background:var(--gold-bg);border:1px solid var(--gold-border);border-radius:var(--r-md);display:flex;align-items:center;justify-content:center;margin:0 auto 24px;">
+          <span class="material-symbols-rounded" style="font-size:28px;color:var(--gold);">explore</span>
+        </div>
+        <h3 class="t-h3" style="margin-bottom:12px;color:var(--text-white);">As Jornadas</h3>
+        <p class="t-body" style="color:var(--text-off);">Trilhas de aprendizado estruturadas por tema, do fundamento ao domínio técnico, com progressão lógica. Sem pular etapas.</p>
+      </div>
+      <div class="card-dark anim d3" style="text-align:center;">
+        <div style="width:56px;height:56px;background:var(--gold-bg);border:1px solid var(--gold-border);border-radius:var(--r-md);display:flex;align-items:center;justify-content:center;margin:0 auto 24px;">
+          <span class="material-symbols-rounded" style="font-size:28px;color:var(--gold);">smart_toy</span>
+        </div>
+        <h3 class="t-h3" style="margin-bottom:12px;color:var(--text-white);">Agentes de IA</h3>
+        <p class="t-body" style="color:var(--text-off);">Treinados com experiência real de projetos SAP. Pergunte sobre arquitetura, Clean Core, BTP e boas práticas como perguntaria a um sênior.</p>
+      </div>
+      <div class="card-dark anim d4" style="text-align:center;">
+        <div style="width:56px;height:56px;background:var(--gold-bg);border:1px solid var(--gold-border);border-radius:var(--r-md);display:flex;align-items:center;justify-content:center;margin:0 auto 24px;">
+          <span class="material-symbols-rounded" style="font-size:28px;color:var(--gold);">library_books</span>
+        </div>
+        <h3 class="t-h3" style="margin-bottom:12px;color:var(--text-white);">O Conteúdo</h3>
+        <p class="t-body" style="color:var(--text-off);">Mais de 500 horas cobrindo S/4HANA, Clean Core, SAP BTP, integrações, APIs, cloud e IA no ecossistema SAP.</p>
+      </div>
+    </div>
+
+    <!-- Screenshot principal -->
+    <div class="anim-scale d5" style="margin-bottom:40px;">
+      <p style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.12em;color:var(--text-muted);text-align:center;margin-bottom:24px;">Veja o Zhub em ação</p>
+      <div class="mockup">
+        <div class="mockup-bar">
+          <span class="mockup-dot"></span><span class="mockup-dot"></span><span class="mockup-dot"></span>
+          <div class="mockup-url"><span style="font-size:10px;color:var(--text-muted);">zhub.lab2learn.com.br/dashboard</span></div>
+        </div>
+        <img src="imagens da plataforma/home.png" alt="Zhub Dashboard" style="width:100%;display:block;">
+      </div>
+    </div>
+
+    <div class="anim d6" style="padding:32px;background:var(--dark-2);border:1px solid var(--dark-border);border-radius:var(--r-md);text-align:center;margin-bottom:40px;">
+      <p class="t-body-lg" style="color:var(--text-off);">A documentação oficial te diz <strong style="color:var(--text-white);">O QUE</strong> existe. Um agente treinado com experiência real te diz <strong style="color:var(--gold);">COMO usar, QUANDO usar</strong> e quais decisões fazem sentido no contexto do seu projeto.</p>
+    </div>
+    <div class="anim d7" style="text-align:center;">
+      <a href="https://chk.eduzz.com/797Z18210E" class="btn-green" style="font-size:13px;padding:0 40px;height:48px;">Acessar o Zhub agora</a>
+    </div>
+  </div>
+</section>
+
+<!-- VALUE STACK -->
+<section class="sec-a sec-pad">
+  <div class="wrap">
+    <div class="anim" style="text-align:center;max-width:600px;margin:0 auto 48px;">
+      <div class="chip" style="display:inline-flex;margin-bottom:16px;">O Que Você Recebe</div>
+      <h2 class="t-h2">Tudo incluído no seu acesso ao Zhub.</h2>
+    </div>
+    <div class="stack-grid" style="margin-bottom:32px;">
+      <div class="stack-item anim d1">
+        <div class="stack-icon"><span class="material-symbols-rounded">school</span></div>
+        <div>
+          <p style="font-size:15px;font-weight:700;color:var(--text-white);margin-bottom:4px;">Formação completa: 10 módulos e +50 videoaulas</p>
+          <p class="t-body-sm" style="color:var(--text-muted);">Conteúdo estruturado em dois grandes pilares — CORE e PLATFORM — levando do fundamento ao avançado com trilha lógica para entender, aplicar e evoluir no novo SAP.</p>
+        </div>
+      </div>
+      <div class="stack-item card-gold anim d2">
+        <div class="stack-icon"><span class="material-symbols-rounded">smart_toy</span></div>
+        <div>
+          <p style="font-size:15px;font-weight:700;color:var(--text-white);margin-bottom:4px;">9 agentes de IA especializados em SAP</p>
+          <p class="t-body-sm" style="color:var(--text-muted);">Treinados com a experiência real da Lab2learn e Lab2dev em projetos SAP. Apoio em validação de arquitetura, especificações, ABAP moderno, Clean Core, integração, carreira e exploração de objetos S/4HANA.</p>
+        </div>
+      </div>
+      <div class="stack-item anim d3">
+        <div class="stack-icon"><span class="material-symbols-rounded">dns</span></div>
+        <div>
+          <p style="font-size:15px;font-weight:700;color:var(--text-white);margin-bottom:4px;">Sandbox S/4HANA 2023</p>
+          <p class="t-body-sm" style="color:var(--text-muted);">Ambiente real para prática, testes e construção. Um S/4HANA de verdade para experimentar e aplicar o que aprende — não é simulador.</p>
+        </div>
+      </div>
+      <div class="stack-item anim d4">
+        <div class="stack-icon"><span class="material-symbols-rounded">design_services</span></div>
+        <div>
+          <p style="font-size:15px;font-weight:700;color:var(--text-white);margin-bottom:4px;">Gerador de protótipos Fiori</p>
+          <p class="t-body-sm" style="color:var(--text-muted);">Crie protótipos de interface seguindo o SAP Fiori Design System, com links compartilháveis para validação rápida de ideias e soluções.</p>
+        </div>
+      </div>
+      <div class="stack-item anim d5">
+        <div class="stack-icon"><span class="material-symbols-rounded">description</span></div>
+        <div>
+          <p style="font-size:15px;font-weight:700;color:var(--text-white);margin-bottom:4px;">Templates Clean Core</p>
+          <p class="t-body-sm" style="color:var(--text-muted);">Modelos prontos para análise, documentação, validação de arquitetura e aderência às boas práticas SAP.</p>
+        </div>
+      </div>
+      <div class="stack-item anim d6">
+        <div class="stack-icon"><span class="material-symbols-rounded">workspace_premium</span></div>
+        <div>
+          <p style="font-size:15px;font-weight:700;color:var(--text-white);margin-bottom:4px;">Quizzes, certificado e dashboard de progresso</p>
+          <p class="t-body-sm" style="color:var(--text-muted);">Avaliações por aula, quizzes gerados por IA, certificado e painel de performance para acompanhar sua evolução dentro da plataforma.</p>
+        </div>
+      </div>
+      <div class="stack-item anim d7">
+        <div class="stack-icon"><span class="material-symbols-rounded">manage_accounts</span></div>
+        <div>
+          <p style="font-size:15px;font-weight:700;color:var(--text-white);margin-bottom:4px;">Onboarding personalizado com IA</p>
+          <p class="t-body-sm" style="color:var(--text-muted);">Diagnóstico inicial de perfil para recomendar os agentes, conteúdos e trilhas mais adequadas para cada aluno.</p>
+        </div>
+      </div>
+      <div class="stack-item anim d8">
+        <div class="stack-icon"><span class="material-symbols-rounded">groups</span></div>
+        <div>
+          <p style="font-size:15px;font-weight:700;color:var(--text-white);margin-bottom:4px;">Encontros mensais com experts</p>
+          <p class="t-body-sm" style="color:var(--text-muted);">Sessões ao vivo com especialistas da Lab2learn e Lab2dev para exercícios práticos, discussão de cenários reais e aprofundamento técnico.</p>
+        </div>
+      </div>
+      <div class="stack-item anim d1">
+        <div class="stack-icon"><span class="material-symbols-rounded">forum</span></div>
+        <div>
+          <p style="font-size:15px;font-weight:700;color:var(--text-white);margin-bottom:4px;">Comunidade exclusiva dentro do Zhub</p>
+          <p class="t-body-sm" style="color:var(--text-muted);">Espaço para fortalecer o ecossistema SAP, incentivar networking, colaboração e parceria entre profissionais que estão evoluindo juntos.</p>
+        </div>
+      </div>
+    </div>
+    <!-- Screenshot: Agente de IA -->
+    <div class="anim-scale" style="margin-bottom:48px;">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center;">
+        <div>
+          <p style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.12em;color:var(--gold);margin-bottom:12px;">Agentes de IA</p>
+          <h3 class="t-h3" style="margin-bottom:12px;">Resposta com contexto real de projeto</h3>
+          <p class="t-body" style="color:var(--text-off);">O Clean Core Guardian analisa sua situação e entrega respostas com nível de profundidade que só quem já viveu projetos SAP reais consegue dar.</p>
+        </div>
+        <div class="mockup">
+          <div class="mockup-bar">
+            <span class="mockup-dot"></span><span class="mockup-dot"></span><span class="mockup-dot"></span>
+            <div class="mockup-url"><span style="font-size:10px;color:var(--text-muted);">Agente: Clean Core Guardian</span></div>
+          </div>
+          <img src="imagens da plataforma/ef wizard.png" alt="Agente de IA Zhub" style="width:100%;display:block;">
+        </div>
+      </div>
+    </div>
+
+    <div class="anim" style="text-align:center;padding-top:8px;">
+      <a href="https://chk.eduzz.com/797Z18210E" class="btn-green" style="font-size:13px;padding:0 40px;height:48px;">Quero fazer parte do Zhub</a>
+      <p class="t-body-sm" style="color:var(--text-muted);margin-top:12px;">12x de R$249,75 &nbsp;·&nbsp; Acesso imediato &nbsp;·&nbsp; Garantia de 7 dias</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- PARA QUEM É -->
+<section class="sec-b sec-pad">
+  <div class="wrap">
+    <div class="anim" style="text-align:center;max-width:600px;margin:0 auto 48px;">
+      <div class="chip" style="display:inline-flex;margin-bottom:16px;">Qualificação</div>
+      <h2 class="t-h2">O Zhub foi feito para você?</h2>
+    </div>
+    <!-- Screenshot: Workbooks -->
+    <div class="anim-scale" style="margin-bottom:48px;">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center;">
+        <div class="mockup">
+          <div class="mockup-bar">
+            <span class="mockup-dot"></span><span class="mockup-dot"></span><span class="mockup-dot"></span>
+            <div class="mockup-url"><span style="font-size:10px;color:var(--text-muted);">Clean Core Workbook</span></div>
+          </div>
+          <img src="imagens da plataforma/workbooks.png" alt="Workbooks Zhub" style="width:100%;display:block;">
+        </div>
+        <div>
+          <p style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.12em;color:var(--gold);margin-bottom:12px;">Jornadas</p>
+          <h3 class="t-h3" style="margin-bottom:12px;">Trilhas estruturadas com contexto real</h3>
+          <p class="t-body" style="color:var(--text-off);">Os Workbooks do Zhub organizam avaliações, scorecards e templates de decisão que você usa diretamente no projeto, não só para estudar.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="for-who-grid">
+      <div class="card-dark anim d1">
+        <p style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--text-subtle);margin-bottom:16px;">Para quem não é</p>
+        <ul class="cross-list">
+          <li><span class="cx">✗</span>Está buscando um atalho mágico sem dedicação real ao aprendizado</li>
+          <li><span class="cx">✗</span>Quer apenas um certificado para o currículo, sem aplicação real</li>
+          <li><span class="cx">✗</span>Não tem nenhuma relação com o ecossistema SAP e quer começar do absoluto zero</li>
+        </ul>
+      </div>
+      <div class="card-dark card-gold anim d2">
+        <p style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--gold);margin-bottom:16px;">Para quem é</p>
+        <ul class="check-list" style="margin-bottom:28px;">
+          <li><span class="ck">✦</span>Consultor SAP funcional, desenvolvedor, arquiteto, analista de negócio, especialista em integração ou líder técnico</li>
+          <li><span class="ck">✦</span>Quer dominar S/4HANA, Clean Core, SAP BTP e tecnologias modernas do ecossistema SAP</li>
+          <li><span class="ck">✦</span>Quer parar de depender de pesquisa fragmentada e ter uma fonte confiável</li>
+          <li><span class="ck">✦</span>Quer usar a plataforma como apoio ativo nos projetos SAP do dia a dia</li>
+          <li><span class="ck">✦</span>Quer crescer como referência técnica no ecossistema SAP</li>
+        </ul>
+        <a href="https://chk.eduzz.com/797Z18210E" class="btn-green" style="width:100%;justify-content:center;font-size:13px;letter-spacing:0.1em;">É PRA MIM!</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROVA SOCIAL -->
+<section class="sec-a sec-pad">
+  <div class="wrap">
+    <div class="anim" style="text-align:center;max-width:600px;margin:0 auto 48px;">
+      <div class="chip" style="display:inline-flex;margin-bottom:16px;">Prova Social</div>
+      <h2 class="t-h2">O que os profissionais SAP dizem sobre aprender com a Lab2learn.</h2>
+    </div>
+    <div class="testimonial-grid" style="margin-bottom:48px;">
+      <div class="testimonial-card anim d1">
+        <div style="padding-top:24px;">
+          <p class="t-body" style="color:var(--text-off);margin-bottom:20px;font-style:italic;">"Bom dia Senhores, passando para agradecer a vocês que após fazer o curso de CPI consegui minha primeira vaga. Devo muito a vocês. Ansioso para o Evento da Lab2dev Summit 2025."</p>
+          <div style="display:flex;align-items:center;gap:12px;">
+            <div style="width:40px;height:40px;border-radius:50%;background:var(--gold-bg);border:1px solid var(--gold-border);display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;color:var(--gold);flex-shrink:0;">B</div>
+            <div><p style="font-size:14px;font-weight:700;color:var(--text-white);">Bruno Bonifácio</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card anim d2">
+        <div style="padding-top:24px;">
+          <p class="t-body" style="color:var(--text-off);margin-bottom:20px;font-style:italic;">"Eu finalizei em 100% o curso RAP disponibilizado pela Lab2Learn. Aproveito para parabenizar o Vitor Ueda pela excelência e didática ao longo do curso. Realmente vale ouro!"</p>
+          <div style="display:flex;align-items:center;gap:12px;">
+            <div style="width:40px;height:40px;border-radius:50%;background:var(--gold-bg);border:1px solid var(--gold-border);display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;color:var(--gold);flex-shrink:0;">A</div>
+            <div><p style="font-size:14px;font-weight:700;color:var(--text-white);">Aluno Lab2learn</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card anim d3">
+        <div style="padding-top:24px;">
+          <p class="t-body" style="color:var(--text-off);margin-bottom:20px;font-style:italic;">"Mais uma live, sensacional... Sobre a EF com a metodologia Activate da SAP é sensacional, pois muitos de nós funcionais temos algumas dificuldades em realizar as estimativas e esforço para contabilizar em quanto tempo entregaremos a melhoria ou função."</p>
+          <div style="display:flex;align-items:center;gap:12px;">
+            <div style="width:40px;height:40px;border-radius:50%;background:var(--gold-bg);border:1px solid var(--gold-border);display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;color:var(--gold);flex-shrink:0;">R</div>
+            <div><p style="font-size:14px;font-weight:700;color:var(--text-white);">Regis Gonçalves</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card anim d4">
+        <div style="padding-top:24px;">
+          <p class="t-body" style="color:var(--text-off);margin-bottom:20px;font-style:italic;">"Assisti todas as lives e certamente elas me ajudaram a conhecer e entender um pouco mais do ecossistema SAP. Ansioso por acompanhar a última live ao vivo finalmente. Quem executa, aparece."</p>
+          <div style="display:flex;align-items:center;gap:12px;">
+            <div style="width:40px;height:40px;border-radius:50%;background:var(--gold-bg);border:1px solid var(--gold-border);display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;color:var(--gold);flex-shrink:0;">F</div>
+            <div><p style="font-size:14px;font-weight:700;color:var(--text-white);">Flávio Inahara</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="anim d5" style="padding:32px;background:var(--dark-2);border-radius:var(--r-md);border:1px solid var(--dark-border);margin-bottom:40px;">
+      <div class="stats-grid" style="text-align:center;">
+        <div><p style="font-size:32px;font-weight:900;color:var(--gold);">+920</p><p class="t-body-sm" style="color:var(--text-muted);margin-top:4px;">profissionais formados</p></div>
+        <div><p style="font-size:32px;font-weight:900;color:var(--gold);">+18.000</p><p class="t-body-sm" style="color:var(--text-muted);margin-top:4px;">na comunidade</p></div>
+        <div><p style="font-size:32px;font-weight:900;color:var(--gold);">+500h</p><p class="t-body-sm" style="color:var(--text-muted);margin-top:4px;">de conteúdo SAP</p></div>
+        <div><p style="font-size:32px;font-weight:900;color:var(--gold);">+12.000</p><p class="t-body-sm" style="color:var(--text-muted);margin-top:4px;">inscritos no YouTube</p></div>
+      </div>
+    </div>
+    <div class="anim d6" style="text-align:center;">
+      <a href="https://chk.eduzz.com/797Z18210E" class="btn-green" style="font-size:13px;padding:0 40px;height:48px;">Seja membro do Zhub</a>
+      <p class="t-body-sm" style="color:var(--text-muted);margin-top:12px;">Junte-se a mais de 920 profissionais do ecossistema SAP</p>
+    </div>
+  </div>
+</section>
+
+<!-- OFERTA + PREÇO -->
+<section class="sec-b sec-pad" id="oferta">
+  <div class="wrap">
+    <div class="anim" style="text-align:center;max-width:640px;margin:0 auto 56px;">
+      <div class="chip" style="display:inline-flex;margin-bottom:16px;">Oferta de Lançamento</div>
+      <h2 class="t-h2" style="margin-bottom:16px;">Seu acesso completo ao Zhub.</h2>
+      <p class="t-body-lg" style="color:var(--text-off);">Uma hora de consultoria com um arquiteto SAP sênior custa em média R$300 a R$600. No Zhub, você tem trilhas completas, centenas de horas e agentes de IA por uma fração desse custo.</p>
+    </div>
+
+    <div class="anim d1" style="max-width:560px;margin:0 auto 40px;">
+      <ul class="check-list" style="padding:24px 28px;background:var(--dark-2);border:1px solid var(--dark-border);border-radius:var(--r-md);">
+        <li><span class="ck">✦</span>Formação completa: 10 módulos e +50 videoaulas</li>
+        <li><span class="ck">✦</span>9 agentes de IA especializados em SAP</li>
+        <li><span class="ck">✦</span>Sandbox S/4HANA 2023</li>
+        <li><span class="ck">✦</span>Gerador de protótipos Fiori</li>
+        <li><span class="ck">✦</span>Templates Clean Core</li>
+        <li><span class="ck">✦</span>Quizzes, certificado e dashboard de progresso</li>
+        <li><span class="ck">✦</span>Onboarding personalizado com IA</li>
+        <li><span class="ck">✦</span>Encontros mensais com experts</li>
+        <li><span class="ck">✦</span>Comunidade exclusiva dentro do Zhub</li>
+      </ul>
+    </div>
+
+    <div class="price-box anim d2">
+      <div style="text-align:center;">
+        <p class="t-label" style="margin-bottom:8px;">Oferta exclusiva de lançamento</p>
+
+        <!-- PREÇO ORIGINAL RISCADO -->
+        <div style="margin-bottom:12px;"><span class="price-old">De R$3.497/ano</span></div>
+
+        <!-- 12x EM DESTAQUE (dourado, maior) -->
+        <p style="font-size:12px;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px;">em até</p>
+        <div style="margin-bottom:8px;">
+          <span style="font-size:clamp(34px,5vw,50px);font-weight:900;color:var(--gold);line-height:1;">12x de R$309,96</span>
+        </div>
+
+        <!-- À VISTA (secundário, menor, branco) -->
+        <p style="font-size:14px;font-weight:400;color:var(--text-muted);margin-bottom:8px;">ou <span style="color:var(--text-off);font-weight:600;">R$2.997,00</span> à vista</p>
+        <p class="t-body-sm" style="color:var(--text-muted);margin-bottom:32px;">Menos de R$8,21/dia para dominar o ecossistema SAP</p>
+
+        <a href="https://chk.eduzz.com/797Z18210E" class="btn-green" style="width:100%;font-size:13px;height:52px;margin-bottom:16px;">
+          Quero fazer parte agora
+        </a>
+
+        <p class="t-body-sm" style="color:var(--text-muted);">
+          Acesso imediato após confirmação &nbsp;·&nbsp; Garantia de 7 dias
+        </p>
+      </div>
+    </div>
+
+    <p class="t-body-sm anim d3" style="text-align:center;color:var(--text-muted);margin-top:24px;">Entre, acesse e use a plataforma por 7 dias. Se não for o que esperava, devolvemos 100%.</p>
+  </div>
+</section>
+
+<!-- GARANTIA -->
+<section class="sec-a sec-pad">
+  <div class="wrap">
+    <div class="anim" style="max-width:600px;margin:0 auto;text-align:center;">
+      <div class="guarantee-badge"><span class="material-symbols-rounded">verified_user</span></div>
+      <div class="chip" style="display:inline-flex;margin-bottom:16px;">Garantia Primeira Jornada</div>
+      <h2 class="t-h2" style="margin-bottom:16px;margin-top:16px;">7 dias de garantia total.</h2>
+      <p class="t-body-lg" style="color:var(--text-off);margin-bottom:20px;">Acesse o Zhub. Explore as Jornadas. Consulte os agentes de IA. Mergulhe no conteúdo.</p>
+      <p class="t-body-lg" style="color:var(--text-off);margin-bottom:24px;">Se em 7 dias você sentir que não foi a decisão certa, basta enviar um e-mail para <strong style="color:var(--text-white);">lab2learn@lab2dev.com</strong> e devolvemos 100% do investimento. Sem formulários. Sem perguntas.</p>
+      <div style="padding:16px 24px;background:var(--dark-2);border-radius:var(--r-sm);border:1px solid var(--dark-border);margin-bottom:28px;">
+        <p class="t-body" style="color:var(--text-off);font-style:italic;">O risco é 100% nosso. Você não arrisca nada.</p>
+      </div>
+      <a href="https://chk.eduzz.com/797Z18210E" class="btn-green" style="font-size:13px;padding:0 40px;height:52px;">Fazer parte com garantia de 7 dias</a>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec-c sec-pad">
+  <div class="wrap">
+    <div class="anim" style="text-align:center;max-width:600px;margin:0 auto 48px;">
+      <div class="chip" style="display:inline-flex;margin-bottom:16px;">Dúvidas</div>
+      <h2 class="t-h2">Perguntas frequentes.</h2>
+    </div>
+    <div class="anim d1" style="max-width:720px;margin:0 auto;">
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false"><span>Para qual perfil de profissional SAP o Zhub é mais indicado?</span><span class="faq-icon"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1V11M1 6H11" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></span></button>
+        <div class="faq-answer"><p>O Zhub foi desenvolvido para quem já atua ou está migrando para projetos SAP: consultores funcionais, desenvolvedores ABAP, arquitetos SAP, analistas de negócio, especialistas em integração e líderes técnicos. Se você trabalha com S/4HANA, Clean Core, SAP BTP ou integrações SAP, o Zhub foi feito para você.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false"><span>Preciso dedicar muito tempo por semana para aproveitar a plataforma?</span><span class="faq-icon"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1V11M1 6H11" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></span></button>
+        <div class="faq-answer"><p>O Zhub foi construído para se encaixar na rotina de quem trabalha em projetos SAP. Você estuda no seu ritmo, avança nas Jornadas quando tem disponibilidade, e usa os agentes de IA para tirar dúvidas no momento em que elas aparecem. Não existe carga horária mínima.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false"><span>Os agentes de IA do Zhub são diferentes de um ChatGPT comum?</span><span class="faq-icon"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1V11M1 6H11" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></span></button>
+        <div class="faq-answer"><p>Sim, e a diferença é significativa. Um modelo genérico responde sobre SAP com base em documentação pública, que nem sempre reflete a realidade de projetos. Os agentes do Zhub foram treinados com experiência real da Lab2learn em projetos SAP. A resposta tem contexto de projeto, não só de documentação.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false"><span>O conteúdo do Zhub acompanha as atualizações do ecossistema SAP?</span><span class="faq-icon"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1V11M1 6H11" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></span></button>
+        <div class="faq-answer"><p>O ecossistema SAP evolui rápido e o conteúdo do Zhub acompanha essa evolução. A plataforma é atualizada continuamente com novos conteúdos, novas Jornadas e aprimoramentos nos agentes de IA. Seu acesso anual inclui tudo que for publicado durante o período.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false"><span>Como sei se R$2.997 é um investimento que faz sentido para mim?</span><span class="faq-icon"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1V11M1 6H11" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></span></button>
+        <div class="faq-answer"><p>Uma hora de consultoria com um arquiteto SAP sênior custa em média R$300 a R$600. O acesso anual ao Zhub te dá trilhas de aprendizado, centenas de horas de conteúdo e agentes de IA especializados por menos de R$8,20 por dia. E com a Garantia Primeira Jornada de 7 dias, o risco é zero.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false"><span>E se eu entrar e não gostar da plataforma?</span><span class="faq-icon"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1V11M1 6H11" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></span></button>
+        <div class="faq-answer"><p>Você tem 7 dias para explorar tudo. Se sentir que não foi a decisão certa, basta enviar um e-mail e devolvemos 100% do investimento. Sem formulários. Sem perguntas.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false"><span>Como funciona o acesso ao Zhub após a compra?</span><span class="faq-icon"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1V11M1 6H11" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></span></button>
+        <div class="faq-answer"><p>O acesso à plataforma é imediato após a confirmação do pagamento. Você recebe um e-mail com as instruções de acesso e já pode entrar, explorar as Jornadas e começar a usar os agentes de IA no mesmo dia.</p></div>
+      </div>
+    </div>
+    <div class="anim" style="text-align:center;margin-top:48px;">
+      <a href="https://chk.eduzz.com/797Z18210E" class="btn-green" style="font-size:13px;padding:0 40px;height:52px;">Fazer parte do Zhub</a>
+      <p class="t-body-sm" style="color:var(--text-muted);margin-top:12px;">12x de R$249,75 &nbsp;·&nbsp; Acesso imediato &nbsp;·&nbsp; Garantia de 7 dias</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer style="background:var(--black);border-top:1px solid var(--dark-border);padding:56px 0 32px;">
+  <div class="wrap">
+    <div style="display:grid;grid-template-columns:1fr auto;gap:64px;flex-wrap:wrap;margin-bottom:40px;" class="anim">
+      <div>
+        <img src="logos/Logo Horizontal Lab2learn - Fundo Escuro.svg" alt="Lab2learn" style="height:28px;margin-bottom:16px;display:block;">
+        <p class="t-body-sm" style="color:var(--text-muted);max-width:280px;line-height:1.7;margin-bottom:8px;">A plataforma de aprendizado e inteligência especializada no ecossistema SAP.</p>
+        <p class="t-body-sm" style="color:var(--text-muted);">Av. Hilário Pereira de Souza, 406 Torre 2<br>Centro, Osasco - SP</p>
+        <!-- Social -->
+        <div style="display:flex;gap:12px;margin-top:20px;">
+          <a href="https://www.youtube.com/@lab2learn" target="_blank" aria-label="YouTube" style="width:36px;height:36px;border-radius:50%;background:var(--dark-2);border:1px solid var(--dark-border);display:flex;align-items:center;justify-content:center;transition:border-color 0.2s;" onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='var(--dark-border)'">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="var(--text-muted)"><path d="M23.5 6.2a3.01 3.01 0 0 0-2.12-2.13C19.54 3.6 12 3.6 12 3.6s-7.54 0-9.38.47A3.01 3.01 0 0 0 .5 6.2C.03 8.05 0 12 0 12s.03 3.95.5 5.8a3.01 3.01 0 0 0 2.12 2.13C4.46 20.4 12 20.4 12 20.4s7.54 0 9.38-.47a3.01 3.01 0 0 0 2.12-2.13c.47-1.85.5-5.8.5-5.8s-.03-3.95-.5-5.8zM9.6 15.6V8.4l6.27 3.6-6.27 3.6z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/company/lab2learn" target="_blank" aria-label="LinkedIn" style="width:36px;height:36px;border-radius:50%;background:var(--dark-2);border:1px solid var(--dark-border);display:flex;align-items:center;justify-content:center;transition:border-color 0.2s;" onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='var(--dark-border)'">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="var(--text-muted)"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <a href="https://www.instagram.com/lab2learn.com.br" target="_blank" aria-label="Instagram" style="width:36px;height:36px;border-radius:50%;background:var(--dark-2);border:1px solid var(--dark-border);display:flex;align-items:center;justify-content:center;transition:border-color 0.2s;" onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='var(--dark-border)'">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="var(--text-muted)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div style="display:flex;gap:48px;flex-wrap:wrap;">
+        <div>
+          <p style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-muted);margin-bottom:16px;">Contato</p>
+          <div style="display:flex;flex-direction:column;gap:8px;">
+            <a href="https://lab2learn.com.br/" style="color:var(--text-off);text-decoration:none;font-size:14px;" target="_blank">lab2learn.com.br</a>
+            <a href="mailto:lab2learn@lab2dev.com" style="color:var(--text-off);text-decoration:none;font-size:14px;">lab2learn@lab2dev.com</a>
+          </div>
+        </div>
+        <div>
+          <p style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-muted);margin-bottom:16px;">Plataforma</p>
+          <div style="display:flex;flex-direction:column;gap:8px;">
+            <a href="https://zhub.lab2learn.com.br/agents" style="color:var(--text-off);text-decoration:none;font-size:14px;" target="_blank">Acessar o Zhub</a>
+            <a href="https://chk.eduzz.com/797Z18210E" style="color:var(--cta-green);text-decoration:none;font-size:14px;font-weight:600;">Fazer parte</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider" style="margin-bottom:24px;"></div>
+    <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;">
+      <p class="t-body-sm" style="color:var(--text-muted);">© 2026 Lab2learn. Todos os direitos reservados.</p>
+      <div style="display:flex;gap:24px;">
+        <a href="#" style="color:var(--text-muted);text-decoration:none;font-size:13px;">Política de Privacidade</a>
+        <a href="#" style="color:var(--text-muted);text-decoration:none;font-size:13px;">Termos de Uso</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- STICKY MOBILE CTA -->
+<div id="sticky-cta">
+  <a href="https://chk.eduzz.com/797Z18210E" class="btn-green" style="width:100%;text-align:center;height:48px;">Fazer parte — 12x de R$249,75</a>
+</div>
+
+<!-- BACK TO TOP -->
+<button id="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Voltar ao topo">
+  <span class="material-symbols-rounded" style="font-size:18px;color:var(--text-muted);">arrow_upward</span>
+</button>
+
+<!-- COOKIE BANNER -->
+<div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:200;background:var(--dark-2);border-top:1px solid var(--dark-border);padding:16px var(--page-px);">
+  <div style="max-width:var(--page-max);margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;">
+    <p class="t-body-sm" style="color:var(--text-muted);">Usamos cookies para melhorar sua experiência. <a href="#" style="color:var(--gold);">Política de Privacidade</a></p>
+    <button onclick="document.getElementById('cookie-banner').style.display='none';localStorage.setItem('cookie-ok','1')" class="btn-gold-sm">Aceitar</button>
+  </div>
+</div>
+
+<script>
+  // FAQ
+  document.querySelectorAll('.faq-trigger').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var expanded=this.getAttribute('aria-expanded')==='true';
+      document.querySelectorAll('.faq-trigger').forEach(function(b){ b.setAttribute('aria-expanded','false'); b.nextElementSibling.classList.remove('open'); });
+      if(!expanded){ this.setAttribute('aria-expanded','true'); this.nextElementSibling.classList.add('open'); }
+    });
+  });
+
+  // COOKIE
+  if(!localStorage.getItem('cookie-ok')) setTimeout(function(){ document.getElementById('cookie-banner').style.display='block'; },3000);
+
+  // SMOOTH SCROLL
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){
+    a.addEventListener('click',function(e){
+      var t=document.querySelector(this.getAttribute('href'));
+      if(t){ e.preventDefault(); window.scrollTo({top:t.getBoundingClientRect().top+window.pageYOffset-96,behavior:'smooth'}); }
+    });
+  });
+
+  // BACK TO TOP
+  window.addEventListener('scroll',function(){
+    var bt=document.getElementById('back-top');
+    if(bt) bt.classList.toggle('visible',window.scrollY>400);
+  });
+
+  // ENTRANCE ANIMATIONS
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){ e.target.classList.add('in'); }
+      else if(e.boundingClientRect.top>0){ e.target.classList.remove('in'); }
+    });
+  },{threshold:0.08,rootMargin:'0px 0px -56px 0px'});
+  document.querySelectorAll('.anim,.anim-left,.anim-right,.anim-scale').forEach(function(el){ io.observe(el); });
+
+  // CANVAS HERO
+  (function(){
+    var canvas=document.getElementById('hero-canvas');
+    if(!canvas)return;
+    var ctx=canvas.getContext('2d');
+    var G='rgba(201,168,76,';
+    var W,H,cx,cy,nodes,hub,particles,raf,tick=0;
+    var TOPICS=['S/4HANA','Clean Core','SAP BTP','ABAP','Integrações','IA SAP','Cloud'];
+    function setup(){
+      W=canvas.offsetWidth; H=canvas.offsetHeight;
+      var dpr=window.devicePixelRatio||1;
+      canvas.width=Math.round(W*dpr); canvas.height=Math.round(H*dpr);
+      ctx.scale(dpr,dpr);
+      cx=W/2; cy=H/2;
+      hub={x:cx,y:cy,r:15,pulse:0};
+      var base=Math.min(W,H)*0.30;
+      nodes=TOPICS.map(function(label,i){
+        var angle=(i/TOPICS.length)*Math.PI*2-Math.PI/2;
+        return{label:label,angle:angle,orbitR:base+(i%3-1)*18,speed:(0.00022+i*0.000025)*(i%2===0?1:-1),ph:i*(Math.PI*2/TOPICS.length),x:0,y:0,dotR:5};
+      });
+      particles=[];
+      nodes.forEach(function(n,ni){
+        for(var j=0;j<3;j++) particles.push({ni:ni,t:Math.random(),speed:0.0035+Math.random()*0.003,toHub:j<2,r:1.5+Math.random()*0.8});
+      });
+    }
+    function draw(){
+      ctx.clearRect(0,0,W,H); tick++;
+      nodes.forEach(function(n){ n.angle+=n.speed; n.ph+=0.04; n.x=cx+Math.cos(n.angle)*n.orbitR; n.y=cy+Math.sin(n.angle)*n.orbitR; });
+      hub.pulse+=0.032;
+      var hg=ctx.createRadialGradient(cx,cy,0,cx,cy,60);
+      hg.addColorStop(0,G+'0.16)'); hg.addColorStop(0.55,G+'0.04)'); hg.addColorStop(1,G+'0)');
+      ctx.fillStyle=hg; ctx.beginPath(); ctx.arc(cx,cy,60,0,Math.PI*2); ctx.fill();
+      nodes.forEach(function(n){
+        var p=(Math.sin(n.ph)+1)/2;
+        ctx.beginPath(); ctx.moveTo(cx,cy); ctx.lineTo(n.x,n.y);
+        ctx.strokeStyle=G+(0.05+0.07*p)+')'; ctx.lineWidth=1; ctx.setLineDash([3,5]); ctx.stroke(); ctx.setLineDash([]);
+      });
+      particles.forEach(function(p){
+        p.t+=p.speed; if(p.t>=1)p.t=0;
+        var n=nodes[p.ni],prog=p.toHub?p.t:1-p.t;
+        var x=cx+(n.x-cx)*prog,y=cy+(n.y-cy)*prog,a=Math.sin(p.t*Math.PI)*0.85;
+        ctx.beginPath(); ctx.arc(x,y,p.r,0,Math.PI*2); ctx.fillStyle=G+a+')'; ctx.fill();
+      });
+      nodes.forEach(function(n){
+        var p=(Math.sin(n.ph)+1)/2;
+        var ng=ctx.createRadialGradient(n.x,n.y,0,n.x,n.y,20);
+        ng.addColorStop(0,G+(0.14*p)+')'); ng.addColorStop(1,'transparent');
+        ctx.fillStyle=ng; ctx.beginPath(); ctx.arc(n.x,n.y,20,0,Math.PI*2); ctx.fill();
+        ctx.beginPath(); ctx.arc(n.x,n.y,n.dotR,0,Math.PI*2); ctx.fillStyle='#1C1A14'; ctx.fill();
+        ctx.strokeStyle=G+(0.32+0.32*p)+')'; ctx.lineWidth=1.5; ctx.stroke();
+        ctx.font='500 9px Montserrat,sans-serif'; ctx.fillStyle='rgba(200,191,168,'+(0.45+0.25*p)+')';
+        ctx.textAlign='center'; ctx.textBaseline='top'; ctx.fillText(n.label,n.x,n.y+n.dotR+4);
+      });
+      var hp=(Math.sin(hub.pulse)+1)/2;
+      ctx.beginPath(); ctx.arc(cx,cy,hub.r+7+hp*4,0,Math.PI*2);
+      ctx.strokeStyle=G+(0.14+0.10*hp)+')'; ctx.lineWidth=1; ctx.stroke();
+      var hcg=ctx.createRadialGradient(cx-4,cy-4,0,cx,cy,hub.r);
+      hcg.addColorStop(0,'#E8C86D'); hcg.addColorStop(1,'#C9A84C');
+      ctx.beginPath(); ctx.arc(cx,cy,hub.r,0,Math.PI*2); ctx.fillStyle=hcg; ctx.fill();
+      ctx.font='700 10px Montserrat,sans-serif'; ctx.fillStyle='#0A0A0A'; ctx.textAlign='center'; ctx.textBaseline='middle';
+      ctx.fillText('Zhub',cx,cy);
+      raf=requestAnimationFrame(draw);
+    }
+    setup(); draw();
+    var rt; window.addEventListener('resize',function(){ clearTimeout(rt); rt=setTimeout(function(){ cancelAnimationFrame(raf); setup(); draw(); },120); });
+  })();
+
+  // AI TYPING — pergunta e resposta animadas (4 fases)
+  (function(){
+    var qEl=document.getElementById('ai-q');
+    var aEl=document.getElementById('ai-typing-text');
+    var cqEl=document.getElementById('ai-cursor-q');
+    var caEl=document.getElementById('ai-cursor-a');
+    if(!qEl||!aEl)return;
+    var pairs=[
+      {q:'Como estruturar extensões em Clean Core?',     a:'Use apenas APIs públicas e BAdIs oficiais. Extensões side-by-side no BTP são o caminho recomendado para customizações complexas.'},
+      {q:'Qual a diferença entre RAP e ABAP clássico?',  a:'RAP é o modelo moderno do S/4HANA: objetos OData, CDS Views e comportamento declarativo. ABAP clássico não segue Clean Core.'},
+      {q:'O que é Side-by-Side Extensibility no BTP?',   a:'São aplicações criadas no SAP BTP que se integram ao S/4HANA via APIs e eventos, sem modificar o código padrão do sistema.'},
+      {q:'Como validar se uma Z viola Clean Core?',      a:'Use o ABAP Test Cockpit para detectar uso de APIs internas, tabelas não suportadas e chamadas diretas a programas standard.'},
+      {q:'Quando usar BAdIs ao invés de user exits?',    a:'BAdIs são a abordagem Clean Core. User exits são legado e comprometem upgrades. Sempre prefira os pontos de extensão oficiais.'},
+    ];
+    var idx=0, qi=0, ai=0, phase='typeQ';
+    function cursor(p){
+      if(cqEl) cqEl.style.display=(p==='typeQ'||p==='eraseQ')?'inline-block':'none';
+      if(caEl) caEl.style.display=(p==='typeA'||p==='waitA'||p==='eraseA')?'inline-block':'none';
+    }
+    function tick(){
+      cursor(phase);
+      if(phase==='typeQ'){
+        if(qi<pairs[idx].q.length){ qEl.textContent=pairs[idx].q.slice(0,++qi); setTimeout(tick,36); }
+        else{ phase='typeA'; setTimeout(tick,550); }
+      } else if(phase==='typeA'){
+        if(ai<pairs[idx].a.length){ aEl.textContent=pairs[idx].a.slice(0,++ai); setTimeout(tick,22); }
+        else{ phase='waitA'; setTimeout(tick,2800); }
+      } else if(phase==='waitA'){
+        phase='eraseA'; setTimeout(tick,80);
+      } else if(phase==='eraseA'){
+        if(ai>0){ aEl.textContent=pairs[idx].a.slice(0,--ai); setTimeout(tick,12); }
+        else{ phase='eraseQ'; setTimeout(tick,200); }
+      } else if(phase==='eraseQ'){
+        if(qi>0){ qEl.textContent=pairs[idx].q.slice(0,--qi); setTimeout(tick,20); }
+        else{ idx=(idx+1)%pairs.length; phase='typeQ'; setTimeout(tick,400); }
+      }
+    }
+    cursor('typeQ');
+    setTimeout(tick,800);
+  })();
+
+  // PROGRESS BAR
+  (function(){
+    var bar=document.getElementById('hero-progress-bar');
+    if(bar) setTimeout(function(){ bar.style.width='67%'; },700);
+  })();
+
+  // PROBLEM CANVAS — fragmentação / caos
+  (function(){
+    var canvas=document.getElementById('problem-canvas');
+    if(!canvas)return;
+    var ctx=canvas.getContext('2d');
+    var W,H,nodes,connections,raf,tick=0;
+    var SOURCES=['YouTube','SAP Docs','Fórum SAP','Blog Técnico','Curso A','LinkedIn'];
+    function setup(){
+      W=canvas.offsetWidth; H=canvas.offsetHeight;
+      var dpr=window.devicePixelRatio||1;
+      canvas.width=Math.round(W*dpr); canvas.height=Math.round(H*dpr);
+      ctx.scale(dpr,dpr);
+      nodes=SOURCES.map(function(label,i){
+        var angle=(i/SOURCES.length)*Math.PI*2+0.28*(i%2?1:-1);
+        var r=80+(i%3)*26;
+        return{label:label,x:W/2+Math.cos(angle)*r,y:H/2+Math.sin(angle)*r,
+          vx:(Math.random()-0.5)*0.20,vy:(Math.random()-0.5)*0.20,ph:i*(Math.PI/3),dotR:7};
+      });
+      connections=[[0,2],[1,4],[2,5],[0,3],[3,1],[4,5],[1,2]];
+    }
+    function draw(){
+      ctx.clearRect(0,0,W,H); tick++;
+      // Fundo sutil
+      var bg=ctx.createRadialGradient(W/2,H/2,0,W/2,H/2,W*0.55);
+      bg.addColorStop(0,'rgba(40,16,16,0.55)'); bg.addColorStop(1,'rgba(10,10,10,0)');
+      ctx.fillStyle=bg; ctx.fillRect(0,0,W,H);
+      nodes.forEach(function(n){
+        n.ph+=0.018; n.x+=n.vx+Math.sin(n.ph*0.6)*0.18; n.y+=n.vy+Math.cos(n.ph*0.4)*0.14;
+        var mg=52;
+        if(n.x<mg)n.vx=Math.abs(n.vx); if(n.x>W-mg)n.vx=-Math.abs(n.vx);
+        if(n.y<mg)n.vy=Math.abs(n.vy); if(n.y>H-mg)n.vy=-Math.abs(n.vy);
+      });
+      // Linhas caóticas
+      connections.forEach(function(c,ci){
+        var n1=nodes[c[0]],n2=nodes[c[1]];
+        var cpx=(n1.x+n2.x)/2+Math.sin(tick*0.012+ci*1.3)*28;
+        var cpy=(n1.y+n2.y)/2+Math.cos(tick*0.009+ci*1.1)*20;
+        ctx.beginPath(); ctx.moveTo(n1.x,n1.y);
+        ctx.quadraticCurveTo(cpx,cpy,n2.x,n2.y);
+        ctx.strokeStyle='rgba(220,90,90,0.28)'; ctx.lineWidth=1.2;
+        ctx.setLineDash([4,7]); ctx.stroke(); ctx.setLineDash([]);
+      });
+      // "?" central
+      var cx=W/2,cy=H/2,qp=(Math.sin(tick*0.028)+1)/2;
+      var qg=ctx.createRadialGradient(cx,cy,0,cx,cy,44);
+      qg.addColorStop(0,'rgba(200,70,70,'+(0.22+0.14*qp)+')');
+      qg.addColorStop(1,'rgba(200,70,70,0)');
+      ctx.fillStyle=qg; ctx.beginPath(); ctx.arc(cx,cy,44,0,Math.PI*2); ctx.fill();
+      ctx.font='800 28px Montserrat,sans-serif';
+      ctx.fillStyle='rgba(240,100,100,'+(0.65+0.3*qp)+')';
+      ctx.textAlign='center'; ctx.textBaseline='middle'; ctx.fillText('?',cx,cy);
+      // Nodes
+      nodes.forEach(function(n){
+        var p=(Math.sin(n.ph)+1)/2;
+        // Glow
+        var ng=ctx.createRadialGradient(n.x,n.y,0,n.x,n.y,24);
+        ng.addColorStop(0,'rgba(220,90,90,'+(0.15*p)+')'); ng.addColorStop(1,'rgba(220,90,90,0)');
+        ctx.fillStyle=ng; ctx.beginPath(); ctx.arc(n.x,n.y,24,0,Math.PI*2); ctx.fill();
+        // Dot
+        ctx.beginPath(); ctx.arc(n.x,n.y,n.dotR,0,Math.PI*2);
+        ctx.fillStyle='#1C0E0E'; ctx.fill();
+        ctx.strokeStyle='rgba(230,100,100,'+(0.55+0.30*p)+')'; ctx.lineWidth=1.8; ctx.stroke();
+        // Label
+        ctx.font='600 10px Montserrat,sans-serif';
+        ctx.fillStyle='rgba(240,200,190,'+(0.70+0.25*p)+')';
+        ctx.textAlign='center'; ctx.textBaseline='top';
+        ctx.fillText(n.label,n.x,n.y+n.dotR+5);
+      });
+      raf=requestAnimationFrame(draw);
+    }
+    setup(); draw();
+    var rt; window.addEventListener('resize',function(){ clearTimeout(rt); rt=setTimeout(function(){ cancelAnimationFrame(raf); setup(); draw(); },120); });
+  })();
+</script>
+</body>
+</html>
