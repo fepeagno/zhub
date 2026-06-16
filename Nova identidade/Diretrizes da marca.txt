@@ -1,0 +1,319 @@
+Você pode usar o texto abaixo como **prompt mestre de identidade visual e UX/UI do Zhub**, para orientar IA, designers, times de produto e ferramentas de geração de interface:
+
+---
+
+# Zhub Design System 2026
+
+## Contexto da Marca
+
+O Zhub está evoluindo de uma plataforma técnica para uma plataforma acessível, moderna e democrática.
+
+Nosso objetivo é reduzir a sensação de complexidade e transformar o aprendizado e o uso de IA em algo simples, intuitivo e agradável para qualquer pessoa, independentemente do seu nível técnico.
+
+A plataforma deve transmitir:
+
+* Simplicidade
+* Clareza
+* Confiança
+* Inteligência
+* Modernidade
+* Acessibilidade
+* Humanização
+
+Evitar qualquer aparência excessivamente corporativa, pesada ou técnica.
+
+---
+
+# Personalidade da Marca
+
+O Zhub deve parecer:
+
+* Inteligente sem ser complicado
+* Profissional sem ser frio
+* Tecnológico sem ser intimidador
+* Moderno sem parecer futurista demais
+* Educacional sem parecer acadêmico
+
+Se o ChatGPT fosse uma universidade moderna e amigável focada em IA, seria essa a sensação desejada.
+
+---
+
+# Paleta de Cores
+
+## Cor Principal
+
+### Roxo Institucional
+
+```css
+#6154A0
+```
+
+Esta deve ser a cor dominante da plataforma.
+
+Representa:
+
+* Inteligência
+* Criatividade
+* Inovação
+* Tecnologia acessível
+
+---
+
+## Cores Secundárias
+
+### Azul
+
+```css
+#5493C5
+```
+
+Utilizado para:
+
+* Estados informativos
+* Destaques
+* Links
+* Componentes auxiliares
+
+---
+
+### Preto
+
+```css
+#000000
+```
+
+Utilizado para:
+
+* Títulos
+* Textos principais
+* Contraste
+
+---
+
+### Branco
+
+```css
+#FFFFFF
+```
+
+Utilizado como base principal da interface.
+
+A plataforma deve ser predominantemente clara.
+
+---
+
+## Cores de Apoio
+
+### Laranja
+
+```css
+#FF8000
+```
+
+Utilizado para:
+
+* Alertas positivos
+* Destaques pontuais
+* Gamificação
+
+---
+
+### Verde
+
+```css
+#1FB67A
+```
+
+Utilizado para:
+
+* Sucesso
+* Conclusão
+* Certificações
+* Aprendizado concluído
+
+---
+
+### Vermelho
+
+```css
+#FF3B30
+```
+
+Utilizado apenas para:
+
+* Erros
+* Ações destrutivas
+
+---
+
+### Rosa
+
+```css
+#E31C93
+```
+
+Utilizado de forma limitada em ilustrações, gradientes e elementos promocionais.
+
+---
+
+### Amarelo
+
+```css
+#E8D72A
+```
+
+Utilizado para:
+
+* Conquistas
+* Recompensas
+* Badges
+
+---
+
+### Ciano
+
+```css
+#1DB4C8
+```
+
+Utilizado para:
+
+* IA
+* Automação
+* Elementos inovadores
+
+---
+
+# Tipografia
+
+## Fonte Oficial
+
+### Poppins
+
+Utilizar exclusivamente a família Poppins.
+
+Pesos recomendados:
+
+* 600 → Títulos
+* 500 → Subtítulos
+* 400 → Textos
+* 300 → Apoio
+
+---
+
+# Diretrizes Visuais
+
+## Interface
+
+A interface deve parecer:
+
+* Leve
+* Respirada
+* Minimalista
+* Organizada
+
+Evitar:
+
+* Bordas pesadas
+* Sombras agressivas
+* Excesso de caixas
+* Muitas divisões visuais
+
+---
+
+## Espaçamento
+
+Priorizar:
+
+* White space
+* Respiro visual
+* Hierarquia clara
+
+Regra:
+
+> Se existir dúvida entre adicionar ou remover um elemento visual, remover.
+
+---
+
+# Componentes
+
+## Botões
+
+Botão primário:
+
+* Fundo #6154A0
+* Texto branco
+* Bordas arredondadas (12px a 16px)
+
+Botão secundário:
+
+* Fundo branco
+* Borda roxa
+* Texto roxo
+
+---
+
+## Cards
+
+* Fundo branco
+* Borda extremamente sutil
+* Cantos arredondados
+* Muito espaço interno
+
+Inspirar-se em:
+
+* Notion
+* Linear
+* Stripe
+* Arc Browser
+
+---
+
+# Estilo de Ilustração
+
+Utilizar:
+
+* Gradientes suaves
+* Elementos abstratos
+* Formas orgânicas
+* Glow discreto
+
+Evitar:
+
+* Robôs
+* Cérebros de IA
+* Circuitos clichês
+* Visual cyberpunk
+
+---
+
+# Experiência do Usuário
+
+O usuário deve sentir:
+
+1. "Eu consigo usar isso."
+2. "Isso é mais simples do que eu imaginava."
+3. "Parece moderno."
+4. "Parece confiável."
+5. "Quero explorar mais."
+
+---
+
+# Benchmark Visual
+
+Misturar características de:
+
+* Notion
+* ChatGPT
+* Linear
+* Stripe
+* Raycast
+* Framer
+
+Mas mantendo identidade própria através do uso predominante do roxo #6154A0.
+
+---
+
+# Resumo Executivo
+
+Redesenhar o Zhub como uma plataforma de IA e aprendizado moderna, minimalista e extremamente acessível. Utilizar Poppins como tipografia principal, priorizar o roxo #6154A0 como cor dominante e criar uma experiência visual limpa, humana e intuitiva. O resultado final deve transmitir simplicidade, confiança e inovação sem parecer complexo ou excessivamente técnico.
