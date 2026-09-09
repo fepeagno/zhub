@@ -64,12 +64,21 @@ document.querySelectorAll('a[href^="#"]').forEach(function(a){
   });
 });
 
-/* ─── BACK TO TOP + NAV BORDER ─── */
+/* ─── BACK TO TOP + NAV BORDER + HIDE HEADER ON SCROLL ─── */
+var lastScrollY=window.scrollY;
 window.addEventListener('scroll',function(){
+  var y=window.scrollY;
   var b=document.getElementById('back-top');
-  if(b) b.classList.toggle('vis',window.scrollY>400);
+  if(b) b.classList.toggle('vis',y>400);
   var n=document.querySelector('nav');
-  if(n) n.classList.toggle('scrolled',window.scrollY>10);
+  if(n) n.classList.toggle('scrolled',y>10);
+
+  if(y>lastScrollY && y>140){
+    document.body.classList.add('hide-topbar');
+  } else if(y<lastScrollY){
+    document.body.classList.remove('hide-topbar');
+  }
+  lastScrollY=y;
 });
 
 /* ─── ENTRANCE ANIMATIONS ─── */
