@@ -22,9 +22,11 @@
 ## Nossos produtos e serviços
 
 - Produto principal: Zhub — acesso anual completo à plataforma com Jornadas de aprendizado estruturadas (ex: Jornada Clean Core), conteúdos sobre S/4HANA, SAP BTP, Clean Core, integrações, APIs, cloud e IA, além de acesso aos agentes de IA treinados com experiência real de projetos SAP
-  - Preço oficial: R$1.497,00/ano (12x de R$124,75)
+  - Preço oficial: R$1.997,00/ano
+  - Promoção "Semana do Cliente" de 09/09/2026 a 15/09/2026: 12x de R$165,17 (preço em destaque no site durante a campanha)
   - 20% de desconto para alunos Lab2learn (cupom disponível)
   - 90% de desconto para funcionários e membros do conselho Lab2learn
+  - Checkout: https://zhub.lab2learn.com.br/checkout
 - Produto de entrada: Não disponível ainda — estratégia de aquecimento foram lives semanais toda segunda-feira até o lançamento
 - Produto premium: Não disponível ainda
 

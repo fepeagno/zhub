@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://zhub.lab2learn.com.br/sitemap.xml

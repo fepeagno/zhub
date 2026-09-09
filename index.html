@@ -6,6 +6,27 @@
   <title>Zhub | Aprenda e aplique o ecossistema SAP com IA | Lab2learn</title>
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <meta name="description" content="Zhub: cursos, agentes de IA e comunidades em um só lugar para você aprender, aplicar e evoluir no ecossistema SAP, com foco em S/4HANA, Clean Core e SAP BTP.">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#6154A0">
+  <link rel="canonical" href="https://zhub.lab2learn.com.br/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Zhub">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:url" content="https://zhub.lab2learn.com.br/">
+  <meta property="og:title" content="Zhub | Aprenda e aplique o ecossistema SAP com IA">
+  <meta property="og:description" content="Cursos, agentes de IA e comunidades em um só lugar para você aprender, aplicar e evoluir no ecossistema SAP, com foco em S/4HANA, Clean Core e SAP BTP.">
+  <meta property="og:image" content="https://zhub.lab2learn.com.br/assets/img/P%C3%A1gina%20Zhub%203.png">
+  <meta property="og:image:width" content="1440">
+  <meta property="og:image:height" content="727">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Zhub | Aprenda e aplique o ecossistema SAP com IA">
+  <meta name="twitter:description" content="Cursos, agentes de IA e comunidades em um só lugar para você aprender, aplicar e evoluir no ecossistema SAP.">
+  <meta name="twitter:image" content="https://zhub.lab2learn.com.br/assets/img/P%C3%A1gina%20Zhub%203.png">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -22,7 +43,7 @@
       --border-2:  rgba(0,0,0,0.13);
       --t1:        #1E1F24;
       --t2:        #4A4B57;
-      --t3:        #888899;
+      --t3:        #6C6C82;
       --t4:        #C0C0CE;
       --purple:    #6154A0;
       --purple-lt: #7A6DB8;
@@ -30,11 +51,20 @@
       --pbg:       rgba(97,84,160,0.08);
       --pborder:   rgba(97,84,160,0.18);
       --blue:      #5493C5;
+      --blue-dk:   #3D6E92;
       --bbg:       rgba(84,147,197,0.08);
       --bborder:   rgba(84,147,197,0.22);
-      --green:     #22C55E;
-      --green-dk:  #16A34A;
-      --green-glow:rgba(34,197,94,0.30);
+      --green:     #15803D;
+      --green-dk:  #166534;
+      --green-glow:rgba(21,128,61,0.30);
+      --sapblue:   #0B6FCC;
+      --sapblue-dk:#084E93;
+      --orange:    #C2691E;
+      --orange-dk: #8F4C15;
+      --yellow:    #B8860B;
+      --yellow-dk: #8A6508;
+      --pink:      #C14C7C;
+      --pink-dk:   #8C3659;
       --nav-bg:    rgba(255,255,255,0.90);
       --sh-sm:     0 2px 8px rgba(0,0,0,0.06);
       --sh-md:     0 8px 32px rgba(0,0,0,0.09);
@@ -50,7 +80,7 @@
       --border-2:  rgba(255,255,255,0.13);
       --t1:        #EEEEF8;
       --t2:        #9898B8;
-      --t3:        #505068;
+      --t3:        #8A8AA2;
       --t4:        #303048;
       --purple:    #8070C8;
       --purple-lt: #9888D8;
@@ -58,16 +88,26 @@
       --pbg:       rgba(128,112,200,0.13);
       --pborder:   rgba(128,112,200,0.26);
       --blue:      #60A0D8;
+      --blue-dk:   #3D6E92;
       --bbg:       rgba(96,160,216,0.10);
       --bborder:   rgba(96,160,216,0.26);
-      --green:     #22C55E;
-      --green-dk:  #16A34A;
-      --green-glow:rgba(34,197,94,0.28);
+      --green:     #15803D;
+      --green-dk:  #166534;
+      --green-glow:rgba(21,128,61,0.28);
+      --sapblue:   #2E8FE0;
+      --sapblue-dk:#1665AD;
+      --orange:    #D98A3D;
+      --orange-dk: #A8631F;
+      --yellow:    #D4A017;
+      --yellow-dk: #A67D0E;
+      --pink:      #D6699A;
+      --pink-dk:   #A84875;
       --nav-bg:    rgba(12,11,18,0.92);
       --sh-sm:     0 2px 8px rgba(0,0,0,0.30);
       --sh-md:     0 8px 32px rgba(0,0,0,0.45);
       --sh-lg:     0 20px 60px rgba(0,0,0,0.60);
     }
+
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
@@ -132,6 +172,9 @@
 
     /* CHIP */
     .chip{display:inline-flex;align-items:center;gap:8px;background:var(--pbg);border:1px solid var(--pborder);color:var(--purple);font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:5px 14px;border-radius:var(--r-pill);}
+    .chip-deal{display:inline-flex;align-items:center;gap:6px;background:rgba(34,197,94,.16);border:1px solid rgba(34,197,94,.45);color:var(--green-dk);font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:5px 14px 5px 10px;border-radius:var(--r-pill);}
+    .chip-deal .material-symbols-rounded{font-size:14px;}
+    [data-theme="dark"] .chip-deal{color:#5FDB93;background:rgba(34,197,94,.16);border-color:rgba(34,197,94,.5);}
     .chip-dot{width:6px;height:6px;border-radius:50%;background:var(--green);animation:pulse 2s infinite;flex-shrink:0;}
     @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
 
@@ -141,20 +184,24 @@
     .card-purple{border-color:var(--pborder)!important;background:linear-gradient(135deg,var(--pbg) 0%,var(--card) 60%);}
 
     /* ANNOUNCE BAR */
-    #abar{position:fixed;top:0;left:0;right:0;z-index:100;height:40px;background:var(--purple);display:flex;align-items:center;justify-content:center;gap:10px;padding:0 24px;}
+    #abar{position:fixed;top:0;left:0;right:0;z-index:100;height:40px;background:var(--purple);display:flex;align-items:center;justify-content:center;gap:10px;padding:0 24px;transition:transform .3s ease;}
     #abar .ab{font-size:12px;font-weight:500;color:rgba(255,255,255,.9);}
     #abar .ab-dot{width:5px;height:5px;border-radius:50%;background:var(--green);flex-shrink:0;}
 
     /* NAV */
-    nav{position:fixed;top:40px;left:0;right:0;z-index:90;height:60px;background:var(--nav-bg);border-bottom:1px solid transparent;transition:border-color .25s;backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);display:flex;align-items:center;justify-content:space-between;padding:0 64px;gap:16px;}
+    nav{position:fixed;top:40px;left:0;right:0;z-index:90;height:60px;background:var(--nav-bg);border-bottom:1px solid transparent;transition:border-color .25s,transform .3s ease;backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);display:flex;align-items:center;justify-content:space-between;padding:0 64px;gap:16px;}
     nav.scrolled{border-bottom-color:var(--border);}
+
+    /* HIDE HEADER ON SCROLL DOWN */
+    body.hide-topbar #abar{transform:translateY(-100%);}
+    body.hide-topbar nav{transform:translateY(-100px);}
     @media(max-width:900px){nav{padding:0 32px;}}
     .nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none;}
     .nav-sep{width:1px;height:20px;background:var(--border-2);}
     .nav-r{display:flex;align-items:center;gap:12px;}
-    #theme-btn{width:36px;height:36px;border-radius:var(--r-sm);background:var(--bg-2);border:1px solid var(--border-2);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s;}
+    #theme-btn{width:32px;height:32px;border-radius:var(--r-sm);background:var(--bg-2);border:1px solid var(--border-2);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s;}
     #theme-btn:hover{background:var(--bg-3);}
-    #theme-btn .material-symbols-rounded{font-size:18px;color:var(--t2);}
+    #theme-btn .material-symbols-rounded{font-size:16px;color:var(--t2);}
     .nav-cta-wrap{display:none;}
     @media(min-width:640px){.nav-cta-wrap{display:flex;}}
 
@@ -210,28 +257,47 @@
     .sec-label{display:flex;align-items:center;gap:16px;margin-bottom:20px;}
     .sec-label-line{flex:1;height:1px;background:var(--border);}
 
+    /* STATS STRIP */
+    .stats-strip{display:flex;justify-content:center;flex-wrap:wrap;border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+    .stat-item{flex:1;min-width:150px;text-align:center;padding:28px 20px;border-left:1px solid var(--border);}
+    .stat-item:first-child{border-left:none;}
+    .stat-num{font-size:28px;font-weight:800;color:var(--purple);line-height:1;margin-bottom:6px;}
+    .stat-label{font-size:12px;color:var(--t3);}
+    @media(max-width:640px){.stat-item{flex:1 1 50%;border-left:none;border-top:1px solid var(--border);}.stat-item:nth-child(1),.stat-item:nth-child(2){border-top:none;}}
+
     /* STEPS */
-    .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;}
-    @media(max-width:768px){.steps{grid-template-columns:1fr;}}
+    .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+    .step-item{border-left:1px solid var(--border);}
+    .step-item:first-child{border-left:none;}
+    @media(max-width:768px){.steps{grid-template-columns:1fr;}.step-item{border-left:none;border-top:1px solid var(--border);}.step-item:first-child{border-top:none;}}
     .step-num{width:40px;height:40px;border-radius:50%;background:var(--pbg);border:1px solid var(--pborder);color:var(--purple);font-size:16px;font-weight:700;display:flex;align-items:center;justify-content:center;margin-bottom:16px;flex-shrink:0;}
 
+    /* PROBLEMA — split assimétrico */
+    .problem-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center;}
+    @media(max-width:900px){.problem-grid{grid-template-columns:1fr;}}
+    .problem-row{display:flex;gap:16px;padding:20px 0;border-top:1px solid var(--border);text-align:left;}
+    .problem-row:last-child{border-bottom:1px solid var(--border);}
+
     /* PILLARS — o que é o Zhub */
-    .pillar-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
-    @media(max-width:900px){.pillar-grid{grid-template-columns:1fr;}}
-    .pillar-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r-xl);padding:32px;display:flex;flex-direction:column;transition:border-color .2s,box-shadow .2s;}
-    .pillar-card:hover{border-color:var(--border-2);box-shadow:var(--sh-sm);}
-    .pillar-icon{width:44px;height:44px;border-radius:var(--r-md);background:var(--pbg);border:1px solid var(--pborder);color:var(--purple);display:flex;align-items:center;justify-content:center;margin-bottom:20px;flex-shrink:0;}
-    .pillar-icon .material-symbols-rounded{font-size:22px;}
-    .pillar-num{font-size:11px;font-weight:700;letter-spacing:.1em;color:var(--purple);margin-bottom:8px;text-transform:uppercase;}
     .pillar-tag{display:inline-flex;align-items:center;background:var(--pbg);border:1px solid var(--pborder);color:var(--purple);font-size:11px;font-weight:600;padding:4px 12px;border-radius:var(--r-pill);}
-    .pillar-agent{background:var(--bg-2);border-radius:var(--r-md);padding:12px 14px;}
 
     /* TRILHAS */
     .trilha-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
     @media(max-width:900px){.trilha-grid{grid-template-columns:repeat(2,1fr);}}
     @media(max-width:640px){.trilha-grid{grid-template-columns:1fr;}}
-    .trilha-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r-lg);padding:24px;display:flex;flex-direction:column;transition:border-color .2s,box-shadow .2s;}
+    .trilha-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden;display:flex;flex-direction:column;transition:border-color .2s,box-shadow .2s;}
     .trilha-card:hover{border-color:var(--pborder);box-shadow:var(--sh-sm);}
+    .trilha-card-hdr{height:76px;display:flex;align-items:center;padding:0 22px;flex-shrink:0;}
+    .trilha-card-hdr.fam-green{background:linear-gradient(120deg,var(--green-dk),var(--green));}
+    .trilha-card-hdr.fam-blue{background:linear-gradient(120deg,var(--blue-dk),var(--blue));}
+    .trilha-card-hdr.fam-purple{background:linear-gradient(120deg,var(--purple-dk),var(--purple));}
+    .trilha-card-hdr.fam-sapblue{background:linear-gradient(120deg,var(--sapblue-dk),var(--sapblue));}
+    .trilha-card-hdr.fam-orange{background:linear-gradient(120deg,var(--orange-dk),var(--orange));}
+    .trilha-card-hdr.fam-yellow{background:linear-gradient(120deg,var(--yellow-dk),var(--yellow));}
+    .trilha-card-hdr.fam-pink{background:linear-gradient(120deg,var(--pink-dk),var(--pink));}
+    .trilha-card-hdr-icon{width:38px;height:38px;border-radius:10px;background:rgba(255,255,255,.18);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+    .trilha-card-hdr-icon .material-symbols-rounded{color:#fff;font-size:20px;}
+    .trilha-card-body{padding:20px 24px 24px;display:flex;flex-direction:column;flex:1;}
     .trilha-level{display:inline-flex;align-self:flex-start;font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:3px 10px;border-radius:var(--r-pill);margin-bottom:14px;}
     .trilha-level.lv-ini{background:rgba(34,197,94,.10);border:1px solid rgba(34,197,94,.25);color:var(--green-dk);}
     .trilha-level.lv-int{background:var(--bbg);border:1px solid var(--bborder);color:var(--blue);}
@@ -269,6 +335,22 @@
     .price-box{border:1.5px solid var(--pborder);border-radius:var(--r-2xl);background:linear-gradient(135deg,var(--pbg) 0%,var(--card) 60%);padding:48px;max-width:540px;margin:0 auto;}
     @media(max-width:640px){.price-box{padding:32px 20px;}}
 
+    /* EXPERT CAROUSEL */
+    .expert-carousel{position:relative;}
+    .expert-track{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:4px 4px 12px;margin:0 -4px;-webkit-overflow-scrolling:touch;scrollbar-width:none;-ms-overflow-style:none;}
+    .expert-track::-webkit-scrollbar{display:none;}
+    .expert-slide{flex:0 0 calc(33.333% - 14px);scroll-snap-align:start;min-width:0;}
+    @media(max-width:900px){.expert-slide{flex:0 0 calc(50% - 10px);}}
+    @media(max-width:640px){.expert-slide{flex:0 0 86%;}}
+    .expert-nav{display:flex;align-items:center;justify-content:center;gap:18px;margin-top:20px;}
+    .expert-arrow{width:40px;height:40px;border-radius:50%;background:var(--card);border:1px solid var(--border-2);display:flex;align-items:center;justify-content:center;color:var(--t2);cursor:pointer;transition:border-color .2s,color .2s;flex-shrink:0;}
+    .expert-arrow:hover{border-color:var(--pborder);color:var(--purple);}
+    .expert-arrow:disabled{opacity:.35;cursor:default;}
+    .expert-arrow:disabled:hover{border-color:var(--border-2);color:var(--t2);}
+    .expert-dots{display:flex;align-items:center;gap:6px;}
+    .expert-dot{width:6px;height:6px;padding:0;border-radius:50%;background:var(--border-2);border:none;cursor:pointer;transition:background-color .2s,width .2s;}
+    .expert-dot.active{background:var(--purple);width:20px;border-radius:3px;}
+
     /* TESTIMONIALS */
     .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
     @media(max-width:960px){.testi-grid{grid-template-columns:1fr 1fr;}}
@@ -279,16 +361,15 @@
     /* FAQ */
     .faq-item{border-bottom:1px solid var(--border);}
     .faq-item:last-child{border-bottom:none;}
-    .faq-btn{width:100%;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px 0;cursor:pointer;background:none;border:none;font-family:'Poppins',sans-serif;font-size:15px;font-weight:500;color:var(--t1);text-align:left;}
+    .faq-btn{width:100%;list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px 0;font-family:'Poppins',sans-serif;font-size:15px;font-weight:500;color:var(--t1);}
+    .faq-btn::-webkit-details-marker{display:none;}
+    .faq-btn::marker{content:'';}
     .faq-icon{flex-shrink:0;width:24px;height:24px;border-radius:50%;border:1px solid var(--border-2);display:flex;align-items:center;justify-content:center;transition:border-color .2s,background-color .2s;}
     .faq-icon svg{transition:transform .25s;}
-    .faq-btn[aria-expanded="true"] .faq-icon{border-color:var(--purple);background:var(--pbg);}
-    .faq-btn[aria-expanded="true"] .faq-icon svg{transform:rotate(45deg);}
-    .faq-btn[aria-expanded="true"] .faq-icon path{stroke:var(--purple);}
-    .faq-body{overflow:hidden;display:grid;grid-template-rows:0fr;transition:grid-template-rows .35s cubic-bezier(.22,1,.36,1);}
-    .faq-body>p{min-height:0;padding-bottom:20px;}
-    .faq-body.open{grid-template-rows:1fr;}
-    .faq-body p{color:var(--t2);font-size:14px;line-height:1.75;}
+    .faq-item[open] .faq-icon{border-color:var(--purple);background:var(--pbg);}
+    .faq-item[open] .faq-icon svg{transform:rotate(45deg);}
+    .faq-item[open] .faq-icon path{stroke:var(--purple);}
+    .faq-body p{color:var(--t2);font-size:14px;line-height:1.75;padding-bottom:20px;}
 
     /* STACK ITEM */
     .stack-item{display:flex;align-items:flex-start;gap:14px;padding:20px;border-radius:var(--r-lg);background:var(--card);border:1px solid var(--border);transition:border-color .2s,box-shadow .2s;}
@@ -343,10 +424,99 @@
 
     /* FOOTER MUTED TEXT — dark mode override */
     [data-theme="dark"] .footer-muted{color:var(--t2)!important;}
+    .footer-grid{display:grid;grid-template-columns:1fr auto;gap:48px;margin-bottom:40px;}
+    @media(max-width:768px){.footer-grid{grid-template-columns:1fr;}}
+    .footer-cols{display:flex;gap:48px;flex-wrap:wrap;}
+    .footer-col-title{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--t3);margin-bottom:14px;}
+    .footer-col-links{display:flex;flex-direction:column;gap:8px;}
+    .footer-col-links a{color:var(--t2);text-decoration:none;font-size:12.5px;}
+    .footer-col-links a:hover{color:var(--purple);}
 
     .material-symbols-rounded{font-variation-settings:'FILL' 1,'wght' 400,'GRAD' 0,'opsz' 24;user-select:none;}
     ::-webkit-scrollbar{width:5px;}::-webkit-scrollbar-track{background:var(--bg-2);}::-webkit-scrollbar-thumb{background:var(--t4);border-radius:3px;}
   </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "EducationalOrganization",
+    "name": "Zhub",
+    "alternateName": "Zhub by Lab2learn",
+    "url": "https://zhub.lab2learn.com.br/",
+    "logo": "https://zhub.lab2learn.com.br/assets/logos/Logo%20Zhub.svg",
+    "description": "Plataforma de aprendizado e inteligência especializada no ecossistema SAP, com Jornadas de aprendizado, agentes de IA treinados com experiência real de projetos SAP e comunidade.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Hilário Pereira de Souza, 406 Torre 2 - 1109 - Centro",
+      "addressLocality": "Osasco",
+      "addressRegion": "SP",
+      "postalCode": "06010-170",
+      "addressCountry": "BR"
+    },
+    "sameAs": [
+      "https://lab2learn.com.br/",
+      "https://www.instagram.com/lab2learn.com.br",
+      "https://www.linkedin.com/company/lab2learn",
+      "https://www.youtube.com/@lab2learn"
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Para qual perfil o Zhub é mais indicado?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Consultores funcionais, desenvolvedores ABAP, arquitetos SAP, analistas de negócio, especialistas em integração e líderes técnicos. Se você trabalha com S/4HANA, Clean Core, SAP BTP ou integrações SAP, o Zhub foi feito para você."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Preciso dedicar muito tempo por semana?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "O Zhub foi construído para se encaixar na rotina de quem trabalha em projetos SAP. Você estuda no seu ritmo e usa os agentes de IA para tirar dúvidas no momento em que elas aparecem. Não existe carga horária mínima."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Os agentes de IA são diferentes de um ChatGPT comum?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sim. Um modelo genérico responde sobre SAP com base em documentação pública. Os agentes do Zhub foram treinados com experiência real da Lab2learn em projetos SAP: a resposta tem contexto de projeto, não só de documentação."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "O conteúdo acompanha as atualizações do ecossistema SAP?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "O ecossistema SAP evolui rápido e o Zhub acompanha essa evolução. A plataforma é atualizada continuamente com novos conteúdos, Jornadas e melhorias nos agentes de IA. Seu acesso anual inclui tudo que for publicado durante o período."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Como funciona o acesso após a compra?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "O acesso é imediato após a confirmação do pagamento. Você recebe um e-mail com as instruções e já pode entrar, explorar as Jornadas e usar os agentes de IA no mesmo dia."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "E se eu não gostar da plataforma?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Você tem 7 dias para explorar tudo. Se não for o que esperava, basta enviar um e-mail para lab2learn@lab2dev.com e devolvemos 100% do investimento. Sem formulários. Sem perguntas."
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
 <div id="theme-flash" style="background:var(--purple);"></div>
@@ -354,7 +524,7 @@
 <!-- ANNOUNCE BAR -->
 <div id="abar">
   <span class="ab-dot"></span>
-  <span class="ab">Acesso anual ao Zhub &nbsp;·&nbsp; 12x de R$154,82 &nbsp;·&nbsp; 7 dias de garantia</span>
+  <span class="ab">Semana do Cliente: 12x de R$165,17 &nbsp;·&nbsp; Termina em <span class="promo-countdown">15/09</span> &nbsp;·&nbsp; 7 dias de garantia</span>
 </div>
 
 <!-- NAV -->
@@ -372,7 +542,7 @@
     </button>
     <div class="nav-cta-wrap" style="gap:8px;">
       <a href="https://zhub.lab2learn.com.br/login" target="_blank" class="btn-outline" style="height:32px;padding:0 14px;font-size:13px;display:inline-flex;align-items:center;gap:6px;"><span class="material-symbols-rounded" style="font-size:15px;">lock_open</span>Área de membros</a>
-      <a href="https://chk.eduzz.com/dqvwtrlu" class="btn-green">Começar agora</a>
+      <a href="https://zhub.lab2learn.com.br/checkout" class="btn-green">Começar agora</a>
     </div>
   </div>
 </nav>
@@ -397,14 +567,10 @@
       Cursos para desenvolver novas habilidades, agentes de IA para apoiar seu dia a dia e comunidades para trocar experiências com quem vive os mesmos desafios.
     </p>
 
-    <div class="anim d3" style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:center;margin-bottom:10px;">
-      <a href="https://chk.eduzz.com/dqvwtrlu" class="btn-green btn-green-lg">Começar agora</a>
-      <a href="#zhub" class="btn-outline">Ver a plataforma</a>
+    <div class="anim d3" style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:center;margin-bottom:28px;">
+      <a href="https://zhub.lab2learn.com.br/checkout" class="btn-green btn-green-lg">Começar agora</a>
+      <a href="#detalhes" class="btn-outline">Ver a plataforma</a>
     </div>
-
-    <p class="t-sm anim d4" style="color:var(--t3);margin-bottom:20px;">
-      12x de R$154,82 &nbsp;·&nbsp; Acesso imediato &nbsp;·&nbsp; 7 dias de garantia
-    </p>
 
     <!-- MOCKUP com floaters -->
     <div class="hero-product anim-s d5">
@@ -469,186 +635,27 @@
 </section>
 
 <!-- ═══════════════════════════════════════
-     O QUE É O ZHUB — id="zhub"
+     PROVA SOCIAL — números
 ═══════════════════════════════════════ -->
-<section class="bg-1 sec" id="zhub">
+<section class="bg-1" style="padding:0 0 48px;">
   <div class="wrap">
-    <div style="text-align:center;max-width:640px;margin:0 auto 56px;" class="anim">
-      <div class="chip" style="display:inline-flex;margin-bottom:16px;">
-        <span class="chip-dot"></span>
-        O que é o Zhub
+    <div class="stats-strip anim">
+      <div class="stat-item">
+        <p class="stat-num">+920</p>
+        <p class="stat-label">profissionais formados</p>
       </div>
-      <h2 class="t-h2" style="margin-bottom:14px;">Tudo que você encontra no Zhub.</h2>
-      <p class="t-lg" style="color:var(--t2);">Cursos para desenvolver novas habilidades. Agentes de IA para apoiar você no dia a dia. Comunidades para trocar experiências com quem vive os mesmos desafios.</p>
-    </div>
-
-    <div class="pillar-grid" style="margin-bottom:40px;">
-
-      <!-- 01 Cursos -->
-      <div class="pillar-card anim d1">
-        <div class="pillar-icon"><span class="material-symbols-rounded">school</span></div>
-        <p class="pillar-num">01 · Cursos</p>
-        <h3 class="t-h3" style="margin-bottom:10px;font-size:19px;">Aprenda no seu ritmo. Evolua no ecossistema SAP.</h3>
-        <p class="t-sm" style="color:var(--t3);margin-bottom:20px;">Conteúdos criados para quem quer desenvolver novas habilidades e acompanhar a evolução do ecossistema SAP.</p>
-        <ul class="ck-list" style="margin-bottom:24px;">
-          <li><span class="ck">✓</span>Jornadas de aprendizado</li>
-          <li><span class="ck">✓</span>Aulas práticas</li>
-          <li><span class="ck">✓</span>Conteúdos atualizados</li>
-          <li><span class="ck">✓</span>Certificados</li>
-          <li><span class="ck">✓</span>Do básico ao avançado</li>
-        </ul>
-        <a href="#trilhas" class="trilha-more" style="margin-top:auto;">Ver as 10 trilhas disponíveis <span aria-hidden="true">→</span></a>
+      <div class="stat-item">
+        <p class="stat-num">+18.000</p>
+        <p class="stat-label">consultores na comunidade</p>
       </div>
-
-      <!-- 02 Agentes de IA -->
-      <div class="pillar-card card-purple anim d2">
-        <div class="pillar-icon"><span class="material-symbols-rounded">smart_toy</span></div>
-        <p class="pillar-num">02 · Agentes de IA</p>
-        <h3 class="t-h3" style="margin-bottom:10px;font-size:19px;">Conhecimento que trabalha com você.</h3>
-        <p class="t-sm" style="color:var(--t3);margin-bottom:20px;">Tenha agentes especializados ao seu lado para estudar, explorar tecnologias e encontrar respostas mais rápido.</p>
-        <div style="display:flex;flex-direction:column;gap:10px;">
-          <div class="pillar-agent">
-            <p style="font-size:13px;font-weight:600;color:var(--t1);margin-bottom:2px;">BTP Agent</p>
-            <p class="t-sm" style="color:var(--t3);">Explore serviços, arquitetura e possibilidades da SAP BTP.</p>
-          </div>
-          <div class="pillar-agent">
-            <p style="font-size:13px;font-weight:600;color:var(--t1);margin-bottom:2px;">RAP Agent</p>
-            <p class="t-sm" style="color:var(--t3);">Tire dúvidas sobre RAP e ABAP Cloud.</p>
-          </div>
-          <div class="pillar-agent">
-            <p style="font-size:13px;font-weight:600;color:var(--t1);margin-bottom:2px;">Clean Core Agent</p>
-            <p class="t-sm" style="color:var(--t3);">Explore boas práticas e estratégias de extensibilidade.</p>
-          </div>
-          <div class="pillar-agent">
-            <p style="font-size:13px;font-weight:600;color:var(--t1);margin-bottom:2px;">Career Agent</p>
-            <p class="t-sm" style="color:var(--t3);">Apoio para sua jornada de aprendizado e desenvolvimento.</p>
-          </div>
-        </div>
-        <p class="t-sm" style="color:var(--t3);margin-top:auto;padding-top:16px;">+ mais agentes especializados dentro da plataforma</p>
+      <div class="stat-item">
+        <p class="stat-num">+500h</p>
+        <p class="stat-label">de conteúdo SAP</p>
       </div>
-
-      <!-- 03 Comunidades -->
-      <div class="pillar-card anim d3">
-        <div class="pillar-icon"><span class="material-symbols-rounded">groups</span></div>
-        <p class="pillar-num">03 · Comunidades</p>
-        <h3 class="t-h3" style="margin-bottom:10px;font-size:19px;">Aprender é melhor quando você não está sozinho.</h3>
-        <p class="t-sm" style="color:var(--t3);margin-bottom:20px;">Faça parte de comunidades criadas para conectar pessoas que estudam, trabalham e constroem soluções dentro do ecossistema SAP.</p>
-        <ul class="ck-list" style="margin-bottom:24px;">
-          <li><span class="ck">✓</span>Tire dúvidas</li>
-          <li><span class="ck">✓</span>Troque experiências</li>
-          <li><span class="ck">✓</span>Compartilhe conhecimento</li>
-          <li><span class="ck">✓</span>Conecte-se com outros profissionais</li>
-          <li><span class="ck">✓</span>Continue aprendendo depois das Jornadas</li>
-        </ul>
-        <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;">
-          <span class="pillar-tag">BTP Community</span><span class="pillar-tag">ABAP & RAP Community</span><span class="pillar-tag">Clean Core Community</span><span class="pillar-tag">Data & AI Community</span>
-        </div>
+      <div class="stat-item">
+        <p class="stat-num">+12.000</p>
+        <p class="stat-label">inscritos no YouTube</p>
       </div>
-
-    </div><!-- /pillar-grid -->
-
-    <div class="anim" style="text-align:center;">
-      <p class="t-lg" style="color:var(--t2);max-width:560px;margin:0 auto 20px;">Cursos, agentes de IA e comunidades conectados em uma única experiência para acelerar sua evolução no ecossistema SAP.</p>
-      <a href="https://chk.eduzz.com/dqvwtrlu" class="btn-green btn-green-lg">Começar agora</a>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════
-     TRILHAS DISPONÍVEIS
-═══════════════════════════════════════ -->
-<section class="bg-1 sec" id="trilhas">
-  <div class="wrap">
-    <div style="text-align:center;max-width:640px;margin:0 auto 48px;" class="anim">
-      <div class="chip" style="display:inline-flex;margin-bottom:16px;">Trilhas disponíveis</div>
-      <h2 class="t-h2" style="margin-bottom:14px;">Do fundamento ao avançado, no seu ritmo.</h2>
-      <p class="t-lg" style="color:var(--t2);">10 trilhas organizadas em módulos e aulas para você evoluir com progressão lógica dentro do ecossistema SAP.</p>
-    </div>
-
-    <div class="trilha-grid">
-
-      <div class="trilha-card anim d1">
-        <span class="trilha-level lv-ini">Iniciante</span>
-        <h3 class="t-h3" style="margin-bottom:8px;">SAP CORE - Foundations</h3>
-        <p class="trilha-desc">Base técnica para atuar com segurança no S/4HANA moderno: fundamentos do ecossistema, Clean Core, extensibilidade, ABAP Cloud, RAP, APIs, Fiori e arquitetura sustentável.</p>
-        <p class="trilha-meta">14 aulas · 3 módulos</p>
-        <a href="cursos/sap-core-foundations.html" class="trilha-more" style="margin-top:auto;">Saiba mais <span aria-hidden="true">→</span></a>
-      </div>
-
-      <div class="trilha-card anim d2">
-        <span class="trilha-level lv-ini">Iniciante</span>
-        <h3 class="t-h3" style="margin-bottom:8px;">SAP Platform & Innovation - Foundations</h3>
-        <p class="trilha-desc">Os conceitos e tecnologias que sustentam a inovação no ecossistema SAP: SAP BTP, Clean Core, extensibilidade, integração e Inteligência Artificial aplicada.</p>
-        <p class="trilha-meta">12 aulas · 2 módulos</p>
-        <a href="cursos/sap-platform-innovation-foundations.html" class="trilha-more" style="margin-top:auto;">Saiba mais <span aria-hidden="true">→</span></a>
-      </div>
-
-      <div class="trilha-card anim d3">
-        <span class="trilha-level lv-int">Intermediário</span>
-        <h3 class="t-h3" style="margin-bottom:8px;">Explore SAP RAP</h3>
-        <p class="trilha-desc">Desenvolva aplicações modernas com o RESTful ABAP Programming Model: modelagem com CDS Views, comportamentos, exposição de serviços e Fiori Elements.</p>
-        <p class="trilha-meta">85 aulas · 4 módulos</p>
-        <a href="cursos/explore-sap-rap.html" class="trilha-more" style="margin-top:auto;">Saiba mais <span aria-hidden="true">→</span></a>
-      </div>
-
-      <div class="trilha-card anim d4">
-        <span class="trilha-level lv-int">Intermediário</span>
-        <h3 class="t-h3" style="margin-bottom:8px;">Explore SAP CAP</h3>
-        <p class="trilha-desc">Crie soluções cloud extensíveis na SAP BTP com o Cloud Application Programming Model: modelagem de dados, serviços, APIs e integrações.</p>
-        <p class="trilha-meta">45 aulas · 8 módulos</p>
-        <a href="cursos/explore-sap-cap.html" class="trilha-more" style="margin-top:auto;">Saiba mais <span aria-hidden="true">→</span></a>
-      </div>
-
-      <div class="trilha-card anim d5">
-        <span class="trilha-level lv-ini">Iniciante</span>
-        <h3 class="t-h3" style="margin-bottom:8px;">Explore SAP Integration Suite</h3>
-        <p class="trilha-desc">Como integrar sistemas, aplicações, dados e processos no ecossistema SAP: fundamentos de integração, APIs, conectividade, eventos e segurança.</p>
-        <p class="trilha-meta">67 aulas · 6 módulos</p>
-        <a href="cursos/explore-sap-integration-suite.html" class="trilha-more" style="margin-top:auto;">Saiba mais <span aria-hidden="true">→</span></a>
-      </div>
-
-      <div class="trilha-card anim d6">
-        <span class="trilha-level lv-ini">Iniciante</span>
-        <h3 class="t-h3" style="margin-bottom:8px;">Explore Datasphere</h3>
-        <p class="trilha-desc">Integre, modele e disponibilize dados de forma moderna e governada com o SAP Datasphere, rumo ao SAP Business Data Cloud.</p>
-        <p class="trilha-meta">34 aulas · 5 módulos</p>
-        <a href="cursos/explore-datasphere.html" class="trilha-more" style="margin-top:auto;">Saiba mais <span aria-hidden="true">→</span></a>
-      </div>
-
-      <div class="trilha-card anim d1">
-        <span class="trilha-level lv-ini">Iniciante</span>
-        <h3 class="t-h3" style="margin-bottom:8px;">Explore Clean Core</h3>
-        <p class="trilha-desc">Os princípios do Clean Core para minimizar customizações no core do S/4HANA e ganhar mais governança e simplicidade nas atualizações.</p>
-        <p class="trilha-meta">12 aulas · 4 módulos</p>
-        <a href="cursos/explore-clean-core.html" class="trilha-more" style="margin-top:auto;">Saiba mais <span aria-hidden="true">→</span></a>
-      </div>
-
-      <div class="trilha-card anim d2">
-        <span class="trilha-level lv-ini">Iniciante</span>
-        <h3 class="t-h3" style="margin-bottom:8px;">Explore SAP BTP</h3>
-        <p class="trilha-desc">A base para inovação no ecossistema SAP: principais serviços da plataforma, criação de aplicações, integrações e extensões inteligentes.</p>
-        <p class="trilha-meta">7 aulas · 2 módulos</p>
-        <a href="cursos/explore-sap-btp.html" class="trilha-more" style="margin-top:auto;">Saiba mais <span aria-hidden="true">→</span></a>
-      </div>
-
-      <div class="trilha-card anim d3">
-        <span class="trilha-level lv-ini">Iniciante</span>
-        <h3 class="t-h3" style="margin-bottom:8px;">Encontros Online</h3>
-        <p class="trilha-desc">Gravações dos encontros ao vivo com especialistas da Lab2learn sobre Clean Core, S/4HANA, SAP BTP, RAP, ABAP Cloud, arquitetura e carreira.</p>
-        <p class="trilha-meta" style="margin-top:auto;">3 aulas · 3 módulos</p>
-      </div>
-
-      <div class="trilha-card anim d4">
-        <span class="trilha-level lv-ini">Iniciante</span>
-        <h3 class="t-h3" style="margin-bottom:8px;">Sessões Estratégicas</h3>
-        <p class="trilha-desc">Sessões ao vivo que conectam IA, agentes e LLMs ao dia a dia de quem trabalha com SAP: arquitetura, Clean Core e as decisões que importam.</p>
-        <p class="trilha-meta" style="margin-top:auto;">1 aula · 1 módulo</p>
-      </div>
-
-    </div><!-- /trilha-grid -->
-
-    <div class="anim" style="text-align:center;margin-top:40px;">
-      <a href="https://chk.eduzz.com/dqvwtrlu" class="btn-green btn-green-lg">Quero acesso a todas as trilhas</a>
     </div>
   </div>
 </section>
@@ -658,39 +665,37 @@
 ═══════════════════════════════════════ -->
 <section class="bg-2 sec">
   <div class="wrap">
-    <div style="text-align:center;max-width:640px;margin:0 auto 48px;" class="anim">
-      <div style="display:inline-flex;align-items:center;gap:10px;background:rgba(220,60,60,.07);border:1.5px solid rgba(220,60,60,.20);color:#C02020;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:8px 22px;border-radius:var(--r-pill);margin-bottom:20px;">
-        <span style="width:7px;height:7px;border-radius:50%;background:#DC3C3C;flex-shrink:0;"></span>
-        O Desafio
-      </div>
-      <h2 class="t-h2" style="margin-bottom:14px;">O ecossistema SAP está mudando rápido. A forma de aprender ficou para trás.</h2>
-      <p class="t-lg" style="color:var(--t2);">S/4HANA, Clean Core, SAP BTP e IA já chegaram aos projetos. As empresas precisam de profissionais que entendam tudo isso agora.</p>
-    </div>
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:40px;">
-      <div class="card anim d1" style="padding:28px 24px;">
-        <div style="width:40px;height:40px;border-radius:var(--r-md);background:rgba(220,60,60,.07);border:1px solid rgba(220,60,60,.14);display:flex;align-items:center;justify-content:center;margin-bottom:16px;">
-          <span class="material-symbols-rounded" style="font-size:20px;color:#DC3C3C;">bolt</span>
+    <div class="problem-grid">
+      <div class="anim">
+        <h2 class="t-h2" style="margin-bottom:14px;">O ecossistema SAP está mudando rápido.</h2>
+        <p class="t-lg" style="color:var(--t2);margin-bottom:8px;">S/4HANA, Clean Core, SAP BTP e IA já chegaram aos projetos e o aprendizado tradicional não dá conta.</p>
+
+        <div class="problem-row">
+          <div style="width:40px;height:40px;border-radius:var(--r-md);background:rgba(220,60,60,.07);border:1px solid rgba(220,60,60,.14);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <span class="material-symbols-rounded" style="font-size:20px;color:#DC3C3C;">bolt</span>
+          </div>
+          <div>
+            <h3 class="t-h3" style="margin-bottom:4px;color:var(--t1);">Aprendizado fragmentado</h3>
+            <p class="t-sm" style="color:var(--t3);">YouTube, documentação e cursos soltos, sem progressão lógica e sem saber por onde começar.</p>
+          </div>
         </div>
-        <h3 class="t-h3" style="margin-bottom:8px;color:var(--t1);">Aprendizado fragmentado</h3>
-        <p class="t-sm" style="color:var(--t3);">YouTube aqui, documentação ali, curso por lá. Sem progressão lógica e sem saber por onde começar.</p>
-      </div>
-      <div class="card anim d2" style="padding:28px 24px;">
-        <div style="width:40px;height:40px;border-radius:var(--r-md);background:rgba(220,60,60,.07);border:1px solid rgba(220,60,60,.14);display:flex;align-items:center;justify-content:center;margin-bottom:16px;">
-          <span class="material-symbols-rounded" style="font-size:20px;color:#DC3C3C;">description</span>
+        <div class="problem-row">
+          <div style="width:40px;height:40px;border-radius:var(--r-md);background:rgba(220,60,60,.07);border:1px solid rgba(220,60,60,.14);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <span class="material-symbols-rounded" style="font-size:20px;color:#DC3C3C;">sentiment_dissatisfied</span>
+          </div>
+          <div>
+            <h3 class="t-h3" style="margin-bottom:4px;color:var(--t1);">Insegurança técnica</h3>
+            <p class="t-sm" style="color:var(--t3);">Dificuldade para propor e validar decisões de arquitetura SAP em reuniões com o cliente.</p>
+          </div>
         </div>
-        <h3 class="t-h3" style="margin-bottom:8px;color:var(--t1);">Documentação sem contexto</h3>
-        <p class="t-sm" style="color:var(--t3);">Documentação oficial extensa e técnica, mas sem o contexto de como aplicar em projetos reais.</p>
+
+        <p class="t-lg" style="color:var(--t1);font-weight:600;margin-top:28px;margin-bottom:0;">É pra isso que existe o Zhub: jornadas de aprendizado, agentes de IA especializados e comunidade, tudo em um só lugar.</p>
+
+        <a href="https://zhub.lab2learn.com.br/checkout" class="btn-green btn-green-lg" style="margin-top:20px;">Conhecer o Zhub</a>
       </div>
-      <div class="card anim d3" style="padding:28px 24px;">
-        <div style="width:40px;height:40px;border-radius:var(--r-md);background:rgba(220,60,60,.07);border:1px solid rgba(220,60,60,.14);display:flex;align-items:center;justify-content:center;margin-bottom:16px;">
-          <span class="material-symbols-rounded" style="font-size:20px;color:#DC3C3C;">sentiment_dissatisfied</span>
-        </div>
-        <h3 class="t-h3" style="margin-bottom:8px;color:var(--t1);">Insegurança técnica</h3>
-        <p class="t-sm" style="color:var(--t3);">Dificuldade para propor e validar decisões de arquitetura SAP em reuniões com o cliente.</p>
+      <div class="anim-s d2 card" style="position:relative;aspect-ratio:1/1;overflow:hidden;">
+        <img src="assets/seção 2.png" alt="Profissional estudando SAP pelo notebook" style="width:100%;height:100%;object-fit:cover;object-position:50% 25%;display:block;">
       </div>
-    </div>
-    <div class="anim" style="text-align:center;">
-      <a href="https://chk.eduzz.com/dqvwtrlu" class="btn-green btn-green-lg">Conhecer a solução</a>
     </div>
   </div>
 </section>
@@ -698,24 +703,23 @@
 <!-- ═══════════════════════════════════════
      COMO FUNCIONA
 ═══════════════════════════════════════ -->
-<section class="bg-2 sec">
+<section class="bg-2 sec" id="como-funciona">
   <div class="wrap">
     <div style="text-align:center;margin-bottom:56px;" class="anim">
-      <div class="chip" style="display:inline-flex;margin-bottom:16px;">Como funciona</div>
       <h2 class="t-h2">Simples de entrar. Poderoso no dia a dia.</h2>
     </div>
     <div class="steps">
-      <div class="anim d1" style="text-align:center;padding:36px 28px;background:var(--card);border:1px solid var(--border);border-radius:var(--r-xl);">
+      <div class="step-item anim d1" style="text-align:center;padding:40px 28px;">
         <div class="step-num" style="margin:0 auto 20px;">1</div>
         <h3 class="t-h3" style="margin-bottom:10px;">Acesse e faça o onboarding</h3>
         <p class="t-sm" style="color:var(--t3);">A IA identifica seu perfil e indica as melhores jornadas, agentes e conteúdos para você.</p>
       </div>
-      <div class="anim d2" style="text-align:center;padding:36px 28px;background:var(--card);border:1px solid var(--border);border-radius:var(--r-xl);">
+      <div class="step-item anim d2" style="text-align:center;padding:40px 28px;">
         <div class="step-num" style="margin:0 auto 20px;">2</div>
         <h3 class="t-h3" style="margin-bottom:10px;">Escolha sua Jornada</h3>
-        <p class="t-sm" style="color:var(--t3);">Trilhas estruturadas do fundamento ao domínio técnico — Clean Core, BTP, ABAP RAP e mais.</p>
+        <p class="t-sm" style="color:var(--t3);">Trilhas estruturadas do fundamento ao domínio técnico: Clean Core, BTP, ABAP RAP e mais.</p>
       </div>
-      <div class="anim d3" style="text-align:center;padding:36px 28px;background:var(--card);border:1px solid var(--border);border-radius:var(--r-xl);">
+      <div class="step-item anim d3" style="text-align:center;padding:40px 28px;">
         <div class="step-num" style="margin:0 auto 20px;">3</div>
         <h3 class="t-h3" style="margin-bottom:10px;">Use no projeto real</h3>
         <p class="t-sm" style="color:var(--t3);">Agentes de IA e templates prontos para apoiar suas decisões técnicas no dia a dia.</p>
@@ -725,13 +729,179 @@
 </section>
 
 <!-- ═══════════════════════════════════════
+     TRANSFORMAÇÃO
+═══════════════════════════════════════ -->
+<section class="bg-1 sec">
+  <div class="wrap">
+    <div style="text-align:center;margin-bottom:48px;" class="anim">
+      <h2 class="t-h2">O que muda para quem entra no Zhub.</h2>
+    </div>
+    <div class="ba-table anim-s d1" style="max-width:860px;margin:0 auto 40px;">
+      <div class="ba-head ba-before-h">Sem o Zhub</div>
+      <div class="ba-head ba-after-h">Com o Zhub</div>
+      <div class="ba-cell ba-b">Aprendizado fragmentado, sem trilha definida</div>
+      <div class="ba-cell ba-a">Progressão lógica do fundamento ao domínio técnico</div>
+      <div class="ba-cell ba-b">Dúvidas de projeto sem resposta rápida</div>
+      <div class="ba-cell ba-a">Agente de IA que responde como um sênior SAP</div>
+      <div class="ba-cell ba-b">Insegurança para validar decisões de arquitetura</div>
+      <div class="ba-cell ba-a">Clareza para propor e validar com fundamento</div>
+      <div class="ba-cell ba-b">Conteúdo genérico sem contexto de projeto</div>
+      <div class="ba-cell ba-a">Conteúdo baseado em projetos reais do ecossistema SAP</div>
+      <div class="ba-cell ba-b" style="border-bottom:none;">Dependência de outros para cada decisão técnica</div>
+      <div class="ba-cell ba-a" style="border-bottom:none;">Autonomia crescente em S/4HANA, BTP e Clean Core</div>
+    </div>
+    <div class="anim" style="text-align:center;">
+      <a href="https://zhub.lab2learn.com.br/checkout" class="btn-green btn-green-lg">Quero evoluir com o Zhub</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     TRILHAS DISPONÍVEIS
+═══════════════════════════════════════ -->
+<section class="bg-2 sec" id="trilhas">
+  <div class="wrap">
+    <div style="text-align:center;max-width:640px;margin:0 auto 48px;" class="anim">
+      <div class="chip" style="display:inline-flex;margin-bottom:16px;">Trilhas disponíveis</div>
+      <h2 class="t-h2" style="margin-bottom:14px;">Do fundamento ao avançado, no seu ritmo.</h2>
+      <p class="t-lg" style="color:var(--t2);">8 trilhas organizadas em módulos e aulas para você evoluir com progressão lógica dentro do ecossistema SAP.</p>
+    </div>
+
+    <div class="trilha-grid">
+
+      <div class="trilha-card anim d1">
+        <div class="trilha-card-hdr fam-sapblue"><div class="trilha-card-hdr-icon"><span class="material-symbols-rounded">school</span></div></div>
+        <div class="trilha-card-body">
+          <span class="trilha-level lv-ini">Iniciante</span>
+          <h3 class="t-h3" style="margin-bottom:8px;">SAP CORE - Foundations</h3>
+          <p class="trilha-desc">Base técnica para atuar com segurança no S/4HANA moderno: fundamentos do ecossistema, Clean Core, extensibilidade, ABAP Cloud, RAP, APIs, Fiori e arquitetura sustentável.</p>
+          <p class="trilha-meta">14 aulas</p>
+          <a href="cursos/sap-core-foundations.html" class="trilha-more" style="margin-top:auto;">Saiba mais <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+
+      <div class="trilha-card anim d2">
+        <div class="trilha-card-hdr fam-sapblue"><div class="trilha-card-hdr-icon"><span class="material-symbols-rounded">bolt</span></div></div>
+        <div class="trilha-card-body">
+          <span class="trilha-level lv-ini">Iniciante</span>
+          <h3 class="t-h3" style="margin-bottom:8px;">SAP Platform & Innovation - Foundations</h3>
+          <p class="trilha-desc">Os conceitos e tecnologias que sustentam a inovação no ecossistema SAP: SAP BTP, Clean Core, extensibilidade, integração e Inteligência Artificial aplicada.</p>
+          <p class="trilha-meta">12 aulas</p>
+          <a href="cursos/sap-platform-innovation-foundations.html" class="trilha-more" style="margin-top:auto;">Saiba mais <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+
+      <div class="trilha-card anim d3">
+        <div class="trilha-card-hdr fam-orange"><div class="trilha-card-hdr-icon"><span class="material-symbols-rounded">data_object</span></div></div>
+        <div class="trilha-card-body">
+          <span class="trilha-level lv-int">Intermediário</span>
+          <h3 class="t-h3" style="margin-bottom:8px;">Explore SAP RAP</h3>
+          <p class="trilha-desc">Desenvolva aplicações modernas com o RESTful ABAP Programming Model: modelagem com CDS Views, comportamentos, exposição de serviços e Fiori Elements.</p>
+          <p class="trilha-meta">85 aulas</p>
+          <a href="cursos/explore-sap-rap.html" class="trilha-more" style="margin-top:auto;">Saiba mais <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+
+      <div class="trilha-card anim d4">
+        <div class="trilha-card-hdr fam-yellow"><div class="trilha-card-hdr-icon"><span class="material-symbols-rounded">terminal</span></div></div>
+        <div class="trilha-card-body">
+          <span class="trilha-level lv-int">Intermediário</span>
+          <h3 class="t-h3" style="margin-bottom:8px;">Explore SAP CAP</h3>
+          <p class="trilha-desc">Crie soluções cloud extensíveis na SAP BTP com o Cloud Application Programming Model: modelagem de dados, serviços, APIs e integrações.</p>
+          <p class="trilha-meta">45 aulas</p>
+          <a href="cursos/explore-sap-cap.html" class="trilha-more" style="margin-top:auto;">Saiba mais <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+
+      <div class="trilha-card anim d5">
+        <div class="trilha-card-hdr fam-pink"><div class="trilha-card-hdr-icon"><span class="material-symbols-rounded">hub</span></div></div>
+        <div class="trilha-card-body">
+          <span class="trilha-level lv-ini">Iniciante</span>
+          <h3 class="t-h3" style="margin-bottom:8px;">Explore SAP Integration Suite</h3>
+          <p class="trilha-desc">Como integrar sistemas, aplicações, dados e processos no ecossistema SAP: fundamentos de integração, APIs, conectividade, eventos e segurança.</p>
+          <p class="trilha-meta">67 aulas</p>
+          <a href="cursos/explore-sap-integration-suite.html" class="trilha-more" style="margin-top:auto;">Saiba mais <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+
+      <div class="trilha-card anim d6">
+        <div class="trilha-card-hdr fam-blue"><div class="trilha-card-hdr-icon"><span class="material-symbols-rounded">database</span></div></div>
+        <div class="trilha-card-body">
+          <span class="trilha-level lv-ini">Iniciante</span>
+          <h3 class="t-h3" style="margin-bottom:8px;">Explore Datasphere</h3>
+          <p class="trilha-desc">Integre, modele e disponibilize dados de forma moderna e governada com o SAP Datasphere, rumo ao SAP Business Data Cloud.</p>
+          <p class="trilha-meta">34 aulas</p>
+          <a href="cursos/explore-datasphere.html" class="trilha-more" style="margin-top:auto;">Saiba mais <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+
+      <div class="trilha-card anim d1">
+        <div class="trilha-card-hdr fam-green"><div class="trilha-card-hdr-icon"><span class="material-symbols-rounded">eco</span></div></div>
+        <div class="trilha-card-body">
+          <span class="trilha-level lv-ini">Iniciante</span>
+          <h3 class="t-h3" style="margin-bottom:8px;">Explore Clean Core</h3>
+          <p class="trilha-desc">Os princípios do Clean Core para minimizar customizações no core do S/4HANA e ganhar mais governança e simplicidade nas atualizações.</p>
+          <p class="trilha-meta">12 aulas</p>
+          <a href="cursos/explore-clean-core.html" class="trilha-more" style="margin-top:auto;">Saiba mais <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+
+      <div class="trilha-card anim d2">
+        <div class="trilha-card-hdr fam-purple"><div class="trilha-card-hdr-icon"><span class="material-symbols-rounded">cloud</span></div></div>
+        <div class="trilha-card-body">
+          <span class="trilha-level lv-ini">Iniciante</span>
+          <h3 class="t-h3" style="margin-bottom:8px;">Explore SAP BTP</h3>
+          <p class="trilha-desc">A base para inovação no ecossistema SAP: principais serviços da plataforma, criação de aplicações, integrações e extensões inteligentes.</p>
+          <p class="trilha-meta">7 aulas</p>
+          <a href="cursos/explore-sap-btp.html" class="trilha-more" style="margin-top:auto;">Saiba mais <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+
+    </div><!-- /trilha-grid -->
+
+    <div class="anim" style="text-align:center;margin-top:40px;">
+      <a href="https://zhub.lab2learn.com.br/checkout" class="btn-green btn-green-lg">Quero acesso a todas as trilhas</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     AO VIVO — encontros e sessões estratégicas
+═══════════════════════════════════════ -->
+<section class="bg-2 sec" style="padding-top:0;">
+  <div class="wrap">
+    <div style="text-align:center;max-width:640px;margin:0 auto 40px;" class="anim">
+      <div class="chip" style="display:inline-flex;margin-bottom:16px;"><span class="chip-dot"></span>Ao vivo, incluso na assinatura</div>
+      <h2 class="t-h2" style="margin-bottom:14px;">Além das trilhas, conteúdo ao vivo direto com especialistas.</h2>
+      <p class="t-lg" style="color:var(--t2);">Gravações exclusivas dos nossos encontros e sessões estratégicas sobre o ecossistema SAP, sem custo extra pra quem assina o Zhub.</p>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:24px;" class="anim-s d1">
+
+      <div class="card card-purple" style="padding:32px;">
+        <span class="material-symbols-rounded" style="font-size:28px;color:var(--purple);margin-bottom:16px;display:block;">groups</span>
+        <h3 class="t-h3" style="margin-bottom:10px;">Encontros Online</h3>
+        <p class="t-sm" style="color:var(--t2);line-height:1.7;">Gravações dos encontros ao vivo com especialistas da Lab2learn sobre Clean Core, S/4HANA, SAP BTP, RAP, ABAP Cloud, arquitetura e carreira.</p>
+      </div>
+
+      <div class="card card-purple" style="padding:32px;">
+        <span class="material-symbols-rounded" style="font-size:28px;color:var(--purple);margin-bottom:16px;display:block;">bolt</span>
+        <h3 class="t-h3" style="margin-bottom:10px;">Sessões Estratégicas</h3>
+        <p class="t-sm" style="color:var(--t2);line-height:1.7;">Sessões ao vivo que conectam IA, agentes e LLMs ao dia a dia de quem trabalha com SAP: arquitetura, Clean Core e as decisões que importam.</p>
+      </div>
+
+    </div><!-- /grid -->
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
      FEATURES BENTO — detalhe do acesso
 ═══════════════════════════════════════ -->
 <section class="bg-1 sec" id="detalhes">
   <div class="wrap">
-    <div style="text-align:center;margin-bottom:56px;" class="anim">
-      <div class="chip" style="display:inline-flex;margin-bottom:16px;">O que está incluído</div>
-      <h2 class="t-h2">Cada detalhe do seu acesso.</h2>
+    <div style="text-align:center;max-width:640px;margin:0 auto 56px;" class="anim">
+      <h2 class="t-h2" style="margin-bottom:14px;">Cada detalhe do seu acesso.</h2>
+      <p class="t-lg" style="color:var(--t2);">Cursos para desenvolver novas habilidades, agentes de IA para apoiar seu dia a dia e comunidade para trocar experiências com quem vive os mesmos desafios no ecossistema SAP.</p>
     </div>
     <!-- 3 colunas de itens — visível em um scroll -->
     <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:16px;" class="anim-s d1">
@@ -743,9 +913,10 @@
           <p style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--purple);">Jornadas de aprendizado</p>
         </div>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:12px;">
-          <li style="display:flex;align-items:center;gap:10px;"><span style="color:var(--purple);font-weight:700;font-size:13px;flex-shrink:0;">✓</span><span class="t-sm" style="color:var(--t1);font-weight:500;">Jornada Clean Core</span><span class="t-sm" style="color:var(--t3);margin-left:auto;white-space:nowrap;">6 módulos</span></li>
-          <li style="display:flex;align-items:center;gap:10px;"><span style="color:var(--purple);font-weight:700;font-size:13px;flex-shrink:0;">✓</span><span class="t-sm" style="color:var(--t1);font-weight:500;">Jornada SAP BTP</span><span class="t-sm" style="color:var(--t3);margin-left:auto;white-space:nowrap;">8 módulos</span></li>
-          <li style="display:flex;align-items:center;gap:10px;"><span style="color:var(--purple);font-weight:700;font-size:13px;flex-shrink:0;">✓</span><span class="t-sm" style="color:var(--t1);font-weight:500;">Jornada ABAP RAP</span><span class="t-sm" style="color:var(--t3);margin-left:auto;white-space:nowrap;">5 módulos</span></li>
+          <li style="display:flex;align-items:center;gap:10px;"><span style="color:var(--purple);font-weight:700;font-size:13px;flex-shrink:0;">✓</span><span class="t-sm" style="color:var(--t1);font-weight:500;">Explore Clean Core</span></li>
+          <li style="display:flex;align-items:center;gap:10px;"><span style="color:var(--purple);font-weight:700;font-size:13px;flex-shrink:0;">✓</span><span class="t-sm" style="color:var(--t1);font-weight:500;">Explore SAP BTP</span></li>
+          <li style="display:flex;align-items:center;gap:10px;"><span style="color:var(--purple);font-weight:700;font-size:13px;flex-shrink:0;">✓</span><span class="t-sm" style="color:var(--t1);font-weight:500;">Explore SAP RAP</span></li>
+          <li style="display:flex;align-items:center;gap:10px;"><span style="color:var(--purple);font-weight:700;font-size:13px;flex-shrink:0;">✓</span><span class="t-sm" style="color:var(--t1);font-weight:500;">Aulas práticas, do básico ao avançado</span></li>
           <li style="display:flex;align-items:center;gap:10px;"><span style="color:var(--purple);font-weight:700;font-size:13px;flex-shrink:0;">✓</span><span class="t-sm" style="color:var(--t1);font-weight:500;">Quizzes + Certificado</span></li>
           <li style="display:flex;align-items:center;gap:10px;"><span style="color:var(--purple);font-weight:700;font-size:13px;flex-shrink:0;">✓</span><span class="t-sm" style="color:var(--t1);font-weight:500;">Painel de progresso</span></li>
           <li style="display:flex;align-items:center;gap:10px;opacity:.5;"><span style="color:var(--t3);font-size:13px;flex-shrink:0;">+</span><span class="t-sm" style="color:var(--t3);">Novas jornadas em breve</span></li>
@@ -766,6 +937,9 @@
           <li style="display:flex;align-items:center;gap:10px;"><span style="color:var(--purple);font-weight:700;font-size:13px;flex-shrink:0;">✓</span><span class="t-sm" style="color:var(--t1);font-weight:500;">Especificações técnicas SAP</span></li>
           <li style="display:flex;align-items:center;gap:10px;"><span style="color:var(--purple);font-weight:700;font-size:13px;flex-shrink:0;">✓</span><span class="t-sm" style="color:var(--t1);font-weight:500;">Validação de arquitetura SAP</span></li>
         </ul>
+        <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:16px;padding-top:16px;border-top:1px solid var(--pborder);">
+          <span class="pillar-tag">BTP Agent</span><span class="pillar-tag">RAP Agent</span><span class="pillar-tag">Clean Core Agent</span><span class="pillar-tag">Career Agent</span>
+        </div>
       </div>
 
       <!-- Coluna 3: Comunidade -->
@@ -777,46 +951,19 @@
         <ul style="list-style:none;display:flex;flex-direction:column;gap:12px;">
           <li style="display:flex;align-items:center;gap:10px;"><span style="color:var(--purple);font-weight:700;font-size:13px;flex-shrink:0;">✓</span><span class="t-sm" style="color:var(--t1);font-weight:500;">Onboarding com IA</span></li>
           <li style="display:flex;align-items:center;gap:10px;"><span style="color:var(--purple);font-weight:700;font-size:13px;flex-shrink:0;">✓</span><span class="t-sm" style="color:var(--t1);font-weight:500;">Encontros mensais ao vivo</span></li>
-          <li style="display:flex;align-items:center;gap:10px;"><span style="color:var(--purple);font-weight:700;font-size:13px;flex-shrink:0;">✓</span><span class="t-sm" style="color:var(--t1);font-weight:500;">Comunidade de profissionais SAP</span></li>
+          <li style="display:flex;align-items:center;gap:10px;"><span style="color:var(--purple);font-weight:700;font-size:13px;flex-shrink:0;">✓</span><span class="t-sm" style="color:var(--t1);font-weight:500;">Troque experiências com outros profissionais</span></li>
           <li style="display:flex;align-items:center;gap:10px;"><span style="color:var(--purple);font-weight:700;font-size:13px;flex-shrink:0;">✓</span><span class="t-sm" style="color:var(--t1);font-weight:500;">Acesso imediato após compra</span></li>
           <li style="display:flex;align-items:center;gap:10px;"><span style="color:var(--purple);font-weight:700;font-size:13px;flex-shrink:0;">✓</span><span class="t-sm" style="color:var(--t1);font-weight:500;">Conteúdo atualizado continuamente</span></li>
           <li style="display:flex;align-items:center;gap:10px;"><span style="color:var(--purple);font-weight:700;font-size:13px;flex-shrink:0;">✓</span><span class="t-sm" style="color:var(--t1);font-weight:500;">7 dias de garantia total</span></li>
         </ul>
+        <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:16px;padding-top:16px;border-top:1px solid var(--border);">
+          <span class="pillar-tag">BTP Community</span><span class="pillar-tag">ABAP & RAP Community</span><span class="pillar-tag">Clean Core Community</span><span class="pillar-tag">Data & AI Community</span>
+        </div>
       </div>
 
     </div><!-- /grid -->
     <div class="anim" style="text-align:center;margin-top:40px;">
-      <a href="https://chk.eduzz.com/dqvwtrlu" class="btn-green btn-green-lg">Quero tudo isso — Começar agora</a>
-      <p class="t-sm" style="color:var(--t3);margin-top:12px;">12x de R$154,82 · Acesso imediato · 7 dias de garantia</p>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════
-     TRANSFORMAÇÃO
-═══════════════════════════════════════ -->
-<section class="bg-2 sec">
-  <div class="wrap">
-    <div style="text-align:center;margin-bottom:48px;" class="anim">
-      <div class="chip" style="display:inline-flex;margin-bottom:16px;">Antes e depois</div>
-      <h2 class="t-h2">O que muda para quem entra no Zhub.</h2>
-    </div>
-    <div class="ba-table anim-s d1" style="max-width:860px;margin:0 auto 40px;">
-      <div class="ba-head ba-before-h">Sem o Zhub</div>
-      <div class="ba-head ba-after-h">Com o Zhub</div>
-      <div class="ba-cell ba-b">Aprendizado fragmentado, sem trilha definida</div>
-      <div class="ba-cell ba-a">Progressão lógica do fundamento ao domínio técnico</div>
-      <div class="ba-cell ba-b">Dúvidas de projeto sem resposta rápida</div>
-      <div class="ba-cell ba-a">Agente de IA que responde como um sênior SAP</div>
-      <div class="ba-cell ba-b">Insegurança para validar decisões de arquitetura</div>
-      <div class="ba-cell ba-a">Clareza para propor e validar com fundamento</div>
-      <div class="ba-cell ba-b">Conteúdo genérico sem contexto de projeto</div>
-      <div class="ba-cell ba-a">Conteúdo baseado em projetos reais do ecossistema SAP</div>
-      <div class="ba-cell ba-b" style="border-bottom:none;">Dependência de outros para cada decisão técnica</div>
-      <div class="ba-cell ba-a" style="border-bottom:none;">Autonomia crescente em S/4HANA, BTP e Clean Core</div>
-    </div>
-    <div class="anim" style="text-align:center;">
-      <a href="https://chk.eduzz.com/dqvwtrlu" class="btn-green btn-green-lg">Quero evoluir com o Zhub</a>
+      <a href="https://zhub.lab2learn.com.br/checkout" class="btn-green btn-green-lg">Começar agora</a>
     </div>
   </div>
 </section>
@@ -824,22 +971,26 @@
 <!-- ═══════════════════════════════════════
      EXPERTS
 ═══════════════════════════════════════ -->
-<section class="bg-1 sec" id="historia">
+<section class="bg-2 sec" id="historia">
   <div class="wrap">
     <div style="text-align:center;margin-bottom:48px;" class="anim">
-      <div class="chip" style="display:inline-flex;margin-bottom:14px;">Quem está por trás</div>
       <h2 class="t-h2">Os especialistas que constroem o Zhub.</h2>
     </div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:40px;">
+    <div class="expert-carousel anim">
+    <div class="expert-track" id="expert-track">
 
       <!-- Leandro -->
-      <div class="card anim d1" style="padding:32px;display:flex;flex-direction:column;gap:0;">
+      <div class="expert-slide">
+      <div class="card" style="padding:32px;display:flex;flex-direction:column;gap:0;height:100%;">
         <div style="display:flex;align-items:center;gap:16px;margin-bottom:20px;">
-          <img src="assets/experts/Leandro Dante.png" alt="Leandro Dante" style="width:64px;height:64px;border-radius:50%;object-fit:cover;object-position:top;border:2px solid var(--pborder);flex-shrink:0;">
+          <img src="assets/experts/Leandro Dante.png" alt="Leandro Dante" loading="lazy" style="width:64px;height:64px;border-radius:50%;object-fit:cover;object-position:top;border:2px solid var(--pborder);flex-shrink:0;">
           <div>
             <p style="font-size:15px;font-weight:700;color:var(--t1);margin-bottom:2px;">Leandro Dante</p>
             <p class="t-sm" style="color:var(--purple);font-weight:500;">Co-fundador Lab2learn · Head SAP BTP</p>
           </div>
+          <a href="https://www.linkedin.com/in/leandrodante/" target="_blank" rel="noopener" aria-label="LinkedIn de Leandro Dante" style="width:32px;height:32px;border-radius:50%;background:var(--bg-2);border:1px solid var(--border-2);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-left:auto;transition:border-color .2s;" onmouseover="this.style.borderColor='var(--purple)'" onmouseout="this.style.borderColor='var(--border-2)'">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="var(--t3)"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
         </div>
         <div class="div" style="margin-bottom:20px;"></div>
         <p class="t-sm" style="color:var(--t2);line-height:1.75;margin-bottom:20px;">Expert reconhecido como referência em SAP BTP no Brasil. Lidera a maior comunidade de SAP BTP do país, com presença em eventos nacionais e internacionais. Foco em Clean Core, IA aplicada e Integração Inteligente em projetos de grande porte.</p>
@@ -850,15 +1001,20 @@
           <span style="background:var(--pbg);border:1px solid var(--pborder);color:var(--purple);font-size:10px;font-weight:600;padding:3px 10px;border-radius:var(--r-pill);">IA SAP</span>
         </div>
       </div>
+      </div>
 
       <!-- Vitor -->
-      <div class="card anim d2" style="padding:32px;display:flex;flex-direction:column;gap:0;">
+      <div class="expert-slide">
+      <div class="card" style="padding:32px;display:flex;flex-direction:column;gap:0;height:100%;">
         <div style="display:flex;align-items:center;gap:16px;margin-bottom:20px;">
-          <img src="assets/experts/Vitor Ueda.png" alt="Vitor Ueda" style="width:64px;height:64px;border-radius:50%;object-fit:cover;object-position:top;border:2px solid var(--pborder);flex-shrink:0;">
+          <img src="assets/experts/Vitor Ueda.png" alt="Vitor Ueda" loading="lazy" style="width:64px;height:64px;border-radius:50%;object-fit:cover;object-position:top;border:2px solid var(--pborder);flex-shrink:0;">
           <div>
             <p style="font-size:15px;font-weight:700;color:var(--t1);margin-bottom:2px;">Vitor Ueda</p>
             <p class="t-sm" style="color:var(--purple);font-weight:500;">Instrutor SAP · Desenvolvedor · Speaker</p>
           </div>
+          <a href="https://www.linkedin.com/in/vitor-ueda-5aa250191/" target="_blank" rel="noopener" aria-label="LinkedIn de Vitor Ueda" style="width:32px;height:32px;border-radius:50%;background:var(--bg-2);border:1px solid var(--border-2);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-left:auto;transition:border-color .2s;" onmouseover="this.style.borderColor='var(--purple)'" onmouseout="this.style.borderColor='var(--border-2)'">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="var(--t3)"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
         </div>
         <div class="div" style="margin-bottom:20px;"></div>
         <p class="t-sm" style="color:var(--t2);line-height:1.75;margin-bottom:20px;">Cinco anos de experiência em projetos SAP com ECC, S/4HANA e BTP. Domínio profundo em ABAP Cloud, RAP, CDS View, SAPUI5, Fiori, PI/PO, CI, CAP e Clean Core nos três tiers. Referência didática no ecossistema SAP, formando equipes de alta performance.</p>
@@ -869,10 +1025,93 @@
           <span style="background:var(--pbg);border:1px solid var(--pborder);color:var(--purple);font-size:10px;font-weight:600;padding:3px 10px;border-radius:var(--r-pill);">CAP</span>
         </div>
       </div>
+      </div>
+
+      <!-- Carlos Eduardo -->
+      <div class="expert-slide">
+      <div class="card" style="padding:32px;display:flex;flex-direction:column;gap:0;height:100%;">
+        <div style="display:flex;align-items:center;gap:16px;margin-bottom:20px;">
+          <img src="assets/experts/Carlos Eduardo Andrade.png" alt="Carlos Eduardo Andrade" loading="lazy" style="width:64px;height:64px;border-radius:50%;object-fit:cover;object-position:top;border:2px solid var(--pborder);flex-shrink:0;">
+          <div>
+            <p style="font-size:15px;font-weight:700;color:var(--t1);margin-bottom:2px;">Carlos Eduardo Andrade</p>
+            <p class="t-sm" style="color:var(--purple);font-weight:500;">SAP BTP Solutions Architect · Lab2dev</p>
+          </div>
+          <a href="https://www.linkedin.com/in/caarloseduardo/" target="_blank" rel="noopener" aria-label="LinkedIn de Carlos Eduardo Andrade" style="width:32px;height:32px;border-radius:50%;background:var(--bg-2);border:1px solid var(--border-2);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-left:auto;transition:border-color .2s;" onmouseover="this.style.borderColor='var(--purple)'" onmouseout="this.style.borderColor='var(--border-2)'">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="var(--t3)"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+        </div>
+        <div class="div" style="margin-bottom:20px;"></div>
+        <p class="t-sm" style="color:var(--t2);line-height:1.75;margin-bottom:20px;">Arquiteto de Soluções SAP BTP com mais de 5 anos de experiência e certificações SAP em Solution Architecture, Integração e IA Generativa. Já liderou frentes técnicas de BTP em implementações S/4HANA Greenfield e Brownfield, validando arquiteturas para aderência ao Clean Core.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;">
+          <span style="background:var(--pbg);border:1px solid var(--pborder);color:var(--purple);font-size:10px;font-weight:600;padding:3px 10px;border-radius:var(--r-pill);">SAP BTP</span>
+          <span style="background:var(--pbg);border:1px solid var(--pborder);color:var(--purple);font-size:10px;font-weight:600;padding:3px 10px;border-radius:var(--r-pill);">SAP CAP</span>
+          <span style="background:var(--pbg);border:1px solid var(--pborder);color:var(--purple);font-size:10px;font-weight:600;padding:3px 10px;border-radius:var(--r-pill);">Clean Core</span>
+          <span style="background:var(--pbg);border:1px solid var(--pborder);color:var(--purple);font-size:10px;font-weight:600;padding:3px 10px;border-radius:var(--r-pill);">IA Generativa</span>
+        </div>
+      </div>
+      </div>
+
+      <!-- Moisés -->
+      <div class="expert-slide">
+      <div class="card" style="padding:32px;display:flex;flex-direction:column;gap:0;height:100%;">
+        <div style="display:flex;align-items:center;gap:16px;margin-bottom:20px;">
+          <img src="assets/experts/Moises Gomes da Silva.png" alt="Moisés Gomes da Silva" loading="lazy" style="width:64px;height:64px;border-radius:50%;object-fit:cover;object-position:top;border:2px solid var(--pborder);flex-shrink:0;">
+          <div>
+            <p style="font-size:15px;font-weight:700;color:var(--t1);margin-bottom:2px;">Moisés Gomes da Silva</p>
+            <p class="t-sm" style="color:var(--purple);font-weight:500;">Engenheiro de Software · SAP Integration Suite Expert</p>
+          </div>
+          <a href="https://www.linkedin.com/in/moisesgomesdev52771/" target="_blank" rel="noopener" aria-label="LinkedIn de Moisés Gomes da Silva" style="width:32px;height:32px;border-radius:50%;background:var(--bg-2);border:1px solid var(--border-2);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-left:auto;transition:border-color .2s;" onmouseover="this.style.borderColor='var(--purple)'" onmouseout="this.style.borderColor='var(--border-2)'">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="var(--t3)"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+        </div>
+        <div class="div" style="margin-bottom:20px;"></div>
+        <p class="t-sm" style="color:var(--t2);line-height:1.75;margin-bottom:20px;">Engenheiro de software e consultor especialista em SAP Integration Suite, com experiência construindo integrações robustas, APIs escaláveis e soluções que conectam sistemas de ponta a ponta. Já palestrou no SAP BTP Experience e é referência em Cloud Integration dentro do ecossistema SAP.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;">
+          <span style="background:var(--pbg);border:1px solid var(--pborder);color:var(--purple);font-size:10px;font-weight:600;padding:3px 10px;border-radius:var(--r-pill);">Integration Suite</span>
+          <span style="background:var(--pbg);border:1px solid var(--pborder);color:var(--purple);font-size:10px;font-weight:600;padding:3px 10px;border-radius:var(--r-pill);">Cloud Integration</span>
+          <span style="background:var(--pbg);border:1px solid var(--pborder);color:var(--purple);font-size:10px;font-weight:600;padding:3px 10px;border-radius:var(--r-pill);">API Management</span>
+          <span style="background:var(--pbg);border:1px solid var(--pborder);color:var(--purple);font-size:10px;font-weight:600;padding:3px 10px;border-radius:var(--r-pill);">Event Mesh</span>
+        </div>
+      </div>
+      </div>
+
+      <!-- Paulo Sampaio -->
+      <div class="expert-slide">
+      <div class="card" style="padding:32px;display:flex;flex-direction:column;gap:0;height:100%;">
+        <div style="display:flex;align-items:center;gap:16px;margin-bottom:20px;">
+          <img src="assets/experts/Paulo Sampaio.png" alt="Paulo Sampaio" loading="lazy" style="width:64px;height:64px;border-radius:50%;object-fit:cover;object-position:top;border:2px solid var(--pborder);flex-shrink:0;">
+          <div>
+            <p style="font-size:15px;font-weight:700;color:var(--t1);margin-bottom:2px;">Paulo Sampaio</p>
+            <p class="t-sm" style="color:var(--purple);font-weight:500;">Head of Delivery · Kinesis IT (grupo Lab2dev)</p>
+          </div>
+          <a href="https://www.linkedin.com/in/paulo-sampaio-aab28927/" target="_blank" rel="noopener" aria-label="LinkedIn de Paulo Sampaio" style="width:32px;height:32px;border-radius:50%;background:var(--bg-2);border:1px solid var(--border-2);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-left:auto;transition:border-color .2s;" onmouseover="this.style.borderColor='var(--purple)'" onmouseout="this.style.borderColor='var(--border-2)'">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="var(--t3)"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+        </div>
+        <div class="div" style="margin-bottom:20px;"></div>
+        <p class="t-sm" style="color:var(--t2);line-height:1.75;margin-bottom:20px;">Mais de 17 anos de TI e mais de 30 projetos de SAP Datasphere entregues, reconhecido como uma das principais referências do Brasil no tema. Domina SAP Analytics Cloud, HANA Cloud e arquitetura de dados em setores como energia, agronegócio e infraestrutura.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;">
+          <span style="background:var(--pbg);border:1px solid var(--pborder);color:var(--purple);font-size:10px;font-weight:600;padding:3px 10px;border-radius:var(--r-pill);">SAP Datasphere</span>
+          <span style="background:var(--pbg);border:1px solid var(--pborder);color:var(--purple);font-size:10px;font-weight:600;padding:3px 10px;border-radius:var(--r-pill);">SAP Analytics Cloud</span>
+          <span style="background:var(--pbg);border:1px solid var(--pborder);color:var(--purple);font-size:10px;font-weight:600;padding:3px 10px;border-radius:var(--r-pill);">SAP BW</span>
+          <span style="background:var(--pbg);border:1px solid var(--pborder);color:var(--purple);font-size:10px;font-weight:600;padding:3px 10px;border-radius:var(--r-pill);">Arquitetura de Dados</span>
+        </div>
+      </div>
+      </div>
 
     </div>
-    <div class="anim" style="text-align:center;">
-      <a href="https://chk.eduzz.com/dqvwtrlu" class="btn-green btn-green-lg">Aprender com eles no Zhub</a>
+    </div>
+    <div class="expert-nav">
+      <button class="expert-arrow" id="expert-prev" aria-label="Especialista anterior">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8L10 13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="expert-dots" id="expert-dots"></div>
+      <button class="expert-arrow" id="expert-next" aria-label="Próximo especialista">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 3L11 8L6 13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
+    <div class="anim" style="text-align:center;margin-top:32px;">
+      <a href="https://zhub.lab2learn.com.br/checkout" class="btn-green btn-green-lg">Aprender com eles no Zhub</a>
     </div>
   </div>
 </section>
@@ -880,7 +1119,7 @@
 <!-- ═══════════════════════════════════════
      DEPOIMENTOS
 ═══════════════════════════════════════ -->
-<section class="bg-2 sec">
+<section class="bg-1 sec">
   <div class="wrap">
     <div style="text-align:center;margin-bottom:48px;" class="anim">
       <div class="chip" style="display:inline-flex;margin-bottom:16px;">Depoimentos</div>
@@ -919,7 +1158,7 @@
       </div>
     </div>
     <div class="anim" style="text-align:center;">
-      <a href="https://chk.eduzz.com/dqvwtrlu" class="btn-green btn-green-lg">Entrar para a comunidade</a>
+      <a href="https://zhub.lab2learn.com.br/checkout" class="btn-green btn-green-lg">Entrar para a comunidade</a>
     </div>
   </div>
 </section>
@@ -927,10 +1166,9 @@
 <!-- ═══════════════════════════════════════
      PARA QUEM É
 ═══════════════════════════════════════ -->
-<section class="bg-1 sec">
+<section class="bg-2 sec">
   <div class="wrap">
     <div style="text-align:center;margin-bottom:48px;" class="anim">
-      <div class="chip" style="display:inline-flex;margin-bottom:16px;">Para quem é</div>
       <h2 class="t-h2">O Zhub foi feito para você?</h2>
     </div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
@@ -950,7 +1188,7 @@
           <li><span class="ck">✦</span>Quer uma fonte confiável para dúvidas de projeto</li>
           <li><span class="ck">✦</span>Quer crescer como referência técnica no ecossistema SAP</li>
         </ul>
-        <a href="https://chk.eduzz.com/dqvwtrlu" class="btn-green btn-green-lg" style="width:100%;justify-content:center;">É pra mim — Começar agora</a>
+        <a href="https://zhub.lab2learn.com.br/checkout" class="btn-green btn-green-lg" style="width:100%;justify-content:center;">Começar agora</a>
       </div>
     </div>
   </div>
@@ -959,7 +1197,7 @@
 <!-- ═══════════════════════════════════════
      PREÇO
 ═══════════════════════════════════════ -->
-<section class="bg-2 sec" id="oferta">
+<section class="bg-1 sec" id="oferta">
   <div class="wrap">
     <div style="text-align:center;margin-bottom:48px;" class="anim">
       <div class="chip" style="display:inline-flex;margin-bottom:16px;">Acesso ao Zhub</div>
@@ -968,12 +1206,13 @@
     </div>
     <div class="price-box anim d1">
       <div style="text-align:center;">
+        <div class="chip-deal" style="margin-bottom:14px;"><span class="material-symbols-rounded">sell</span>Termina em <span class="promo-countdown">15/09</span></div>
         <p class="t-label" style="margin-bottom:8px;">Acesso anual completo</p>
         <p style="font-size:12px;font-weight:500;color:var(--t3);text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px;">em até</p>
-        <p style="font-size:clamp(30px,5vw,46px);font-weight:800;color:var(--purple);line-height:1;margin-bottom:8px;">12x de R$154,82</p>
-        <p style="font-size:14px;color:var(--t3);margin-bottom:6px;">ou <strong style="color:var(--t1);">R$1.497,00</strong> à vista</p>
+        <p style="font-size:clamp(30px,5vw,46px);font-weight:800;color:var(--purple);line-height:1;margin-bottom:8px;">12x de R$165,17</p>
+        <p style="font-size:14px;color:var(--t3);margin-bottom:6px;">de <s style="color:var(--t3);">R$1.997,00</s> · oferta por tempo limitado</p>
         <p class="t-sm" style="color:var(--t3);margin-bottom:32px;">Menos de R$4,10/dia para evoluir no ecossistema SAP</p>
-        <a href="https://chk.eduzz.com/dqvwtrlu" class="btn-green btn-green-lg" style="width:100%;justify-content:center;margin-bottom:16px;">Começar agora</a>
+        <a href="https://zhub.lab2learn.com.br/checkout" class="btn-green btn-green-lg" style="width:100%;justify-content:center;margin-bottom:16px;">Começar agora</a>
         <p class="t-sm" style="color:var(--t3);">Acesso imediato · Garantia de 7 dias · Cancele quando quiser</p>
       </div>
     </div>
@@ -983,16 +1222,16 @@
 <!-- ═══════════════════════════════════════
      GARANTIA
 ═══════════════════════════════════════ -->
-<section class="bg-1 sec-sm">
+<section class="bg-2 sec-sm">
   <div class="wrap">
     <div class="anim" style="max-width:560px;margin:0 auto;text-align:center;">
       <div class="guarantee-badge"><span class="material-symbols-rounded">verified_user</span></div>
       <h2 class="t-h2" style="margin-bottom:12px;">7 dias de garantia total.</h2>
-      <p class="t-lg" style="color:var(--t2);margin-bottom:20px;">Acesse, explore as Jornadas, consulte os agentes de IA. Se em 7 dias não for o que esperava, devolvemos 100% — sem formulários, sem perguntas.</p>
+      <p class="t-lg" style="color:var(--t2);margin-bottom:20px;">Acesse, explore as Jornadas, consulte os agentes de IA. Se em 7 dias não for o que esperava, devolvemos 100%, sem formulários e sem perguntas.</p>
       <div style="padding:16px 24px;background:var(--bg-2);border-radius:var(--r-md);border:1px solid var(--border);margin-bottom:28px;">
         <p class="t-body" style="color:var(--t2);font-style:italic;">O risco é 100% nosso. Você não arrisca nada.</p>
       </div>
-      <a href="https://chk.eduzz.com/dqvwtrlu" class="btn-green btn-green-lg">Começar com garantia de 7 dias</a>
+      <a href="https://zhub.lab2learn.com.br/checkout" class="btn-green btn-green-lg">Começar com garantia de 7 dias</a>
     </div>
   </div>
 </section>
@@ -1000,41 +1239,41 @@
 <!-- ═══════════════════════════════════════
      FAQ
 ═══════════════════════════════════════ -->
-<section class="bg-2 sec">
+<section class="bg-1 sec" id="faq">
   <div class="wrap">
     <div style="text-align:center;margin-bottom:48px;" class="anim">
       <div class="chip" style="display:inline-flex;margin-bottom:16px;">Dúvidas</div>
       <h2 class="t-h2">Perguntas frequentes.</h2>
     </div>
     <div class="anim d1" style="max-width:720px;margin:0 auto;">
-      <div class="faq-item">
-        <button class="faq-btn" aria-expanded="false"><span>Para qual perfil o Zhub é mais indicado?</span><span class="faq-icon"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1V11M1 6H11" stroke="#888899" stroke-width="2" stroke-linecap="round"/></svg></span></button>
+      <details class="faq-item" name="faq-group">
+        <summary class="faq-btn"><span>Para qual perfil o Zhub é mais indicado?</span><span class="faq-icon"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1V11M1 6H11" stroke="#888899" stroke-width="2" stroke-linecap="round"/></svg></span></summary>
         <div class="faq-body"><p>Consultores funcionais, desenvolvedores ABAP, arquitetos SAP, analistas de negócio, especialistas em integração e líderes técnicos. Se você trabalha com S/4HANA, Clean Core, SAP BTP ou integrações SAP, o Zhub foi feito para você.</p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-btn" aria-expanded="false"><span>Preciso dedicar muito tempo por semana?</span><span class="faq-icon"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1V11M1 6H11" stroke="#888899" stroke-width="2" stroke-linecap="round"/></svg></span></button>
+      </details>
+      <details class="faq-item" name="faq-group">
+        <summary class="faq-btn"><span>Preciso dedicar muito tempo por semana?</span><span class="faq-icon"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1V11M1 6H11" stroke="#888899" stroke-width="2" stroke-linecap="round"/></svg></span></summary>
         <div class="faq-body"><p>O Zhub foi construído para se encaixar na rotina de quem trabalha em projetos SAP. Você estuda no seu ritmo e usa os agentes de IA para tirar dúvidas no momento em que elas aparecem. Não existe carga horária mínima.</p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-btn" aria-expanded="false"><span>Os agentes de IA são diferentes de um ChatGPT comum?</span><span class="faq-icon"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1V11M1 6H11" stroke="#888899" stroke-width="2" stroke-linecap="round"/></svg></span></button>
-        <div class="faq-body"><p>Sim. Um modelo genérico responde sobre SAP com base em documentação pública. Os agentes do Zhub foram treinados com experiência real da Lab2learn em projetos SAP — a resposta tem contexto de projeto, não só de documentação.</p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-btn" aria-expanded="false"><span>O conteúdo acompanha as atualizações do ecossistema SAP?</span><span class="faq-icon"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1V11M1 6H11" stroke="#888899" stroke-width="2" stroke-linecap="round"/></svg></span></button>
+      </details>
+      <details class="faq-item" name="faq-group">
+        <summary class="faq-btn"><span>Os agentes de IA são diferentes de um ChatGPT comum?</span><span class="faq-icon"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1V11M1 6H11" stroke="#888899" stroke-width="2" stroke-linecap="round"/></svg></span></summary>
+        <div class="faq-body"><p>Sim. Um modelo genérico responde sobre SAP com base em documentação pública. Os agentes do Zhub foram treinados com experiência real da Lab2learn em projetos SAP: a resposta tem contexto de projeto, não só de documentação.</p></div>
+      </details>
+      <details class="faq-item" name="faq-group">
+        <summary class="faq-btn"><span>O conteúdo acompanha as atualizações do ecossistema SAP?</span><span class="faq-icon"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1V11M1 6H11" stroke="#888899" stroke-width="2" stroke-linecap="round"/></svg></span></summary>
         <div class="faq-body"><p>O ecossistema SAP evolui rápido e o Zhub acompanha essa evolução. A plataforma é atualizada continuamente com novos conteúdos, Jornadas e melhorias nos agentes de IA. Seu acesso anual inclui tudo que for publicado durante o período.</p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-btn" aria-expanded="false"><span>Como funciona o acesso após a compra?</span><span class="faq-icon"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1V11M1 6H11" stroke="#888899" stroke-width="2" stroke-linecap="round"/></svg></span></button>
+      </details>
+      <details class="faq-item" name="faq-group">
+        <summary class="faq-btn"><span>Como funciona o acesso após a compra?</span><span class="faq-icon"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1V11M1 6H11" stroke="#888899" stroke-width="2" stroke-linecap="round"/></svg></span></summary>
         <div class="faq-body"><p>O acesso é imediato após a confirmação do pagamento. Você recebe um e-mail com as instruções e já pode entrar, explorar as Jornadas e usar os agentes de IA no mesmo dia.</p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-btn" aria-expanded="false"><span>E se eu não gostar da plataforma?</span><span class="faq-icon"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1V11M1 6H11" stroke="#888899" stroke-width="2" stroke-linecap="round"/></svg></span></button>
+      </details>
+      <details class="faq-item" name="faq-group">
+        <summary class="faq-btn"><span>E se eu não gostar da plataforma?</span><span class="faq-icon"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1V11M1 6H11" stroke="#888899" stroke-width="2" stroke-linecap="round"/></svg></span></summary>
         <div class="faq-body"><p>Você tem 7 dias para explorar tudo. Se não for o que esperava, basta enviar um e-mail para lab2learn@lab2dev.com e devolvemos 100% do investimento. Sem formulários. Sem perguntas.</p></div>
-      </div>
+      </details>
     </div>
     <div class="anim" style="text-align:center;margin-top:48px;">
-      <a href="https://chk.eduzz.com/dqvwtrlu" class="btn-green btn-green-lg">Começar no Zhub agora</a>
-      <p class="t-sm" style="color:var(--t3);margin-top:12px;">12x de R$154,82 · Acesso imediato · 7 dias de garantia</p>
+      <a href="https://zhub.lab2learn.com.br/checkout" class="btn-green btn-green-lg">Começar no Zhub agora</a>
+      <p class="t-sm" style="color:var(--t3);margin-top:12px;">12x de R$165,17 · Acesso imediato · 7 dias de garantia</p>
     </div>
   </div>
 </section>
@@ -1044,37 +1283,50 @@
 ═══════════════════════════════════════ -->
 <footer style="background:var(--bg);border-top:1px solid var(--border);padding:56px 0 32px;">
   <div class="wrap">
-    <div style="display:grid;grid-template-columns:1fr auto;gap:48px;margin-bottom:40px;">
+    <div class="footer-grid">
       <div>
         <img src="assets/logos/Logo Horizontal Lab2learn - Fundo Claro.svg" alt="Lab2learn" id="footer-logo-l" style="height:18px;margin-bottom:14px;display:block;">
         <img src="assets/logos/Logo Horizontal Lab2learn - Fundo Escuro.svg" alt="Lab2learn" id="footer-logo-d" style="height:18px;margin-bottom:14px;display:none;">
         <p class="t-sm footer-muted" style="color:var(--t3);max-width:260px;margin-bottom:6px;">A plataforma de aprendizado e inteligência especializada no ecossistema SAP.</p>
-        <p class="t-sm footer-muted" style="color:var(--t3);">Av. Hilário Pereira de Souza, 406 Torre 2 — Osasco, SP</p>
+        <p class="t-sm footer-muted" style="color:var(--t3);">Av. Hilário Pereira de Souza, 406 Torre 2, Osasco, SP</p>
         <div style="display:flex;gap:8px;margin-top:16px;">
-          <a href="https://www.youtube.com/@lab2learn" target="_blank" style="width:34px;height:34px;border-radius:50%;background:var(--bg-2);border:1px solid var(--border-2);display:flex;align-items:center;justify-content:center;transition:border-color .2s;" onmouseover="this.style.borderColor='var(--purple)'" onmouseout="this.style.borderColor='var(--border-2)'">
+          <a href="https://www.youtube.com/@lab2learn" target="_blank" style="width:40px;height:40px;border-radius:50%;background:var(--bg-2);border:1px solid var(--border-2);display:flex;align-items:center;justify-content:center;transition:border-color .2s;" onmouseover="this.style.borderColor='var(--purple)'" onmouseout="this.style.borderColor='var(--border-2)'">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="var(--t3)"><path d="M23.5 6.2a3.01 3.01 0 0 0-2.12-2.13C19.54 3.6 12 3.6 12 3.6s-7.54 0-9.38.47A3.01 3.01 0 0 0 .5 6.2C.03 8.05 0 12 0 12s.03 3.95.5 5.8a3.01 3.01 0 0 0 2.12 2.13C4.46 20.4 12 20.4 12 20.4s7.54 0 9.38-.47a3.01 3.01 0 0 0 2.12-2.13c.47-1.85.5-5.8.5-5.8s-.03-3.95-.5-5.8zM9.6 15.6V8.4l6.27 3.6-6.27 3.6z"/></svg>
           </a>
-          <a href="https://www.linkedin.com/company/lab2learn" target="_blank" style="width:34px;height:34px;border-radius:50%;background:var(--bg-2);border:1px solid var(--border-2);display:flex;align-items:center;justify-content:center;transition:border-color .2s;" onmouseover="this.style.borderColor='var(--purple)'" onmouseout="this.style.borderColor='var(--border-2)'">
+          <a href="https://www.linkedin.com/company/lab2learn" target="_blank" style="width:40px;height:40px;border-radius:50%;background:var(--bg-2);border:1px solid var(--border-2);display:flex;align-items:center;justify-content:center;transition:border-color .2s;" onmouseover="this.style.borderColor='var(--purple)'" onmouseout="this.style.borderColor='var(--border-2)'">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="var(--t3)"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
           </a>
-          <a href="https://www.instagram.com/lab2learn.com.br" target="_blank" style="width:34px;height:34px;border-radius:50%;background:var(--bg-2);border:1px solid var(--border-2);display:flex;align-items:center;justify-content:center;transition:border-color .2s;" onmouseover="this.style.borderColor='var(--purple)'" onmouseout="this.style.borderColor='var(--border-2)'">
+          <a href="https://www.instagram.com/lab2learn.com.br" target="_blank" style="width:40px;height:40px;border-radius:50%;background:var(--bg-2);border:1px solid var(--border-2);display:flex;align-items:center;justify-content:center;transition:border-color .2s;" onmouseover="this.style.borderColor='var(--purple)'" onmouseout="this.style.borderColor='var(--border-2)'">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--t3)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
           </a>
         </div>
       </div>
-      <div style="display:flex;gap:48px;">
+      <div class="footer-cols">
         <div>
-          <p style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--t3);margin-bottom:14px;">Contato</p>
-          <div style="display:flex;flex-direction:column;gap:8px;">
-            <a href="https://lab2learn.com.br/" style="color:var(--t2);text-decoration:none;font-size:14px;" target="_blank">lab2learn.com.br</a>
-            <a href="mailto:lab2learn@lab2dev.com" style="color:var(--t2);text-decoration:none;font-size:14px;">lab2learn@lab2dev.com</a>
+          <p class="footer-col-title">Trilhas</p>
+          <div class="footer-col-links">
+            <a href="cursos/sap-core-foundations.html">SAP CORE - Foundations</a>
+            <a href="cursos/sap-platform-innovation-foundations.html">SAP Platform & Innovation</a>
+            <a href="cursos/explore-sap-rap.html">Explore SAP RAP</a>
+            <a href="cursos/explore-sap-cap.html">Explore SAP CAP</a>
+            <a href="cursos/explore-sap-integration-suite.html">Explore SAP Integration Suite</a>
+            <a href="cursos/explore-datasphere.html">Explore Datasphere</a>
+            <a href="cursos/explore-clean-core.html">Explore Clean Core</a>
+            <a href="cursos/explore-sap-btp.html">Explore SAP BTP</a>
           </div>
         </div>
         <div>
-          <p style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--t3);margin-bottom:14px;">Plataforma</p>
-          <div style="display:flex;flex-direction:column;gap:8px;">
-            <a href="https://zhub.lab2learn.com.br/agents" style="color:var(--t2);text-decoration:none;font-size:14px;" target="_blank">Acessar o Zhub</a>
-            <a href="https://chk.eduzz.com/dqvwtrlu" style="color:var(--green);text-decoration:none;font-size:14px;font-weight:600;">Começar agora</a>
+          <p class="footer-col-title">Contato</p>
+          <div class="footer-col-links">
+            <a href="https://lab2learn.com.br/" target="_blank">lab2learn.com.br</a>
+            <a href="mailto:lab2learn@lab2dev.com">lab2learn@lab2dev.com</a>
+          </div>
+        </div>
+        <div>
+          <p class="footer-col-title">Plataforma</p>
+          <div class="footer-col-links">
+            <a href="https://zhub.lab2learn.com.br/agents" target="_blank">Acessar o Zhub</a>
+            <a href="https://zhub.lab2learn.com.br/checkout" style="color:var(--green);font-weight:600;">Começar agora</a>
           </div>
         </div>
       </div>
@@ -1092,7 +1344,7 @@
 
 <!-- STICKY MOBILE -->
 <div id="sticky">
-  <a href="https://chk.eduzz.com/dqvwtrlu" class="btn-green btn-green-lg" style="width:100%;justify-content:center;">Começar agora — 12x de R$154,82</a>
+  <a href="https://zhub.lab2learn.com.br/checkout" class="btn-green btn-green-lg" style="width:100%;justify-content:center;">Começar agora · 12x de R$165,17</a>
 </div>
 
 <!-- BACK TO TOP -->
@@ -1107,6 +1359,34 @@
     <button onclick="document.getElementById('cookie').classList.remove('show');localStorage.setItem('ck','1')" class="btn-green">Aceitar</button>
   </div>
 </div>
+
+<script>
+/* ─── CONTAGEM REGRESSIVA SEMANA DO CLIENTE ─── */
+(function(){
+  var promoEnd = new Date('2026-09-15T23:59:59-03:00');
+  var els = document.querySelectorAll('.promo-countdown');
+  if(!els.length) return;
+  var timer;
+  function pad(n){ return n < 10 ? '0' + n : '' + n; }
+  function tick(){
+    var diff = promoEnd - new Date();
+    var text;
+    if(diff <= 0){
+      text = 'Oferta encerrada';
+      if(timer) clearInterval(timer);
+    } else {
+      var d = Math.floor(diff / 86400000);
+      var h = Math.floor((diff % 86400000) / 3600000);
+      var m = Math.floor((diff % 3600000) / 60000);
+      var s = Math.floor((diff % 60000) / 1000);
+      text = d + 'd ' + pad(h) + 'h ' + pad(m) + 'm ' + pad(s) + 's';
+    }
+    els.forEach(function(el){ el.textContent = text; });
+  }
+  tick();
+  timer = setInterval(tick, 1000);
+})();
+</script>
 
 <script>
 /* ─── DARK MODE ─── */
@@ -1145,14 +1425,6 @@
   }
 })();
 
-/* ─── FAQ ─── */
-document.querySelectorAll('.faq-btn').forEach(function(btn){
-  btn.addEventListener('click',function(){
-    var expanded=this.getAttribute('aria-expanded')==='true';
-    document.querySelectorAll('.faq-btn').forEach(function(b){b.setAttribute('aria-expanded','false');b.nextElementSibling.classList.remove('open');});
-    if(!expanded){this.setAttribute('aria-expanded','true');this.nextElementSibling.classList.add('open');}
-  });
-});
 
 /* ─── COOKIE ─── */
 if(!localStorage.getItem('ck')) setTimeout(function(){document.getElementById('cookie').classList.add('show');},3000);
@@ -1170,11 +1442,20 @@ document.querySelectorAll('a[href^="#"]').forEach(function(a){
   });
 });
 
-/* ─── BACK TO TOP + NAV BORDER ─── */
+/* ─── BACK TO TOP + NAV BORDER + HIDE HEADER ON SCROLL ─── */
+var lastScrollY=window.scrollY;
 window.addEventListener('scroll',function(){
+  var y=window.scrollY;
   var b=document.getElementById('back-top');
-  if(b) b.classList.toggle('vis',window.scrollY>400);
-  document.querySelector('nav').classList.toggle('scrolled',window.scrollY>10);
+  if(b) b.classList.toggle('vis',y>400);
+  document.querySelector('nav').classList.toggle('scrolled',y>10);
+
+  if(y>lastScrollY && y>140){
+    document.body.classList.add('hide-topbar');
+  } else if(y<lastScrollY){
+    document.body.classList.remove('hide-topbar');
+  }
+  lastScrollY=y;
 });
 
 /* ─── ENTRANCE ANIMATIONS ─── */
@@ -1255,6 +1536,13 @@ setTimeout(function(){var b=document.getElementById('prog-bar');if(b)b.style.wid
     {q:'Diferença entre RAP e ABAP clássico?',a:'RAP é o modelo moderno do S/4HANA com CDS Views e comportamento declarativo. ABAP clássico não segue Clean Core.'},
     {q:'Como validar se uma Z viola Clean Core?',a:'Use o ABAP Test Cockpit para detectar APIs internas e tabelas não suportadas.'},
   ];
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    qEl.textContent=pairs[0].q;
+    aEl.textContent=pairs[0].a;
+    if(cq)cq.style.display='none';
+    if(ca)ca.style.display='none';
+    return;
+  }
   var idx=0,qi=0,ai=0,phase='typeQ';
   function cursor(p){
     if(cq)cq.style.display=(p==='typeQ'||p==='eraseQ')?'inline-block':'none';
@@ -1281,67 +1569,56 @@ setTimeout(function(){var b=document.getElementById('prog-bar');if(b)b.style.wid
   cursor('typeQ');setTimeout(tick,1200);
 })();
 
-/* ─── PROBLEM CANVAS ─── */
+/* ─── CARROSSEL DE ESPECIALISTAS ─── */
 (function(){
-  var c=document.getElementById('prob-canvas');
-  if(!c)return;
-  var ctx=c.getContext('2d');
-  var W,H,nodes,conns,raf,tick=0;
-  var SRC=['YouTube','SAP Docs','Fórum SAP','Blog Técnico','Curso A','LinkedIn'];
-  function setup(){
-    W=c.offsetWidth;H=c.offsetHeight;
-    var dpr=window.devicePixelRatio||1;
-    c.width=Math.round(W*dpr);c.height=Math.round(H*dpr);ctx.scale(dpr,dpr);
-    nodes=SRC.map(function(label,i){
-      var a=(i/SRC.length)*Math.PI*2+.28*(i%2?1:-1),r=80+(i%3)*26;
-      return{label:label,x:W/2+Math.cos(a)*r,y:H/2+Math.sin(a)*r,vx:(Math.random()-.5)*.2,vy:(Math.random()-.5)*.2,ph:i*(Math.PI/3),dotR:7};
-    });
-    conns=[[0,2],[1,4],[2,5],[0,3],[3,1],[4,5],[1,2]];
+  var track = document.getElementById('expert-track');
+  if(!track) return;
+  var slides = track.querySelectorAll('.expert-slide');
+  var prevBtn = document.getElementById('expert-prev');
+  var nextBtn = document.getElementById('expert-next');
+  var dotsWrap = document.getElementById('expert-dots');
+
+  slides.forEach(function(_, i){
+    var dot = document.createElement('button');
+    dot.className = 'expert-dot';
+    dot.setAttribute('aria-label', 'Ir para especialista ' + (i + 1));
+    dot.addEventListener('click', function(){ scrollToSlide(i); });
+    dotsWrap.appendChild(dot);
+  });
+  var dots = dotsWrap.querySelectorAll('.expert-dot');
+
+  function slideStep(){
+    return slides[0].getBoundingClientRect().width + 20;
   }
-  function draw(){
-    ctx.clearRect(0,0,W,H);tick++;
-    var dark=document.documentElement.getAttribute('data-theme')==='dark';
-    var bg=ctx.createRadialGradient(W/2,H/2,0,W/2,H/2,W*.6);
-    bg.addColorStop(0,dark?'rgba(60,20,20,.40)':'rgba(255,220,220,.25)');
-    bg.addColorStop(1,'rgba(0,0,0,0)');
-    ctx.fillStyle=bg;ctx.fillRect(0,0,W,H);
-    nodes.forEach(function(n){
-      n.ph+=.018;n.x+=n.vx+Math.sin(n.ph*.6)*.18;n.y+=n.vy+Math.cos(n.ph*.4)*.14;
-      var mg=52;
-      if(n.x<mg)n.vx=Math.abs(n.vx);if(n.x>W-mg)n.vx=-Math.abs(n.vx);
-      if(n.y<mg)n.vy=Math.abs(n.vy);if(n.y>H-mg)n.vy=-Math.abs(n.vy);
-    });
-    conns.forEach(function(conn,ci){
-      var n1=nodes[conn[0]],n2=nodes[conn[1]];
-      var cpx=(n1.x+n2.x)/2+Math.sin(tick*.012+ci*1.3)*28;
-      var cpy=(n1.y+n2.y)/2+Math.cos(tick*.009+ci*1.1)*20;
-      ctx.beginPath();ctx.moveTo(n1.x,n1.y);ctx.quadraticCurveTo(cpx,cpy,n2.x,n2.y);
-      ctx.strokeStyle='rgba(220,60,60,.20)';ctx.lineWidth=1.2;ctx.setLineDash([4,7]);ctx.stroke();ctx.setLineDash([]);
-    });
-    var qp=(Math.sin(tick*.028)+1)/2;
-    var qg=ctx.createRadialGradient(W/2,H/2,0,W/2,H/2,44);
-    qg.addColorStop(0,'rgba(200,60,60,'+(dark?.30:.18)+qp*.10+')');qg.addColorStop(1,'rgba(200,60,60,0)');
-    ctx.fillStyle=qg;ctx.beginPath();ctx.arc(W/2,H/2,44,0,Math.PI*2);ctx.fill();
-    ctx.font='800 28px Poppins,sans-serif';
-    ctx.fillStyle='rgba(200,60,60,'+(dark?.70:.55)+')';
-    ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText('?',W/2,H/2);
-    nodes.forEach(function(n){
-      var p=(Math.sin(n.ph)+1)/2;
-      var ng=ctx.createRadialGradient(n.x,n.y,0,n.x,n.y,24);
-      ng.addColorStop(0,'rgba(220,80,80,'+(dark?.18:.10)*p+')');ng.addColorStop(1,'rgba(220,80,80,0)');
-      ctx.fillStyle=ng;ctx.beginPath();ctx.arc(n.x,n.y,24,0,Math.PI*2);ctx.fill();
-      ctx.beginPath();ctx.arc(n.x,n.y,n.dotR,0,Math.PI*2);
-      ctx.fillStyle=dark?'#1A1828':'#fff';ctx.fill();
-      ctx.strokeStyle='rgba(210,70,70,'+(dark?.55:.42)+p*.20+')';ctx.lineWidth=1.8;ctx.stroke();
-      ctx.font='600 10px Poppins,sans-serif';
-      ctx.fillStyle=dark?'rgba(180,180,200,.80)':'rgba(74,75,87,.75)';
-      ctx.textAlign='center';ctx.textBaseline='top';ctx.fillText(n.label,n.x,n.y+n.dotR+5);
-    });
-    raf=requestAnimationFrame(draw);
+  function currentIndex(){
+    return Math.round(track.scrollLeft / slideStep());
   }
-  setup();draw();
-  var rt;window.addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(function(){cancelAnimationFrame(raf);setup();draw();},120);});
+  function scrollToSlide(i){
+    track.scrollTo({ left: i * slideStep(), behavior: 'smooth' });
+  }
+  function updateUI(){
+    var idx = Math.min(currentIndex(), dots.length - 1);
+    dots.forEach(function(d, i){ d.classList.toggle('active', i === idx); });
+  }
+
+  if(prevBtn) prevBtn.addEventListener('click', function(){
+    var idx = currentIndex();
+    scrollToSlide(idx <= 0 ? slides.length - 1 : idx - 1);
+  });
+  if(nextBtn) nextBtn.addEventListener('click', function(){
+    var idx = currentIndex();
+    scrollToSlide(idx >= slides.length - 1 ? 0 : idx + 1);
+  });
+
+  var scrollTimer;
+  track.addEventListener('scroll', function(){
+    clearTimeout(scrollTimer);
+    scrollTimer = setTimeout(updateUI, 80);
+  });
+  window.addEventListener('resize', updateUI);
+  updateUI();
 })();
+
 </script>
 </body>
 </html>
