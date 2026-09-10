@@ -203,7 +203,16 @@
     #theme-btn:hover{background:var(--bg-3);}
     #theme-btn .material-symbols-rounded{font-size:16px;color:var(--t2);}
     .nav-cta-wrap{display:none;}
-    @media(min-width:640px){.nav-cta-wrap{display:flex;}}
+    @media(min-width:768px){.nav-cta-wrap{display:flex;}}
+
+    /* MOBILE MENU — abriga links que não cabem no header em telas pequenas (ex: Área de membros) */
+    .mobile-menu-btn{display:flex;width:32px;height:32px;border-radius:var(--r-sm);background:var(--bg-2);border:1px solid var(--border-2);cursor:pointer;align-items:center;justify-content:center;}
+    .mobile-menu-btn .material-symbols-rounded{font-size:18px;color:var(--t2);}
+    @media(min-width:768px){.mobile-menu-btn{display:none;}}
+    .mobile-menu{display:none;position:absolute;top:calc(100% + 8px);right:16px;background:var(--card);border:1px solid var(--border-2);border-radius:var(--r-md);box-shadow:var(--sh-md);padding:6px;min-width:190px;z-index:95;}
+    .mobile-menu.open{display:block;}
+    .mobile-menu-link{display:flex;align-items:center;gap:8px;padding:10px 12px;border-radius:var(--r-sm);color:var(--t1);font-size:13px;font-weight:600;text-decoration:none;}
+    .mobile-menu-link:hover{background:var(--bg-2);}
 
     /* STICKY CTA */
     #sticky{display:none;position:fixed;bottom:0;left:0;right:0;z-index:80;padding:12px 20px 20px;background:var(--bg);border-top:1px solid var(--border);}
@@ -212,6 +221,37 @@
     #back-top.vis{opacity:1;pointer-events:all;}
     #back-top:hover{transform:translateY(-2px);}
     @media(min-width:768px){#back-top{bottom:32px;}}
+
+    /* MOBILE — evita horizontal overflow e botões repetidos (o sticky já cobre a ação em todo o scroll) */
+    @media(max-width:767px){
+      html,body{overflow-x:hidden;}
+      .cta-inline{display:none;}
+    }
+
+    /* MOBILE — grids de 2/3 colunas que não tinham breakpoint e "vazavam" a tela */
+    .grid-2-mob{display:grid;grid-template-columns:repeat(2,1fr);}
+    @media(max-width:640px){.grid-2-mob{grid-template-columns:1fr;}}
+    .grid-3-mob{display:grid;grid-template-columns:repeat(3,1fr);}
+    @media(max-width:900px){.grid-3-mob{grid-template-columns:repeat(2,1fr);}}
+    @media(max-width:640px){.grid-3-mob{grid-template-columns:1fr;}}
+
+    /* MOBILE — remove o cabeçalho duplicado da tabela antes/depois (os ícones ✗/✓ já identificam cada linha) */
+    @media(max-width:640px){.ba-before-h,.ba-after-h,.ba-b{display:none;}.ba-a{border-right:none;}}
+
+    /* MOBILE — carrossel (mesmo padrão do carrossel de especialistas) para trilhas e detalhes do acesso */
+    /* seletor composto (.classe-original.mob-carousel) para garantir prioridade sobre o display:grid do desktop, independente da ordem no arquivo */
+    @media(max-width:640px){
+      .trilha-grid.mob-carousel,.grid-3-mob.mob-carousel,.grid-2-mob.mob-carousel{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;gap:16px;padding:4px 4px 12px;margin:0 -4px;-webkit-overflow-scrolling:touch;scrollbar-width:none;-ms-overflow-style:none;}
+      .trilha-grid.mob-carousel::-webkit-scrollbar,.grid-3-mob.mob-carousel::-webkit-scrollbar,.grid-2-mob.mob-carousel::-webkit-scrollbar{display:none;}
+      .mob-carousel > *{flex:0 0 86%;scroll-snap-align:start;min-width:0;}
+    }
+    .mob-carousel-dots{display:none;align-items:center;justify-content:center;gap:6px;margin-top:4px;}
+    @media(max-width:640px){.mob-carousel-dots{display:flex;}}
+    .mob-carousel-dot{width:6px;height:6px;padding:0;border-radius:50%;background:var(--border-2);border:none;cursor:pointer;transition:background-color .2s,width .2s;}
+    .mob-carousel-dot.active{background:var(--purple);width:20px;border-radius:3px;}
+
+    /* MOBILE — a faixa de promoção tem altura fixa (40px); em telas estreitas o texto não pode quebrar linha e "vazar" por cima do menu */
+    @media(max-width:480px){#abar .ab{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:10.5px;}}
 
     /* COOKIE BAR */
     #cookie{transform:translateY(100%);opacity:0;pointer-events:none;transition:transform .3s cubic-bezier(.22,1,.36,1),opacity .3s ease;}
@@ -282,6 +322,22 @@
     .pillar-tag{display:inline-flex;align-items:center;background:var(--pbg);border:1px solid var(--pborder);color:var(--purple);font-size:11px;font-weight:600;padding:4px 12px;border-radius:var(--r-pill);}
 
     /* TRILHAS */
+    .trilha-filters{display:flex;flex-wrap:wrap;align-items:center;gap:8px;justify-content:center;margin-bottom:32px;}
+    .trilha-filter-btn{display:inline-flex;align-items:center;height:32px;padding:0 16px;border-radius:var(--r-pill);background:var(--bg-1);border:1px solid var(--border-2);color:var(--t2);font-family:'Poppins',sans-serif;font-weight:600;font-size:12.5px;cursor:pointer;white-space:nowrap;transition:background .2s,color .2s,border-color .2s;}
+    .trilha-filter-btn:hover{border-color:var(--pborder);color:var(--purple);}
+    .trilha-filter-btn.active{background:var(--purple);border-color:var(--purple);color:#fff;}
+    .trilha-card.filtered-out{display:none;}
+    @media(max-width:640px){
+      .trilha-filters{gap:8px 6px;margin-bottom:24px;}
+      .trilha-filter-btn{height:30px;padding:0 12px;font-size:12px;}
+    }
+    /* DESKTOP — tags acompanham o scroll até o fim da última linha de cursos, pra filtrar sem precisar voltar ao topo */
+    .trilha-scope{position:relative;}
+    @media(min-width:901px){
+      .trilha-filters{position:sticky;top:112px;z-index:40;background:var(--bg-2);padding:12px 0;margin:-12px 0 20px;transition:top .3s ease;}
+      /* quando o header some no scroll para baixo, as tags sobem junto pra não sobrar espaço vazio no topo */
+      body.hide-topbar .trilha-filters{top:16px;}
+    }
     .trilha-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
     @media(max-width:900px){.trilha-grid{grid-template-columns:repeat(2,1fr);}}
     @media(max-width:640px){.trilha-grid{grid-template-columns:1fr;}}
@@ -544,6 +600,12 @@
       <a href="https://zhub.lab2learn.com.br/login" target="_blank" class="btn-outline" style="height:32px;padding:0 14px;font-size:13px;display:inline-flex;align-items:center;gap:6px;"><span class="material-symbols-rounded" style="font-size:15px;">lock_open</span>Área de membros</a>
       <a href="https://zhub.lab2learn.com.br/checkout" class="btn-green">Começar agora</a>
     </div>
+    <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Abrir menu" aria-expanded="false">
+      <span class="material-symbols-rounded">menu</span>
+    </button>
+    <div id="mobile-menu" class="mobile-menu">
+      <a href="https://zhub.lab2learn.com.br/login" target="_blank" class="mobile-menu-link"><span class="material-symbols-rounded" style="font-size:16px;">lock_open</span>Área de membros</a>
+    </div>
   </div>
 </nav>
 
@@ -568,7 +630,7 @@
     </p>
 
     <div class="anim d3" style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:center;margin-bottom:28px;">
-      <a href="https://zhub.lab2learn.com.br/checkout" class="btn-green btn-green-lg">Começar agora</a>
+      <a href="https://zhub.lab2learn.com.br/checkout" class="btn-green btn-green-lg cta-inline">Começar agora</a>
       <a href="#detalhes" class="btn-outline">Ver a plataforma</a>
     </div>
 
@@ -691,7 +753,7 @@
 
         <p class="t-lg" style="color:var(--t1);font-weight:600;margin-top:28px;margin-bottom:0;">É pra isso que existe o Zhub: jornadas de aprendizado, agentes de IA especializados e comunidade, tudo em um só lugar.</p>
 
-        <a href="https://zhub.lab2learn.com.br/checkout" class="btn-green btn-green-lg" style="margin-top:20px;">Conhecer o Zhub</a>
+        <a href="https://zhub.lab2learn.com.br/checkout" class="btn-green btn-green-lg cta-inline" style="margin-top:20px;">Conhecer o Zhub</a>
       </div>
       <div class="anim-s d2 card" style="position:relative;aspect-ratio:1/1;overflow:hidden;">
         <img src="assets/seção 2.png" alt="Profissional estudando SAP pelo notebook" style="width:100%;height:100%;object-fit:cover;object-position:50% 25%;display:block;">
@@ -751,7 +813,7 @@
       <div class="ba-cell ba-a" style="border-bottom:none;">Autonomia crescente em S/4HANA, BTP e Clean Core</div>
     </div>
     <div class="anim" style="text-align:center;">
-      <a href="https://zhub.lab2learn.com.br/checkout" class="btn-green btn-green-lg">Quero evoluir com o Zhub</a>
+      <a href="https://zhub.lab2learn.com.br/checkout" class="btn-green btn-green-lg cta-inline">Quero evoluir com o Zhub</a>
     </div>
   </div>
 </section>
@@ -767,9 +829,21 @@
       <p class="t-lg" style="color:var(--t2);">8 trilhas organizadas em módulos e aulas para você evoluir com progressão lógica dentro do ecossistema SAP.</p>
     </div>
 
-    <div class="trilha-grid">
+    <div class="trilha-scope">
+    <div class="trilha-filters anim" id="trilha-filters" role="group" aria-label="Filtrar trilhas por tema">
+      <button class="trilha-filter-btn active" data-tag="todos">Todos</button>
+      <button class="trilha-filter-btn" data-tag="fundamentos">Fundamentos</button>
+      <button class="trilha-filter-btn" data-tag="clean-core">Clean Core</button>
+      <button class="trilha-filter-btn" data-tag="btp">SAP BTP</button>
+      <button class="trilha-filter-btn" data-tag="abap-rap">ABAP & RAP</button>
+      <button class="trilha-filter-btn" data-tag="integracao">Integração</button>
+      <button class="trilha-filter-btn" data-tag="dados-ia">Dados & IA</button>
+    </div>
+    <p class="t-sm" id="trilha-empty" style="display:none;text-align:center;color:var(--t3);margin-bottom:20px;">Nenhuma trilha nesse tema ainda — novas trilhas chegando em breve.</p>
 
-      <div class="trilha-card anim d1">
+    <div class="trilha-grid mob-carousel" id="trilha-track">
+
+      <div class="trilha-card anim d1" data-tag="fundamentos">
         <div class="trilha-card-hdr fam-sapblue"><div class="trilha-card-hdr-icon"><span class="material-symbols-rounded">school</span></div></div>
         <div class="trilha-card-body">
           <span class="trilha-level lv-ini">Iniciante</span>
@@ -780,7 +854,7 @@
         </div>
       </div>
 
-      <div class="trilha-card anim d2">
+      <div class="trilha-card anim d2" data-tag="fundamentos">
         <div class="trilha-card-hdr fam-sapblue"><div class="trilha-card-hdr-icon"><span class="material-symbols-rounded">bolt</span></div></div>
         <div class="trilha-card-body">
           <span class="trilha-level lv-ini">Iniciante</span>
@@ -791,7 +865,7 @@
         </div>
       </div>
 
-      <div class="trilha-card anim d3">
+      <div class="trilha-card anim d3" data-tag="abap-rap">
         <div class="trilha-card-hdr fam-orange"><div class="trilha-card-hdr-icon"><span class="material-symbols-rounded">data_object</span></div></div>
         <div class="trilha-card-body">
           <span class="trilha-level lv-int">Intermediário</span>
@@ -802,7 +876,7 @@
         </div>
       </div>
 
-      <div class="trilha-card anim d4">
+      <div class="trilha-card anim d4" data-tag="btp">
         <div class="trilha-card-hdr fam-yellow"><div class="trilha-card-hdr-icon"><span class="material-symbols-rounded">terminal</span></div></div>
         <div class="trilha-card-body">
           <span class="trilha-level lv-int">Intermediário</span>
@@ -813,7 +887,7 @@
         </div>
       </div>
 
-      <div class="trilha-card anim d5">
+      <div class="trilha-card anim d5" data-tag="integracao">
         <div class="trilha-card-hdr fam-pink"><div class="trilha-card-hdr-icon"><span class="material-symbols-rounded">hub</span></div></div>
         <div class="trilha-card-body">
           <span class="trilha-level lv-ini">Iniciante</span>
@@ -824,7 +898,7 @@
         </div>
       </div>
 
-      <div class="trilha-card anim d6">
+      <div class="trilha-card anim d6" data-tag="dados-ia">
         <div class="trilha-card-hdr fam-blue"><div class="trilha-card-hdr-icon"><span class="material-symbols-rounded">database</span></div></div>
         <div class="trilha-card-body">
           <span class="trilha-level lv-ini">Iniciante</span>
@@ -835,7 +909,7 @@
         </div>
       </div>
 
-      <div class="trilha-card anim d1">
+      <div class="trilha-card anim d1" data-tag="clean-core">
         <div class="trilha-card-hdr fam-green"><div class="trilha-card-hdr-icon"><span class="material-symbols-rounded">eco</span></div></div>
         <div class="trilha-card-body">
           <span class="trilha-level lv-ini">Iniciante</span>
@@ -846,7 +920,7 @@
         </div>
       </div>
 
-      <div class="trilha-card anim d2">
+      <div class="trilha-card anim d2" data-tag="btp">
         <div class="trilha-card-hdr fam-purple"><div class="trilha-card-hdr-icon"><span class="material-symbols-rounded">cloud</span></div></div>
         <div class="trilha-card-body">
           <span class="trilha-level lv-ini">Iniciante</span>
@@ -858,9 +932,11 @@
       </div>
 
     </div><!-- /trilha-grid -->
+    <div class="mob-carousel-dots" id="trilha-dots"></div>
+    </div><!-- /trilha-scope -->
 
     <div class="anim" style="text-align:center;margin-top:40px;">
-      <a href="https://zhub.lab2learn.com.br/checkout" class="btn-green btn-green-lg">Quero acesso a todas as trilhas</a>
+      <a href="https://zhub.lab2learn.com.br/checkout" class="btn-green btn-green-lg cta-inline">Quero acesso a todas as trilhas</a>
     </div>
   </div>
 </section>
@@ -876,7 +952,7 @@
       <p class="t-lg" style="color:var(--t2);">Gravações exclusivas dos nossos encontros e sessões estratégicas sobre o ecossistema SAP, sem custo extra pra quem assina o Zhub.</p>
     </div>
 
-    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:24px;" class="anim-s d1">
+    <div style="gap:24px;" class="grid-2-mob anim-s d1">
 
       <div class="card card-purple" style="padding:32px;">
         <span class="material-symbols-rounded" style="font-size:28px;color:var(--purple);margin-bottom:16px;display:block;">groups</span>
@@ -904,7 +980,7 @@
       <p class="t-lg" style="color:var(--t2);">Cursos para desenvolver novas habilidades, agentes de IA para apoiar seu dia a dia e comunidade para trocar experiências com quem vive os mesmos desafios no ecossistema SAP.</p>
     </div>
     <!-- 3 colunas de itens — visível em um scroll -->
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:16px;" class="anim-s d1">
+    <div style="gap:20px;margin-bottom:16px;" class="grid-3-mob mob-carousel anim-s d1" id="detalhes-track">
 
       <!-- Coluna 1: Jornadas -->
       <div class="card" style="padding:28px;">
@@ -962,8 +1038,9 @@
       </div>
 
     </div><!-- /grid -->
+    <div class="mob-carousel-dots" id="detalhes-dots"></div>
     <div class="anim" style="text-align:center;margin-top:40px;">
-      <a href="https://zhub.lab2learn.com.br/checkout" class="btn-green btn-green-lg">Começar agora</a>
+      <a href="https://zhub.lab2learn.com.br/checkout" class="btn-green btn-green-lg cta-inline">Começar agora</a>
     </div>
   </div>
 </section>
@@ -1111,7 +1188,7 @@
       </button>
     </div>
     <div class="anim" style="text-align:center;margin-top:32px;">
-      <a href="https://zhub.lab2learn.com.br/checkout" class="btn-green btn-green-lg">Aprender com eles no Zhub</a>
+      <a href="https://zhub.lab2learn.com.br/checkout" class="btn-green btn-green-lg cta-inline">Aprender com eles no Zhub</a>
     </div>
   </div>
 </section>
@@ -1158,7 +1235,7 @@
       </div>
     </div>
     <div class="anim" style="text-align:center;">
-      <a href="https://zhub.lab2learn.com.br/checkout" class="btn-green btn-green-lg">Entrar para a comunidade</a>
+      <a href="https://zhub.lab2learn.com.br/checkout" class="btn-green btn-green-lg cta-inline">Entrar para a comunidade</a>
     </div>
   </div>
 </section>
@@ -1171,7 +1248,7 @@
     <div style="text-align:center;margin-bottom:48px;" class="anim">
       <h2 class="t-h2">O Zhub foi feito para você?</h2>
     </div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
+    <div style="gap:20px;" class="grid-2-mob">
       <div class="card anim d1" style="padding:32px;">
         <p style="font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--t3);margin-bottom:16px;">Não é pra você se</p>
         <ul class="cx-list">
@@ -1188,7 +1265,7 @@
           <li><span class="ck">✦</span>Quer uma fonte confiável para dúvidas de projeto</li>
           <li><span class="ck">✦</span>Quer crescer como referência técnica no ecossistema SAP</li>
         </ul>
-        <a href="https://zhub.lab2learn.com.br/checkout" class="btn-green btn-green-lg" style="width:100%;justify-content:center;">Começar agora</a>
+        <a href="https://zhub.lab2learn.com.br/checkout" class="btn-green btn-green-lg cta-inline" style="width:100%;justify-content:center;">Começar agora</a>
       </div>
     </div>
   </div>
@@ -1212,7 +1289,7 @@
         <p style="font-size:clamp(30px,5vw,46px);font-weight:800;color:var(--purple);line-height:1;margin-bottom:8px;">12x de R$165,17</p>
         <p style="font-size:14px;color:var(--t3);margin-bottom:6px;">de <s style="color:var(--t3);">R$1.997,00</s> · oferta por tempo limitado</p>
         <p class="t-sm" style="color:var(--t3);margin-bottom:32px;">Menos de R$4,10/dia para evoluir no ecossistema SAP</p>
-        <a href="https://zhub.lab2learn.com.br/checkout" class="btn-green btn-green-lg" style="width:100%;justify-content:center;margin-bottom:16px;">Começar agora</a>
+        <a href="https://zhub.lab2learn.com.br/checkout" class="btn-green btn-green-lg cta-inline" style="width:100%;justify-content:center;margin-bottom:16px;">Começar agora</a>
         <p class="t-sm" style="color:var(--t3);">Acesso imediato · Garantia de 7 dias · Cancele quando quiser</p>
       </div>
     </div>
@@ -1231,7 +1308,7 @@
       <div style="padding:16px 24px;background:var(--bg-2);border-radius:var(--r-md);border:1px solid var(--border);margin-bottom:28px;">
         <p class="t-body" style="color:var(--t2);font-style:italic;">O risco é 100% nosso. Você não arrisca nada.</p>
       </div>
-      <a href="https://zhub.lab2learn.com.br/checkout" class="btn-green btn-green-lg">Começar com garantia de 7 dias</a>
+      <a href="https://zhub.lab2learn.com.br/checkout" class="btn-green btn-green-lg cta-inline">Começar com garantia de 7 dias</a>
     </div>
   </div>
 </section>
@@ -1272,7 +1349,7 @@
       </details>
     </div>
     <div class="anim" style="text-align:center;margin-top:48px;">
-      <a href="https://zhub.lab2learn.com.br/checkout" class="btn-green btn-green-lg">Começar no Zhub agora</a>
+      <a href="https://zhub.lab2learn.com.br/checkout" class="btn-green btn-green-lg cta-inline">Começar no Zhub agora</a>
       <p class="t-sm" style="color:var(--t3);margin-top:12px;">12x de R$165,17 · Acesso imediato · 7 dias de garantia</p>
     </div>
   </div>
@@ -1468,6 +1545,109 @@ var io=new IntersectionObserver(function(entries){
   });
 },{threshold:.08,rootMargin:'0px 0px -56px 0px'});
 document.querySelectorAll('.anim,.anim-l,.anim-r,.anim-s,.anim-pop,.anim-blur').forEach(function(el){io.observe(el);});
+
+/* ─── MENU MOBILE (links que não cabem no header, ex: Área de membros) ─── */
+(function(){
+  var btn=document.getElementById('mobile-menu-btn');
+  var menu=document.getElementById('mobile-menu');
+  if(!btn||!menu) return;
+  btn.addEventListener('click',function(e){
+    e.stopPropagation();
+    var open=menu.classList.toggle('open');
+    btn.setAttribute('aria-expanded',open?'true':'false');
+  });
+  document.addEventListener('click',function(e){
+    if(menu.classList.contains('open') && !menu.contains(e.target) && e.target!==btn){
+      menu.classList.remove('open');
+      btn.setAttribute('aria-expanded','false');
+    }
+  });
+})();
+
+/* ─── DOTS DOS CARROSSÉIS MOBILE (trilhas + detalhes do acesso) ─── */
+function initMobileCarouselDots(trackId,dotsId){
+  var track=document.getElementById(trackId);
+  var dotsWrap=document.getElementById(dotsId);
+  if(!track||!dotsWrap) return null;
+
+  function visibleSlides(){
+    return Array.prototype.filter.call(track.children,function(el){
+      return !el.classList.contains('filtered-out');
+    });
+  }
+  function slideStep(slides){
+    return slides[0].getBoundingClientRect().width+16;
+  }
+  function updateDots(dots,slides){
+    if(!slides.length) return;
+    var idx=Math.min(Math.round(track.scrollLeft/slideStep(slides)),dots.length-1);
+    dots.forEach(function(d,i){d.classList.toggle('active',i===idx);});
+  }
+  function build(){
+    dotsWrap.innerHTML='';
+    var slides=visibleSlides();
+    if(!slides.length) return;
+    slides.forEach(function(_,i){
+      var dot=document.createElement('button');
+      dot.className='mob-carousel-dot';
+      dot.setAttribute('aria-label','Ir para item '+(i+1));
+      dot.addEventListener('click',function(){
+        track.scrollTo({left:i*slideStep(slides),behavior:'smooth'});
+      });
+      dotsWrap.appendChild(dot);
+    });
+    var dots=dotsWrap.querySelectorAll('.mob-carousel-dot');
+    updateDots(dots,slides);
+  }
+
+  var t;
+  track.addEventListener('scroll',function(){
+    clearTimeout(t);
+    t=setTimeout(function(){
+      updateDots(dotsWrap.querySelectorAll('.mob-carousel-dot'),visibleSlides());
+    },80);
+  });
+  build();
+  return {refresh:build};
+}
+var detalhesCarousel=initMobileCarouselDots('detalhes-track','detalhes-dots');
+
+/* ─── FILTRO DE TRILHAS POR TEMA ─── */
+(function(){
+  var filterWrap=document.getElementById('trilha-filters');
+  var track=document.getElementById('trilha-track');
+  var emptyMsg=document.getElementById('trilha-empty');
+  if(!filterWrap||!track) return;
+  var buttons=filterWrap.querySelectorAll('.trilha-filter-btn');
+  var cards=track.querySelectorAll('.trilha-card');
+  var trilhaCarousel=initMobileCarouselDots('trilha-track','trilha-dots');
+
+  buttons.forEach(function(btn){
+    btn.addEventListener('click',function(){
+      buttons.forEach(function(b){b.classList.remove('active');});
+      btn.classList.add('active');
+      var tag=btn.getAttribute('data-tag');
+      var visibleCount=0;
+      cards.forEach(function(card){
+        var match=tag==='todos'||card.getAttribute('data-tag')===tag;
+        card.classList.toggle('filtered-out',!match);
+        if(match) visibleCount++;
+      });
+      if(emptyMsg) emptyMsg.style.display=visibleCount?'none':'block';
+      track.scrollTo({left:0,behavior:'instant'});
+      if(trilhaCarousel) trilhaCarousel.refresh();
+
+      /* sobe até a primeira linha de trilhas se o clique aconteceu com a página rolada mais abaixo.
+         usa o track (não sticky) como referência — o próprio filterWrap é sticky e, quando já
+         "grudado" no topo, getBoundingClientRect() devolve a posição colada, não a posição real no documento. */
+      var reserved=100+filterWrap.offsetHeight+12;
+      var targetY=track.getBoundingClientRect().top+window.pageYOffset-reserved;
+      if(window.pageYOffset>targetY){
+        window.scrollTo({top:targetY,behavior:'smooth'});
+      }
+    });
+  });
+})();
 
 /* ─── HERO CANVAS — partículas roxas suaves ─── */
 (function(){

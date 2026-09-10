@@ -91,3 +91,57 @@ var io=new IntersectionObserver(function(entries){
   });
 },{threshold:.08,rootMargin:'0px 0px -56px 0px'});
 document.querySelectorAll('.anim,.anim-l,.anim-r,.anim-s').forEach(function(el){io.observe(el);});
+
+/* ─── MENU MOBILE (links que não cabem no header, ex: Área de membros) ─── */
+(function(){
+  var btn=document.getElementById('mobile-menu-btn');
+  var menu=document.getElementById('mobile-menu');
+  if(!btn||!menu) return;
+  btn.addEventListener('click',function(e){
+    e.stopPropagation();
+    var open=menu.classList.toggle('open');
+    btn.setAttribute('aria-expanded',open?'true':'false');
+  });
+  document.addEventListener('click',function(e){
+    if(menu.classList.contains('open') && !menu.contains(e.target) && e.target!==btn){
+      menu.classList.remove('open');
+      btn.setAttribute('aria-expanded','false');
+    }
+  });
+})();
+
+/* ─── DOTS DOS CARROSSÉIS MOBILE (trilhas + detalhes do acesso) ─── */
+function initMobileCarouselDots(trackId,dotsId){
+  var track=document.getElementById(trackId);
+  var dotsWrap=document.getElementById(dotsId);
+  if(!track||!dotsWrap) return;
+  var slides=track.children;
+  if(!slides.length) return;
+
+  Array.prototype.forEach.call(slides,function(_,i){
+    var dot=document.createElement('button');
+    dot.className='mob-carousel-dot';
+    dot.setAttribute('aria-label','Ir para item '+(i+1));
+    dot.addEventListener('click',function(){
+      track.scrollTo({left:i*slideStep(),behavior:'smooth'});
+    });
+    dotsWrap.appendChild(dot);
+  });
+  var dots=dotsWrap.querySelectorAll('.mob-carousel-dot');
+
+  function slideStep(){
+    return slides[0].getBoundingClientRect().width+16;
+  }
+  function updateDots(){
+    var idx=Math.min(Math.round(track.scrollLeft/slideStep()),dots.length-1);
+    dots.forEach(function(d,i){d.classList.toggle('active',i===idx);});
+  }
+  var t;
+  track.addEventListener('scroll',function(){
+    clearTimeout(t);
+    t=setTimeout(updateDots,80);
+  });
+  updateDots();
+}
+initMobileCarouselDots('trilha-track','trilha-dots');
+initMobileCarouselDots('detalhes-track','detalhes-dots');
