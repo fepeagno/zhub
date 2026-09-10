@@ -28,6 +28,14 @@
   --green:     #15803D;
   --green-dk:  #166534;
   --green-glow:rgba(21,128,61,0.30);
+  --sapblue:   #0B6FCC;
+  --sapblue-dk:#084E93;
+  --orange:    #C2691E;
+  --orange-dk: #8F4C15;
+  --yellow:    #B8860B;
+  --yellow-dk: #8A6508;
+  --pink:      #C14C7C;
+  --pink-dk:   #8C3659;
   --nav-bg:    rgba(255,255,255,0.90);
   --sh-sm:     0 2px 8px rgba(0,0,0,0.06);
   --sh-md:     0 8px 32px rgba(0,0,0,0.09);
@@ -57,6 +65,14 @@
   --green:     #15803D;
   --green-dk:  #166534;
   --green-glow:rgba(21,128,61,0.28);
+  --sapblue:   #2E8FE0;
+  --sapblue-dk:#1665AD;
+  --orange:    #D98A3D;
+  --orange-dk: #A8631F;
+  --yellow:    #D4A017;
+  --yellow-dk: #A67D0E;
+  --pink:      #D6699A;
+  --pink-dk:   #A84875;
   --nav-bg:    rgba(12,11,18,0.92);
   --sh-sm:     0 2px 8px rgba(0,0,0,0.30);
   --sh-md:     0 8px 32px rgba(0,0,0,0.45);
@@ -224,6 +240,19 @@ body.hide-topbar nav{transform:translateY(-100px);}
 .course-hero .stat-tile .l{color:rgba(255,255,255,.65);}
 .course-hero .btn-outline{border-color:rgba(255,255,255,.4);color:#fff;}
 .course-hero .btn-outline:hover{border-color:#fff;background:rgba(255,255,255,.14);color:#fff;}
+
+/* MOBILE — a foto de capa fica cortada/ilegível numa tela estreita (object-fit:cover num recorte muito vertical).
+   Troca por um gradiente sólido com a cor da família da trilha, igual ao usado nos cards do index. */
+@media(max-width:768px){
+  .course-hero .hero-bg,.course-hero .hero-overlay{display:none;}
+  .course-hero.fam-green{background:linear-gradient(135deg,var(--green-dk),var(--green));}
+  .course-hero.fam-blue{background:linear-gradient(135deg,var(--blue-dk),var(--blue));}
+  .course-hero.fam-purple{background:linear-gradient(135deg,var(--purple-dk),var(--purple));}
+  .course-hero.fam-sapblue{background:linear-gradient(135deg,var(--sapblue-dk),var(--sapblue));}
+  .course-hero.fam-orange{background:linear-gradient(135deg,var(--orange-dk),var(--orange));}
+  .course-hero.fam-yellow{background:linear-gradient(135deg,var(--yellow-dk),var(--yellow));}
+  .course-hero.fam-pink{background:linear-gradient(135deg,var(--pink-dk),var(--pink));}
+}
 
 /* TRILHA MORE LINK (reaproveitado do index) */
 .trilha-more{display:inline-flex;align-items:center;gap:4px;color:var(--purple);font-size:13px;font-weight:600;text-decoration:none;}
